@@ -1,0 +1,34 @@
+# Sensei Group
+
+> AI consulting and professional services arm of Hanzo AI.
+
+## About
+Sensei Group provides AI consulting, strategy, and professional services for enterprises looking to adopt and scale AI. As the services arm of Hanzo AI, Sensei Group offers end-to-end support from AI strategy development through implementation, training, and ongoing optimization. The team includes AI researchers, engineers, and industry specialists.
+
+## Key Features
+- AI strategy and roadmap development
+- Custom model development and fine-tuning
+- Implementation and integration services
+- AI infrastructure architecture and design
+- Team training and enablement programs
+- Ongoing optimization and support
+- Change management and AI adoption consulting
+- Ethical AI and governance frameworks
+- Industry-specific expertise (finance, healthcare, government, retail)
+- Partnership with Hanzo AI for platform access
+
+## Services
+- Strategy Workshops: 1-2 week AI readiness assessments
+- Implementation: End-to-end AI project delivery
+- Training: Technical and executive AI education
+- Advisory: Ongoing strategic AI counsel
+- Managed AI: Fully managed AI operations
+
+## Links
+- [Website](https://sensei.group)
+- [Hanzo AI](https://hanzo.ai)
+- [Case Studies](https://sensei.group/cases)
+
+## Contact
+- Inquiries: hello@sensei.group
+- Sales: sales@hanzo.ai
