@@ -100,12 +100,14 @@ const NotFound = () => {
                 >
                   Products
                 </Link>
-                <Link
-                  to="/docs"
+                <a
+                  href="https://docs.hanzo.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800 text-sm text-neutral-300 hover:text-white hover:border-neutral-700 transition-colors"
                 >
                   Documentation
-                </Link>
+                </a>
                 <Link
                   to="/contact"
                   className="px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800 text-sm text-neutral-300 hover:text-white hover:border-neutral-700 transition-colors"
