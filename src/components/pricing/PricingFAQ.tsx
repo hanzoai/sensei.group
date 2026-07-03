@@ -68,7 +68,7 @@ const PricingFAQ = () => {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto my-16 px-4">
+    <div id="faq" className="max-w-3xl mx-auto my-16 px-4">
       <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
       
       <Accordion type="single" collapsible className="border-gray-800">
