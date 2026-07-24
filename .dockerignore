@@ -1,0 +1,9 @@
+# Keep the build context lean and portable: never drag the host's (macOS)
+# node_modules or a prior dist/ into the linux image build — pnpm install
+# rebuilds node_modules for linux inside the image.
+node_modules
+dist
+.git
+.github
+.DS_Store
+*.log

@@ -1,0 +1,17 @@
+# Canonical CI/CD config for hanzoai/sensei.group — read by the shared
+# hanzoai/ci reusable workflow (.github/workflows/cicd.yml) and platform.hanzo.ai.
+#
+# ONE image: the Vite SPA served by hanzoai/static. The Dockerfile IS the gate
+# (`pnpm build` fails the image on any break), so there is no separate `test:`
+# block. GHCR push uses the job's automatic GITHUB_TOKEN (permissions:
+# packages: write) — no PAT, nothing hard-coded.
+#
+# NO `deploy:` block: the rollout onto do-sfo3-hanzo-k8s is owned by the operator
+# App CR (universe: infra/k8s/operator/crs/sensei-group.yaml), not by this repo.
+# CI only builds + pushes the immutable image ghcr.io/hanzoai/sensei-group:sha-<short>-amd64.
+
+images:
+  - name: sensei-group
+    context: .
+    dockerfile: Dockerfile
+    repo: ghcr.io/hanzoai/sensei-group
