@@ -32,7 +32,7 @@ jobs:
     # hanzo-build-linux-amd64 = the warm-floor arc pool (minRunners:1), proven
     # active (hanzoai/world builds here in ~2 min). The hanzo-apps-build pool
     # left an identical job pending 20+ min this session.
-    runs-on: hanzo-build-linux-amd64
+    runs-on: hanzo-apps-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
 
