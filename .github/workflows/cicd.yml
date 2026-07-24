@@ -1,21 +1,52 @@
-# Canonical CI/CD — imports the shared hanzoai/ci reusable workflow, which reads
-# hanzo.yml (images) and builds + pushes on our self-hosted arc pool. No per-repo
-# build logic, no GitHub-hosted runners.
 name: CI/CD
+
+# Build + push the sensei.group image (Vite SPA served by hanzoai/static) to
+# GHCR on our self-hosted arc pool. The rollout onto do-sfo3-hanzo-k8s is owned
+# by the operator App CR (universe: infra/k8s/operator/crs/sensei-group.yaml),
+# NOT this repo — CI only produces the immutable image.
+#
+# Self-contained (not the hanzoai/ci reusable workflow): that reusable caller
+# deterministically `startup_failure`d for THIS repo with no annotation, while
+# building fine for hanzoai/world — an opaque repo-level quirk. These are the
+# exact `docker login` + `docker buildx build --push` steps the reusable
+# workflow runs, so the produced tag shape (sha-<short>-amd64 + latest) is
+# identical. GHCR auth = the job's automatic GITHUB_TOKEN; no PAT, nothing
+# hard-coded.
 
 on:
   push:
     branches: [main]
     tags: ['v*']
-  pull_request:
   workflow_dispatch:
 
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
 jobs:
-  cicd:
-    uses: hanzoai/ci/.github/workflows/build.yml@v1
-    # Target the active Hanzo apps arc scale set by its installation name. ARC
-    # scale sets match by name, not by the [self-hosted,linux,amd64] label
-    # triple ci@v1 defaults to — without this override the job sits queued.
-    with:
-      runner: '["hanzo-apps-build-linux-amd64"]'
-    secrets: inherit
+  build:
+    # hanzo-build-linux-amd64 = the warm-floor arc pool (minRunners:1), proven
+    # active (hanzoai/world builds here in ~2 min). The hanzo-apps-build pool
+    # left an identical job pending 20+ min this session.
+    runs-on: hanzo-build-linux-amd64
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Image tag (immutable sha-<short>-amd64)
+        id: tag
+        run: echo "tag=sha-$(echo ${{ github.sha }} | cut -c1-7)-amd64" >> "$GITHUB_OUTPUT"
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Build & push image
+        run: |
+          docker buildx build --platform linux/amd64 --push \
+            -t ghcr.io/hanzoai/sensei-group:${{ steps.tag.outputs.tag }} \
+            -t ghcr.io/hanzoai/sensei-group:latest \
+            -f Dockerfile .
+          echo "pushed ghcr.io/hanzoai/sensei-group:${{ steps.tag.outputs.tag }}"
