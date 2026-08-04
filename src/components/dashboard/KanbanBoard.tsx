@@ -1,9 +1,8 @@
 
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button, toast } from "@hanzo/ui";
 import { DummyTaskData } from "./data";
 import { TaskDetailModal } from "./task-detail";
-import { toast } from "sonner";
 import { Task } from "./data/tasks/task-data";
 import KanbanColumn from "./kanban/KanbanColumn";
 import KanbanAddTaskButton from "./kanban/KanbanAddTaskButton";

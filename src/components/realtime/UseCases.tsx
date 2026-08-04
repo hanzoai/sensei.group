@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MessageSquare, Users, Edit, GamepadIcon, ChartBar, Code, Heart, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 interface UseCaseCardProps {
   icon: React.ElementType;

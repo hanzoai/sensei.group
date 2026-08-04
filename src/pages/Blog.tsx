@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CalendarIcon, User, Tag, ArrowRight, Rss, BookOpen } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const BRAND_COLOR = "#fd4444";
 

@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Github, Star, GitBranch, GitMerge, Database, Brain, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const InfrastructureComponents = () => {
   return (

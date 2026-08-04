@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { TooltipProvider } from "@/components/ui/radix-tooltip";
+import { TooltipProvider } from "@hanzo/ui";
 import { useDeploymentSequence } from "./hooks/useDeploymentSequence";
 import BackgroundGrid from "./BackgroundGrid";
 import ZoomControls from "./ZoomControls";

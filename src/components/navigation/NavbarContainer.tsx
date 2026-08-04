@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
-import { cn } from "@/lib/utils";
+import { cn } from "@hanzo/ui";
 
 interface NavbarContainerProps {
   children: ReactNode;

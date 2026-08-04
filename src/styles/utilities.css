@@ -258,20 +258,35 @@
 
 /* Origin-inspired monochrome styling */
 .mono-card {
-  @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-md p-4 transition-all;
+  background-color: rgb(24 24 27 / 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgb(39 39 42);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  transition: all 150ms;
 }
 
 .mono-card:hover {
-  @apply bg-gray-800/50 border-gray-700;
+  background-color: rgb(39 39 42 / 0.5);
+  border-color: rgb(63 63 70);
   transform: translateY(-2px);
 }
 
 .mono-button {
-  @apply bg-gray-800 hover:bg-gray-700 text-[var(--white)] px-4 py-2 rounded-md transition-all;
+  background-color: rgb(39 39 42);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 150ms;
 }
 
 .mono-button-outline {
-  @apply bg-transparent hover:bg-gray-800/50 text-neutral-300 hover:text-[var(--white)] border border-gray-700 hover:border-gray-600 px-4 py-2 rounded-md transition-all;
+  background-color: transparent;
+  color: rgb(212 212 212);
+  border: 1px solid rgb(63 63 70);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 150ms;
 }
 
 /* Linear.app inspired animations */
@@ -296,23 +311,41 @@
 
 /* Monochrome UI elements */
 .mono-input {
-  @apply bg-gray-900 border border-gray-800 rounded-md px-4 py-2 text-[var(--white)] placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700;
+  background-color: rgb(24 24 27);
+  border: 1px solid rgb(39 39 42);
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  color: var(--white);
 }
 
 .mono-select {
-  @apply bg-gray-900 border border-gray-800 rounded-md px-4 py-2 text-[var(--white)] focus:outline-none focus:ring-1 focus:ring-gray-700 focus:border-gray-700;
+  background-color: rgb(24 24 27);
+  border: 1px solid rgb(39 39 42);
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  color: var(--white);
 }
 
 .mono-tabs {
-  @apply flex space-x-1 p-1 bg-gray-900/50 rounded-md border border-gray-800;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background-color: rgb(24 24 27 / 0.5);
+  border-radius: 0.375rem;
+  border: 1px solid rgb(39 39 42);
 }
 
 .mono-tab {
-  @apply px-3 py-2 text-sm text-neutral-400 rounded-md hover:bg-gray-800/50 hover:text-[var(--white)] transition-all;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: rgb(163 163 163);
+  border-radius: 0.375rem;
+  transition: all 150ms;
 }
 
 .mono-tab-active {
-  @apply bg-gray-800 text-[var(--white)];
+  background-color: rgb(39 39 42);
+  color: var(--white);
 }
 
 /* Hide scrollbar but allow scrolling */

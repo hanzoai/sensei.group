@@ -1,8 +1,6 @@
 
 import React from "react";
-import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Button, Input, Textarea } from "@hanzo/ui";
 import { Bot } from "lucide-react";
 import AssigneesList from "./AssigneesList";
 import LabelsList from "./LabelsList";

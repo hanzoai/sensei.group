@@ -1,8 +1,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/ui/animated-section";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/visual/animated-section";
+import { createAnimationVariant, curves } from "@/components/visual/animation-variants";
 
 const companyItemVariant = createAnimationVariant("fadeInBlur", {
   duration: 0.3,

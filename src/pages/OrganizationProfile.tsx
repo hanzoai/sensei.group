@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useAccount } from '@/contexts/AccountContext';
-import { Button } from '@/components/ui/button';
+import { Button } from "@hanzo/ui";
 import { Building, Users, Calendar, Globe, Edit, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import AccountLayout from '@/components/account/AccountLayout';

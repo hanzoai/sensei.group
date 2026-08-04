@@ -2,7 +2,7 @@
 import React from 'react';
 import InvoicesList from '@/components/invoices/InvoicesList';
 import InvoicesSummary from '@/components/invoices/InvoicesSummary';
-import AnimatedSection, { AnimatedHeading } from '@/components/ui/animated-section';
+import AnimatedSection, { AnimatedHeading } from '@/components/visual/animated-section';
 
 const Invoices = () => {
   return (

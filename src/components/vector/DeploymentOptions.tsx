@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Laptop, Server, Cloud, Workflow } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const DeploymentOptions = () => {
   const deploymentOptions = [

@@ -1,6 +1,6 @@
 
 import React from "react";
-import { GridLines, BlueprintLine } from "@/components/ui/architectural-elements";
+import { GridLines, BlueprintLine } from "@/components/visual/architectural-elements";
 
 interface BackgroundProps {
   mousePosition: { x: number; y: number };

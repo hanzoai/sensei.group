@@ -1,9 +1,6 @@
 
 import React, { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/radix-dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button, Dialog, DialogContent, DialogHeader, DialogTitle, Input, Textarea } from "@hanzo/ui";
 import { 
   Bot, Calendar, Tag, 
   User, AlertCircle, X,

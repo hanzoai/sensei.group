@@ -13,7 +13,7 @@ import Regions from "@/components/cloud/Regions";
 import Security from "@/components/cloud/Security";
 import TechStack from "@/components/cloud/TechStack";
 import CallToAction from "@/components/cloud/CallToAction";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@hanzo/ui";
 
 const Cloud = () => {
   return (

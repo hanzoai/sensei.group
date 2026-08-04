@@ -1,9 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Tabs, TabsContent, TabsList, TabsTrigger } from "@hanzo/ui";
 import { Link } from "react-router-dom";
 import {
   Github,
@@ -60,7 +57,7 @@ import {
 } from "lucide-react";
 import type { Product, ProductCategory } from "@/data/product-taxonomy";
 import { getProductsByCategory } from "@/data/product-taxonomy";
-import { GridLines, BlueprintLine, ArchitecturalBox } from "@/components/ui/architectural-elements";
+import { GridLines, BlueprintLine, ArchitecturalBox } from "@/components/visual/architectural-elements";
 import { ProductMockup } from "./ProductMockup";
 import { UpstreamAttribution } from "./UpstreamAttribution";
 import { CodeExamplesSection } from "./CodeExamplesSection";

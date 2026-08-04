@@ -1,13 +1,9 @@
 
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button, Input, Progress, cn, toast } from "@hanzo/ui";
 import { Bot, Activity, Database, Settings, PlayCircle, StopCircle, Brain, Zap, PlusCircle, Search, List, LayoutGrid } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Progress } from "@/components/ui/progress";
 import { DummyAgentData, Agent } from "./data";
-import { cn } from "@/lib/utils";
 import AgentDetail from "./AgentDetail";
-import { toast } from "sonner";
 
 interface AgentsListProps {
   viewMode?: "list" | "grid";

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Slider } from "@/components/ui/radix-slider";
+import { Button, Slider } from "@hanzo/ui";
 import { Cpu, Zap, Users } from "lucide-react";
-import { Button } from "@/components/ui/radix-button";
 
 interface TeamPlanDetailsProps {
   fromMaxPlan?: boolean;

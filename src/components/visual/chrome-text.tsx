@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef, CSSProperties } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@hanzo/ui";
 
 interface ChromeTextProps {
   children: React.ReactNode;

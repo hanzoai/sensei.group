@@ -1,11 +1,6 @@
 
 import React from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@hanzo/ui";
 
 const PricingFAQ = () => {
   const faqs = [
@@ -71,22 +66,18 @@ const PricingFAQ = () => {
     <div className="max-w-3xl mx-auto my-16 px-4">
       <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
       
-      <Accordion type="single" collapsible className="border-gray-800">
+      <div className="border-gray-800">
         {faqs.map((faq, index) => (
-          <AccordionItem 
-            key={index} 
-            value={`item-${index}`}
-            className="border-b border-gray-800"
-          >
-            <AccordionTrigger className="py-4 text-left text-neutral-200 hover:text-[var(--white)]">
+          <Collapsible key={index} className="border-b border-gray-800">
+            <CollapsibleTrigger className="py-4 w-full text-left text-neutral-200 hover:text-[var(--white)]">
               {faq.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-neutral-400 pb-4">
+            </CollapsibleTrigger>
+            <CollapsibleContent className="text-neutral-400 pb-4">
               {faq.answer}
-            </AccordionContent>
-          </AccordionItem>
+            </CollapsibleContent>
+          </Collapsible>
         ))}
-      </Accordion>
+      </div>
     </div>
   );
 };

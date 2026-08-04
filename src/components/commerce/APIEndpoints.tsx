@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { cn } from "@/lib/utils";
+import { Tabs, TabsContent, TabsList, TabsTrigger, cn } from "@hanzo/ui";
 
 interface EndpointProps {
   path: string;

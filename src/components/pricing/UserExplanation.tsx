@@ -1,7 +1,6 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { Button, Popover, PopoverContent, PopoverTrigger } from "@hanzo/ui";
 import { User, HelpCircle } from "lucide-react";
 
 const UserExplanation = () => {

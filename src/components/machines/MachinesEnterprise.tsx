@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Shield, Database, Server } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 const EnterpriseFeature = ({ icon: Icon, title, description }) => {
   return (

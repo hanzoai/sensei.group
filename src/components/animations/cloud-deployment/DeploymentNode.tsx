@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { NodeType } from "./types";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/radix-tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@hanzo/ui";
 import { renderIcon } from "./utils/iconUtils";
 
 interface DeploymentNodeProps {

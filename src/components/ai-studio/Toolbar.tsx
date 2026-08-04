@@ -1,7 +1,7 @@
 
 import React from "react";
 import { PanelLeft, MessageSquare, Layers, Terminal, Save, Play, Share2, Download, Settings } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 interface ToolbarProps {
   showSidebar: boolean;

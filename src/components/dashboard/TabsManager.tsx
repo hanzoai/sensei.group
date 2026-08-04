@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { X, Plus, LayoutGrid, List, MenuSquare } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@hanzo/ui";
 
 export type TabType = {
   id: string;

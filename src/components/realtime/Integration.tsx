@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Code, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 // Define a proper type for the presence event
 interface PresenceEvent {

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Users, Briefcase, Star, Globe, Clock, Award, Handshake, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const categories = [
   { icon: "💻", name: "Engineering", count: "500+" },

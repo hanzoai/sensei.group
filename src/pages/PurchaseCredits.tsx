@@ -1,14 +1,10 @@
 
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { toast } from 'sonner';
+import { Button, Checkbox, Input, Label, toast } from "@hanzo/ui";
 import { useBilling } from '@/contexts/BillingContext';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, CreditCard } from 'lucide-react';
-import { Checkbox } from '@/components/ui/checkbox';
-import AnimatedSection, { AnimatedHeading } from '@/components/ui/animated-section';
+import AnimatedSection, { AnimatedHeading } from '@/components/visual/animated-section';
 
 const PurchaseCredits = () => {
   const { addCredits } = useBilling();

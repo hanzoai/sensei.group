@@ -1,6 +1,6 @@
 
 import React from "react";
-import { GridLines } from "@/components/ui/architectural-elements";
+import { GridLines } from "@/components/visual/architectural-elements";
 
 const Background = () => {
   console.log("Background component rendering");

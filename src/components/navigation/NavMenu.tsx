@@ -1,7 +1,7 @@
 import { useState, ReactNode, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { cn } from "@/lib/utils";
+import { cn } from "@hanzo/ui";
 import { useTheme } from "@/contexts/ThemeContext";
 
 type NavMenuProps = {

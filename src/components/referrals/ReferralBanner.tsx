@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Gift, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from "@hanzo/ui";
 import { useNavigate } from 'react-router-dom';
 
 const ReferralBanner = () => {

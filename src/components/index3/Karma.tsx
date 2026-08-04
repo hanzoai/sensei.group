@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Leaf, Recycle, ThermometerSun } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
-import { Button } from "@/components/ui/button";
+import ChromeText from "@/components/visual/chrome-text";
+import { Button } from "@hanzo/ui";
 const Karma = () => {
   return <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
       <div className="absolute top-20 right-20 w-64 h-64 bg-purple-900/5 rounded-full blur-3xl"></div>

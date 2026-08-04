@@ -3,8 +3,8 @@ import React from "react";
 import CloudServiceCard from "./CloudServiceCard";
 import { cloudServiceData } from "./cloudServiceData";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ArchitecturalBox, GridLines } from "@/components/ui/architectural-elements";
+import { Button } from "@hanzo/ui";
+import { ArchitecturalBox, GridLines } from "@/components/visual/architectural-elements";
 
 interface CloudServiceGridProps {
   isHovered: string | null;

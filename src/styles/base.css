@@ -1,10 +1,5 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  /* Dark mode (default) */
+/* Dark mode (default) */
   :root {
     /* Base colors */
     --background: #000000;
@@ -61,33 +56,29 @@
     --ring: #3552F2;
     /* ... keep existing code (light mode CSS variables) */
   }
-}
 
-@layer base {
-  /* Apply the default border color to all elements that have borders */
+/* Apply the default border color to all elements that have borders */
   * {
     border-color: var(--border);
   }
 
   body {
-    @apply bg-[var(--background)] text-[var(--foreground)];
+    background-color: var(--background);
+    color: var(--foreground);
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
-  }
-  
-  /* Global styles */
-  html {
-    @apply scroll-smooth;
+    transition: background-color 300ms, color 300ms;
   }
 
-  body {
-    @apply bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300;
+  html {
+    scroll-behavior: smooth;
   }
 
   .dark {
-    @apply bg-[var(--black)] text-[var(--white)];
+    background-color: var(--black);
+    color: var(--white);
   }
 
   .light {
-    @apply bg-[var(--white)] text-neutral-900;
+    background-color: var(--white);
+    color: #171717;
   }
-}

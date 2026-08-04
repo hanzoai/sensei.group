@@ -1,7 +1,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { AppWindow, Rocket, Bot, ShoppingCart } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { useRef } from "react";
 
 const quickApps = [{

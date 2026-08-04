@@ -1,5 +1,5 @@
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { ArrowRight } from "lucide-react";
 
 const CallToAction = () => {

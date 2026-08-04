@@ -4,10 +4,9 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button, Toaster } from "@hanzo/ui";
 import { Briefcase, Globe, Clock, MapPin, Users, Sparkles } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
-import { Toaster } from "@/components/ui/toaster";
+import ChromeText from "@/components/visual/chrome-text";
 
 const jobOpenings = [
   {

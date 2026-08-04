@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { Github, Twitter, ExternalLink } from "lucide-react";
 
 const OperativeCTA = () => {

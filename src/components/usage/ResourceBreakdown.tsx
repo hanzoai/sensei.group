@@ -2,7 +2,7 @@
 import React from "react";
 import { Cpu, HardDrive, Globe, CircuitBoard } from "lucide-react";
 import { motion } from "framer-motion";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import { createAnimationVariant, curves } from "@/components/visual/animation-variants";
 
 const cardAnimation = createAnimationVariant("fadeInBlur", {
   duration: 0.4,

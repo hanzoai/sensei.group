@@ -1,10 +1,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 interface HeroProps {
   mousePosition: { x: number; y: number };

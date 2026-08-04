@@ -1,8 +1,7 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button, cn } from "@hanzo/ui";
 import { ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 interface ViewAllButtonProps {

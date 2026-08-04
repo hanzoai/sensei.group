@@ -1,29 +1,78 @@
 
 import React, { useState, useEffect } from 'react';
 import { useAccount } from '@/contexts/AccountContext';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableHead, 
-  TableHeader, 
-  TableRow 
-} from '@/components/ui/table';
+import { Avatar, AvatarFallback, AvatarImage, Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, Input, Label, Textarea, toast } from "@hanzo/ui";
+import { DataTable, type Column } from '@hanzo/ui/product';
 import { Building, User, UserPlus, MoreVertical, Upload, MapPin, Globe, Link as LinkIcon } from 'lucide-react';
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
-import AnimatedSection, { AnimatedHeading } from '@/components/ui/animated-section';
+import AnimatedSection, { AnimatedHeading } from '@/components/visual/animated-section';
+
+interface TeamMember {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  avatar: string;
+}
+
+const memberColumns: Column<TeamMember>[] = [
+  {
+    key: 'user',
+    header: 'User',
+    render: (member) => (
+      <div className="flex items-center space-x-3">
+        <Avatar className="h-8 w-8">
+          <AvatarImage src={member.avatar} />
+          <AvatarFallback className="bg-gray-900/50">{member.name[0]}</AvatarFallback>
+        </Avatar>
+        <div>
+          <div className="font-medium">{member.name}</div>
+          <div className="text-sm text-neutral-400">{member.email}</div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    key: 'role',
+    header: 'Role',
+    render: (member) => (
+      <span className={`px-2 py-1 rounded-full text-xs ${
+        member.role === 'Owner'
+          ? 'bg-purple-900/10 text-purple-300'
+          : member.role === 'Admin'
+            ? 'bg-blue-900/10 text-blue-300'
+            : 'bg-gray-900/20 text-neutral-300'
+      }`}>
+        {member.role}
+      </span>
+    ),
+  },
+  {
+    key: 'actions',
+    header: 'Actions',
+    align: 'right',
+    render: () => (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+            <MoreVertical className="h-4 w-4" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="bg-[var(--black)] border-gray-800/30">
+          <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
+            View Profile
+          </DropdownMenuItem>
+          <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
+            Change Role
+          </DropdownMenuItem>
+          <DropdownMenuItem className="text-red-400 hover:bg-red-900/10 hover:text-red-300">
+            Remove
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    ),
+  },
+];
 
 const Organization = () => {
   const { currentOrganization, updateOrganization } = useAccount();
@@ -42,7 +91,7 @@ const Organization = () => {
   }, [currentOrganization]);
   
   // Mock team members for demonstration
-  const teamMembers = [
+  const teamMembers: TeamMember[] = [
     { id: '1', name: 'Alex Johnson', email: 'alex@hanzo.ai', role: 'Owner', avatar: '/placeholder.svg' },
     { id: '2', name: 'Sarah Chen', email: 'sarah@hanzo.ai', role: 'Admin', avatar: '/placeholder.svg' },
     { id: '3', name: 'Miguel Rodriguez', email: 'miguel@hanzo.ai', role: 'Member', avatar: '/placeholder.svg' },
@@ -168,64 +217,11 @@ const Organization = () => {
           </div>
           
           <div className="rounded-lg overflow-hidden">
-            <Table>
-              <TableHeader className="bg-gray-900/30">
-                <TableRow className="border-0">
-                  <TableHead>User</TableHead>
-                  <TableHead>Role</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {teamMembers.map((member) => (
-                  <TableRow key={member.id} className="border-gray-800/10">
-                    <TableCell>
-                      <div className="flex items-center space-x-3">
-                        <Avatar className="h-8 w-8">
-                          <AvatarImage src={member.avatar} />
-                          <AvatarFallback className="bg-gray-900/50">{member.name[0]}</AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <div className="font-medium">{member.name}</div>
-                          <div className="text-sm text-neutral-400">{member.email}</div>
-                        </div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <span className={`px-2 py-1 rounded-full text-xs ${
-                        member.role === 'Owner' 
-                          ? 'bg-purple-900/10 text-purple-300' 
-                          : member.role === 'Admin' 
-                            ? 'bg-blue-900/10 text-blue-300' 
-                            : 'bg-gray-900/20 text-neutral-300'
-                      }`}>
-                        {member.role}
-                      </span>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                            <MoreVertical className="h-4 w-4" />
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="bg-[var(--black)] border-gray-800/30">
-                          <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
-                            View Profile
-                          </DropdownMenuItem>
-                          <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
-                            Change Role
-                          </DropdownMenuItem>
-                          <DropdownMenuItem className="text-red-400 hover:bg-red-900/10 hover:text-red-300">
-                            Remove
-                          </DropdownMenuItem>
-                        </DropdownMenuContent>
-                      </DropdownMenu>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+            <DataTable<TeamMember>
+              rows={teamMembers}
+              rowKey={(m) => m.id}
+              columns={memberColumns}
+            />
           </div>
         </div>
       </div>

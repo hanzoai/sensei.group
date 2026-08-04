@@ -1,14 +1,12 @@
 
 import { useState, useEffect, useRef } from "react";
-import { useToast } from "@/components/ui/use-toast";
 import HeroTitle from "@/components/hero/HeroTitle";
 import HeroDescription from "@/components/hero/HeroDescription";
 import HeroButtons from "@/components/hero/HeroButtons";
 import HeroFeatures from "@/components/hero/HeroFeatures";
-import { GridLines, BlueprintLine, ArchitecturalBox } from "@/components/ui/architectural-elements";
+import { GridLines, BlueprintLine, ArchitecturalBox } from "@/components/visual/architectural-elements";
 
 const Hero = () => {
-  const { toast } = useToast();
   const [animationComplete, setAnimationComplete] = useState(false);
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

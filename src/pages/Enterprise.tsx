@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Building2, Shield, Users, Zap, Globe, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const Enterprise = () => {
   const features = [

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Activity, BarChart, Clock, ShoppingCart, Shield, Lightbulb, Signal, LineChart, Gamepad2, Cpu, Network, Users } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 const UseCasesSection = () => {
   const useCases = [

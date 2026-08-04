@@ -2,8 +2,7 @@ import { productsNav, featuredProducts } from "@/constants/navigation-data";
 import { Link } from "react-router-dom";
 import NavMenu from "../NavMenu";
 import { Sparkles, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Button, cn } from "@hanzo/ui";
 import { useTheme } from "@/contexts/ThemeContext";
 
 const ITEMS_PER_CATEGORY = 3;

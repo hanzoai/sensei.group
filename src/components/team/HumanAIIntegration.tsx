@@ -9,7 +9,7 @@ import {
   Workflow,
   Users
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@hanzo/ui";
 
 const HumanAIIntegration = () => {
   const features = [

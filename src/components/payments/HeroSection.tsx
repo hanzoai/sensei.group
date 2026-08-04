@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { CreditCard, Lock, Globe, Zap } from "lucide-react";
 
 const HeroSection = () => {

@@ -1,8 +1,8 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { motion } from "framer-motion";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import { createAnimationVariant, curves } from "@/components/visual/animation-variants";
 
 interface UsageOverviewProps {
   dateRange: {

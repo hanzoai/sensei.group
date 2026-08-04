@@ -1,9 +1,9 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { CreditCard, Receipt, Clock, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import { createAnimationVariant, curves } from "@/components/visual/animation-variants";
 
 const cardAnimation = createAnimationVariant("fadeInBlur", {
   duration: 0.4,

@@ -15,23 +15,7 @@ import {
   Package,
   Check,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
-import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
+import { Badge, Button, Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, Input, cn } from "@hanzo/ui";
 import {
   ossCatalog,
   featuredCollections,
@@ -646,8 +630,8 @@ const OSSCatalog: React.FC = () => {
             </div>
 
             {/* Mobile Filter Button */}
-            <Sheet>
-              <SheetTrigger asChild>
+            <Dialog>
+              <DialogTrigger asChild>
                 <Button variant="outline" size="sm" className="lg:hidden border-neutral-700">
                   <Filter className="w-4 h-4 mr-2" />
                   Filters
@@ -657,16 +641,16 @@ const OSSCatalog: React.FC = () => {
                     </span>
                   )}
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="bottom" className="h-[80vh] bg-neutral-900 border-neutral-800">
-                <SheetHeader>
-                  <SheetTitle className="text-white">Filters</SheetTitle>
-                </SheetHeader>
+              </DialogTrigger>
+              <DialogContent className="h-[80vh] bg-neutral-900 border-neutral-800">
+                <DialogHeader>
+                  <DialogTitle className="text-white">Filters</DialogTitle>
+                </DialogHeader>
                 <div className="mt-6 overflow-y-auto h-full pb-20">
                   <FacetRail />
                 </div>
-              </SheetContent>
-            </Sheet>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
 

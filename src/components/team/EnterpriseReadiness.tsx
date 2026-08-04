@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button, Card, CardContent, CardHeader } from "@hanzo/ui";
 import { 
   Briefcase, 
   Building, 
@@ -11,7 +11,6 @@ import {
   Users,
   ArrowRight
 } from "lucide-react";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 const EnterpriseReadiness = () => {
   const enterpriseFeatures = [

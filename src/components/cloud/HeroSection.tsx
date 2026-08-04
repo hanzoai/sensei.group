@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { motion } from "framer-motion";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 import { Server, Globe, Zap } from "lucide-react";
 
 const HeroSection = () => {

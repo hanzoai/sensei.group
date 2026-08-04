@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import { Button } from "@hanzo/ui";
 
 interface BillingTabsLinkProps {
   tabId: 'overview' | 'payment-methods' | 'history';

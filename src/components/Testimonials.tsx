@@ -1,7 +1,6 @@
 
 import { motion } from "framer-motion";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Button } from "@/components/ui/button";
+import { Button, ScrollArea } from "@hanzo/ui";
 import { ArrowRight } from "lucide-react";
 
 const testimonials = [{

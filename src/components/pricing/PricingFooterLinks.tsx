@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { Github } from "lucide-react";
 
 const PricingFooterLinks = () => {

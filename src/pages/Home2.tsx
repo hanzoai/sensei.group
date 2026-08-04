@@ -7,7 +7,7 @@ import Hero from "@/components/home2/Hero";
 import Features from "@/components/home2/Features";
 import CTA from "@/components/home2/CTA";
 import Testimonials from "@/components/home2/Testimonials";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@hanzo/ui";
 
 const Home2 = () => {
   return (

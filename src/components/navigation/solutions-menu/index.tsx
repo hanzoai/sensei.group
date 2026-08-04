@@ -2,9 +2,8 @@ import { capabilitiesNav, industriesNav } from "@/constants/navigation-data";
 import { Link } from "react-router-dom";
 import NavMenu from "../NavMenu";
 import { Users, Shield, Building2, ArrowRight, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Button, cn } from "@hanzo/ui";
 import { useTheme } from "@/contexts/ThemeContext";
-import { Button } from "@/components/ui/button";
 
 const ITEMS_PER_CATEGORY = 4;
 

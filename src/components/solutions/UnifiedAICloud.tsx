@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, Users, BookOpen, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import SectionHeader from "@/components/zen/SectionHeader";
 
 const UnifiedAICloud: React.FC = () => {

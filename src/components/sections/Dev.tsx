@@ -16,8 +16,7 @@ import {
   ExternalLink,
   Bot
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Button, cn } from "@hanzo/ui";
 
 // Sidebar navigation items
 const sidebarItems = [

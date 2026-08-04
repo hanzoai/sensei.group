@@ -1,7 +1,7 @@
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 interface UseCaseCardProps {
   title: string;

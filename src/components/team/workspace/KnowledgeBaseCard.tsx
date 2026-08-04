@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FileText, Calendar, Bot } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@hanzo/ui";
 
 const KnowledgeBaseCard = () => {
   return (

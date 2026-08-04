@@ -1,10 +1,7 @@
 
 import React, { useState } from 'react';
 import { CreditCard, Plus, Trash2, CheckCircle, Edit, ArrowLeft, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { toast } from 'sonner';
+import { Button, Input, Label, toast } from "@hanzo/ui";
 import BillingTabsLink from './BillingTabsLink';
 import { useNavigate } from 'react-router-dom';
 

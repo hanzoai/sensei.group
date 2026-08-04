@@ -24,9 +24,9 @@ import {
 import { getIcon } from "@/constants/iconMappings";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import SectionHeader from "@/components/zen/SectionHeader";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 const SolutionIndustries: React.FC = () => {
   const [expandedSections, setExpandedSections] = useState<Record<string, number>>({});

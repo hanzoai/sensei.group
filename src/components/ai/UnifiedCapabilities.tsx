@@ -5,7 +5,7 @@ import {
   Code, Brain, Database, Bot, Search, FileText, Workflow, 
   BarChart3, Lock, MessageSquare, Layers, Zap
 } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 const capabilities = [
   {

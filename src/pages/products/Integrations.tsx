@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge, Button, Input } from "@hanzo/ui";
 import { Search, ExternalLink, Github, Plug } from "lucide-react";
 
 // Sample integrations data - in production, this would come from an API

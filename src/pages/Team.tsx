@@ -27,7 +27,7 @@ import WorkspaceIntegration from "@/components/team/WorkspaceIntegration";
 import AuditFeatures from "@/components/team/AuditFeatures";
 import EnterpriseReadiness from "@/components/team/EnterpriseReadiness";
 import CallToAction from "@/components/team/CallToAction";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@hanzo/ui";
 
 const Team = () => {
   useEffect(() => {

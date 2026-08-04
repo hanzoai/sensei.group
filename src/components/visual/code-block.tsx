@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Copy, Check } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@hanzo/ui";
 
 // Simple token-based syntax highlighting
 const highlightCode = (code: string, language: string): React.ReactNode[] => {

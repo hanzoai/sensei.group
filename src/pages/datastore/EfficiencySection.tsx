@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 interface EfficiencyCardProps {
   title: string;

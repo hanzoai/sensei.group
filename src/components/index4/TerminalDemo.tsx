@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArchitecturalBox } from "@/components/ui/architectural-elements";
+import { ArchitecturalBox } from "@/components/visual/architectural-elements";
 
 const TerminalDemo = () => {
   return (

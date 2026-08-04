@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { Cpu, Server, Zap, Network, BarChart, Globe } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 const FeatureCard = ({ icon: Icon, title, description, delay }) => {
   return (

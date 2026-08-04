@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Brain, Scale, Leaf, Shield, Code } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 const WhyHanzo = () => {
   const features = [

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Code, Terminal, PenTool, Layers } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const tabs = [
   { id: "js", label: "JavaScript", icon: <Code className="h-4 w-4" /> },

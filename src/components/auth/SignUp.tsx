@@ -1,11 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Checkbox } from '@/components/ui/checkbox';
-import { toast } from 'sonner';
+import { Button, Checkbox, Input, Label, toast } from "@hanzo/ui";
 import { Mail, Lock, User, ArrowRight } from 'lucide-react';
 
 const SignUp = () => {

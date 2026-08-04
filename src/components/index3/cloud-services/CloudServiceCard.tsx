@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 import { Link } from "react-router-dom";
 
 interface CloudServiceCardProps {

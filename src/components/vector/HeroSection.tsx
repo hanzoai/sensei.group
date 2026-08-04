@@ -1,10 +1,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import ChromeText from "@/components/ui/chrome-text";
-import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/ui/animated-section";
-import { createAnimationVariant, curves, buttonAnimation } from "@/components/ui/animation-variants";
+import { Button } from "@hanzo/ui";
+import ChromeText from "@/components/visual/chrome-text";
+import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/visual/animated-section";
+import { createAnimationVariant, curves, buttonAnimation } from "@/components/visual/animation-variants";
 
 const fadeInUpVariant = createAnimationVariant("fadeInBlur", {
   duration: 0.4,

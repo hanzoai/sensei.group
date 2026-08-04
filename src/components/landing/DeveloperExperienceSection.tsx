@@ -18,7 +18,7 @@ import {
   Box,
   Bot,
 } from "lucide-react";
-import { CodeTabs } from "@/components/ui/code-block";
+import { CodeTabs } from "@/components/visual/code-block";
 
 const BRAND_COLOR = "#fd4444";
 

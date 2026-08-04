@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Activity, Radio, Zap, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const HeroSection = () => {
   return (

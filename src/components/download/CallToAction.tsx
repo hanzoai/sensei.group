@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { ArrowDown, Apple, Chrome, Terminal } from "lucide-react";
 
 const CallToAction = () => {

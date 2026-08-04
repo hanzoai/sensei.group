@@ -1,19 +1,10 @@
 
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, toast } from "@hanzo/ui";
 import { ArrowLeft, Check, CreditCard } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'sonner';
 import { useBilling } from '@/contexts/BillingContext';
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardFooter, 
-  CardHeader, 
-  CardTitle 
-} from '@/components/ui/card';
-import AnimatedSection, { AnimatedHeading } from '@/components/ui/animated-section';
+import AnimatedSection, { AnimatedHeading } from '@/components/visual/animated-section';
 
 const BillingPlans = () => {
   const navigate = useNavigate();

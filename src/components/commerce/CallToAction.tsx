@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { ArrowRight, ShoppingCart, Book, Code } from "lucide-react";
 
 const CallToAction = () => {

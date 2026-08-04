@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import ChromeText from "@/components/ui/chrome-text";
-import { MasonryGrid, MasonryItem } from "@/components/ui/masonry-grid";
-import { ArchitecturalBox, GridLines } from "@/components/ui/architectural-elements";
+import { Button } from "@hanzo/ui";
+import ChromeText from "@/components/visual/chrome-text";
+import { MasonryGrid, MasonryItem } from "@/components/visual/masonry-grid";
+import { ArchitecturalBox, GridLines } from "@/components/visual/architectural-elements";
 import { aiPlatformFeatures } from "./data/ai-platform-data";
 import { getColorClasses } from "./utils/tailwind-helpers";
 

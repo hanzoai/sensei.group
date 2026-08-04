@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Badge, Button } from "@hanzo/ui";
 import { BrainCircuit, Zap, Users, ArrowRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 const TeamHero = () => {
   return (

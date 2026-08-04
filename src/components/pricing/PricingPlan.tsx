@@ -1,8 +1,7 @@
 
 import React from "react";
-import { Button } from "@/components/ui/radix-button";
+import { Button, Dialog, DialogTrigger } from "@hanzo/ui";
 import { Check } from "lucide-react";
-import { Dialog, DialogTrigger } from "@/components/ui/radix-dialog";
 
 interface PricingPlanProps {
   name: string;

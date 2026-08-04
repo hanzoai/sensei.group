@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Kanban, CheckCircle, Bot } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@hanzo/ui";
 
 const ProjectManagementCard = () => {
   return (

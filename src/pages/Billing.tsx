@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from "react";
 import BillingOverview from "@/components/billing/BillingOverview";
-import AnimatedSection, { AnimatedHeading } from "@/components/ui/animated-section";
+import AnimatedSection, { AnimatedHeading } from "@/components/visual/animated-section";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { CreditCard, FileText } from "lucide-react";
 
 const BillingPage = () => {

@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import FeatureShowcaseHeader from "./FeatureShowcaseHeader";
 import FeatureShowcaseSlider from "./FeatureShowcaseSlider";
 import { features, aiCloudFeatures_export, dxPlatformFeatures_export } from "./data/features";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const FeatureShowcase: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);

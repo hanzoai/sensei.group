@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import '@hanzo/ui/theme.css';
 
 /* Main CSS file that imports all other CSS files */
 @import "./base.css";

@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@hanzo/ui";
 import IChingHexagram from "./svg/IChingHexagram";
 import TaijiSymbol from "./svg/TaijiSymbol";
 import { ichingPrinciples } from "./data/ichingPrinciples";

@@ -4,8 +4,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { LucideIcon, ExternalLink, Mail, Phone, Shield, Users } from "lucide-react";
 import TeamSlack from "@/components/TeamSlack";
-import { Button } from "@/components/ui/button";
-import { toast } from "@/hooks/use-toast";
+import { Button, toast } from "@hanzo/ui";
 import { teamMembers, TeamMemberId } from "@/constants/team-members";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -20,18 +19,12 @@ const TeamMemberPage = ({ memberId }: TeamMemberPageProps) => {
 
   const handleContactSensei = () => {
     window.location.href = "https://sensei.group";
-    toast({
-      title: "Redirecting to Sensei Group",
-      description: "Connecting you with human assistance..."
-    });
+    toast("Redirecting to Sensei Group", { description: "Connecting you with human assistance..." });
   };
 
   const handleContactAgency = () => {
     window.location.href = "https://hanzo.agency";
-    toast({
-      title: "Redirecting to Hanzo Agency",
-      description: "Connecting you with our creative team..."
-    });
+    toast("Redirecting to Hanzo Agency", { description: "Connecting you with our creative team..." });
   };
 
   // Extract the first part of the description to use as specialty

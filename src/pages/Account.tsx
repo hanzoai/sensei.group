@@ -1,15 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { useAccount } from '@/contexts/AccountContext';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { toast } from 'sonner';
+import { Avatar, AvatarFallback, AvatarImage, Button, Input, Label, Textarea, toast } from "@hanzo/ui";
 import { Mail, Key, Shield, UserCircle, MapPin, Phone, Globe, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import AnimatedSection, { AnimatedHeading } from '@/components/ui/animated-section';
+import AnimatedSection, { AnimatedHeading } from '@/components/visual/animated-section';
 
 const Account = () => {
   const { user, updateUserProfile } = useAccount();

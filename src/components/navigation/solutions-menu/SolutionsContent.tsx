@@ -3,14 +3,14 @@ import { solutions } from "@/constants/navigation";
 import { SolutionCategory } from "./SolutionCategory";
 import { AgencyCard } from "./AgencyCard";
 import { SenseiCard } from "./SenseiCard";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 interface SolutionsContentProps {
   onCloseMenu: () => void;
 }
 
 export const SolutionsContent = ({ onCloseMenu }: SolutionsContentProps) => {
-  const isMobile = useIsMobile();
+  const isMobile = useMediaQuery("(max-width: 767px)");
   
   return (
     <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} gap-6`}>

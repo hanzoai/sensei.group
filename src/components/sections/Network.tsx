@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Globe, Server, Shield, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const Network = () => {
   return (

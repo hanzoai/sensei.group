@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Terminal, Github, CheckCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const GettingStarted = () => {
   const prerequisites = [

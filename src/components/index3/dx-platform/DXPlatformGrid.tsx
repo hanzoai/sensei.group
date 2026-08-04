@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import DXPlatformCard from "./DXPlatformCard";
 import { dxPlatformData } from "./dxPlatformData";
 import { Link } from "react-router-dom";
-import ChromeText from "@/components/ui/chrome-text";
-import { Button } from "@/components/ui/button";
+import ChromeText from "@/components/visual/chrome-text";
+import { Button } from "@hanzo/ui";
 
 interface DXPlatformGridProps {
   isHovered: string | null;

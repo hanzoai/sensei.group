@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import HeroTitle from "@/components/hero/HeroTitle";

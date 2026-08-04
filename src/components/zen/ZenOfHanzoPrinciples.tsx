@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@hanzo/ui";
 import ZenPrincipleCard from "./ZenPrincipleCard";
 import { principles } from "./data/zenPrinciples";
 

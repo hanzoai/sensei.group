@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Bot, MessageSquare, Paperclip, AlertCircle } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@hanzo/ui";
 
 interface TaskCardProps {
   task: {

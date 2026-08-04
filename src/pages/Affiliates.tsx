@@ -4,10 +4,10 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { ExternalLink, DollarSign, BarChart, Target, Award, Briefcase, BookOpen } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
-import { GridLines } from "@/components/ui/architectural-elements";
+import ChromeText from "@/components/visual/chrome-text";
+import { GridLines } from "@/components/visual/architectural-elements";
 import { Link } from "react-router-dom";
 
 const Affiliates = () => {

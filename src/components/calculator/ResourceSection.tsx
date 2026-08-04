@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Slider } from "@/components/ui/radix-slider";
+import { Slider } from "@hanzo/ui";
 
 interface ResourceSectionProps {
   icon: React.ReactNode;

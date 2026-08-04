@@ -9,16 +9,8 @@ import {
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { useAccount } from '@/contexts/AccountContext';
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
-} from '@/components/ui/select';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import AnimatedSection, { AnimatedHeading } from '@/components/ui/animated-section';
+import { Avatar, AvatarFallback, AvatarImage, Button, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@hanzo/ui";
+import AnimatedSection, { AnimatedHeading } from '@/components/visual/animated-section';
 
 const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
   const { user, organizations, currentOrganization, switchOrganization, isLoading } = useAccount();

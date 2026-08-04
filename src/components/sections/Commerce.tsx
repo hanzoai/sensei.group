@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ShoppingCart, CreditCard, DollarSign, BarChart } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 const Commerce = () => {
   return <section className="py-20 bg-gradient-to-b from-black to-gray-900 bg-[var(--black)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

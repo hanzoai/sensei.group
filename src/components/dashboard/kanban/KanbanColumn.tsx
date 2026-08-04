@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { Plus, MoreHorizontal } from "lucide-react";
 import TaskCard from "../TaskCard";
 import KanbanAddTaskButton from "./KanbanAddTaskButton";

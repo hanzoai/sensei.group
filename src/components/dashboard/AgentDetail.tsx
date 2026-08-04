@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/radix-dialog";
+import { Button, Dialog, DialogContent, DialogHeader, DialogTitle, Input, Progress, Textarea } from "@hanzo/ui";
 import { 
   Bot, Activity, Database, 
   FileText, Globe, Trash2, 
@@ -9,10 +9,6 @@ import {
   PlayCircle, StopCircle,
   Save, X
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Progress } from "@/components/ui/progress";
 import { Agent } from "./data";
 
 interface AgentDetailProps {

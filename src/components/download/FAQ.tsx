@@ -1,12 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@hanzo/ui";
 
 const FAQ = () => {
   const faqs = [
@@ -61,22 +56,21 @@ const FAQ = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Accordion type="single" collapsible className="space-y-4">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
+              <Collapsible
+                key={index}
                 className="border border-gray-800 rounded-lg overflow-hidden bg-gray-900/50"
               >
-                <AccordionTrigger className="px-6 py-4 text-left text-lg font-medium text-[var(--white)] hover:no-underline">
+                <CollapsibleTrigger className="px-6 py-4 w-full text-left text-lg font-medium text-[var(--white)]">
                   {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-neutral-300">
+                </CollapsibleTrigger>
+                <CollapsibleContent className="px-6 pb-4 text-neutral-300">
                   {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                </CollapsibleContent>
+              </Collapsible>
             ))}
-          </Accordion>
+          </div>
         </motion.div>
       </div>
     </section>

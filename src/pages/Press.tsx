@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { motion } from "framer-motion";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Link } from "react-router-dom";

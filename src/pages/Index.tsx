@@ -10,7 +10,7 @@ import DeveloperExperienceSection from "@/components/landing/DeveloperExperience
 import OpenSourceSection from "@/components/landing/OpenSourceSection";
 import PricingPreviewSection from "@/components/landing/PricingPreviewSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@hanzo/ui";
 import ChatWidget from "@/components/chat/ChatWidget";
 
 const Index = () => {

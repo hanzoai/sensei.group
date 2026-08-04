@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cloud, Cpu, Globe, Server, Database, Network, Bot, Lock, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const Features = () => {
   return (

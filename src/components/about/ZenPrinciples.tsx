@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { 
   Users, Database, Share2, RefreshCcw, Heart, BookOpen
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { Link } from "react-router-dom";
 
 const principles = [

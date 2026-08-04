@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Database, Lock, Zap, Cloud, Settings, Globe } from "lucide-react";
-import { Button } from "@/components/ui/radix-button";
+import { Button } from "@hanzo/ui";
 
 const Base = () => {
   return (

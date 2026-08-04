@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Code, Rocket, Stars, Coins, Trophy, Lightbulb, Bot, User2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const timelineEvents = [
   {

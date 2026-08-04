@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cloud, Server, Shield, Zap, Globe, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { useNavigate } from "react-router-dom";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 const AICloudSection: React.FC = () => {
   const navigate = useNavigate();

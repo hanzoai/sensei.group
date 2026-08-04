@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Menu, X, ChevronRight, Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, cn } from "@hanzo/ui";
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
   isOpen: boolean;

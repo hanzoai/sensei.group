@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Shield, Lock, Server } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { Link } from "react-router-dom";
 
 const Compliance = () => {

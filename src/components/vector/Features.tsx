@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Database, Search, Zap, Shield, Code, BarChart } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
-import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/ui/animated-section";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import ChromeText from "@/components/visual/chrome-text";
+import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/visual/animated-section";
+import { createAnimationVariant, curves } from "@/components/visual/animation-variants";
 
 const featureCardVariant = createAnimationVariant("popIn", {
   duration: 0.4,

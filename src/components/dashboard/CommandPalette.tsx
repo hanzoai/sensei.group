@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Command } from "cmdk";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@hanzo/ui";
 import { 
   Search, 
   Bot, 
@@ -86,7 +86,7 @@ const CommandPalette: React.FC = () => {
         >
           <div className="border-b border-gray-800 p-2 flex items-center">
             <Search className="ml-2 h-4 w-4 text-neutral-500" />
-            <Command.Input 
+            <CommandInput 
               value={search}
               onValueChange={setSearch}
               className="w-full bg-transparent border-none focus:outline-none px-2 py-1.5 text-neutral-200 placeholder-gray-500" 
@@ -98,13 +98,13 @@ const CommandPalette: React.FC = () => {
             </kbd>
           </div>
           
-          <Command.List className="max-h-80 overflow-auto p-2">
-            <Command.Empty className="py-6 text-center text-neutral-500">
+          <CommandList className="max-h-80 overflow-auto p-2">
+            <CommandEmpty className="py-6 text-center text-neutral-500">
               No results found.
-            </Command.Empty>
+            </CommandEmpty>
             
-            <Command.Group heading="Navigation" className="pb-2">
-              <Command.Item 
+            <CommandGroup heading="Navigation" className="pb-2">
+              <CommandItem 
                 id="view-board" 
                 onSelect={handleSelect} 
                 className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
@@ -112,8 +112,8 @@ const CommandPalette: React.FC = () => {
               >
                 <LayoutGrid className="h-4 w-4 text-neutral-400" />
                 <span>View Kanban Board</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="view-agents" 
                 onSelect={handleSelect} 
                 className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
@@ -121,8 +121,8 @@ const CommandPalette: React.FC = () => {
               >
                 <Bot className="h-4 w-4 text-neutral-400" />
                 <span>View Agents</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="view-analytics" 
                 onSelect={handleSelect} 
                 className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
@@ -130,11 +130,11 @@ const CommandPalette: React.FC = () => {
               >
                 <ChartBar className="h-4 w-4 text-neutral-400" />
                 <span>View Analytics</span>
-              </Command.Item>
-            </Command.Group>
+              </CommandItem>
+            </CommandGroup>
             
-            <Command.Group heading="Actions" className="pb-2">
-              <Command.Item 
+            <CommandGroup heading="Actions" className="pb-2">
+              <CommandItem 
                 id="new-agent" 
                 onSelect={handleSelect} 
                 className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
@@ -142,8 +142,8 @@ const CommandPalette: React.FC = () => {
               >
                 <PlusCircle className="h-4 w-4 text-neutral-400" />
                 <span>Create New Agent</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="new-task" 
                 onSelect={handleSelect} 
                 className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
@@ -151,8 +151,8 @@ const CommandPalette: React.FC = () => {
               >
                 <PlusCircle className="h-4 w-4 text-neutral-400" />
                 <span>Create New Task</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="refresh" 
                 onSelect={handleSelect} 
                 className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
@@ -160,8 +160,8 @@ const CommandPalette: React.FC = () => {
               >
                 <RefreshCw className="h-4 w-4 text-neutral-400" />
                 <span>Refresh Dashboard</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="settings" 
                 onSelect={handleSelect} 
                 className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
@@ -169,12 +169,12 @@ const CommandPalette: React.FC = () => {
               >
                 <Settings className="h-4 w-4 text-neutral-400" />
                 <span>Open Settings</span>
-              </Command.Item>
-            </Command.Group>
+              </CommandItem>
+            </CommandGroup>
             
-            <Command.Group heading="Manage Agents" className="pb-2">
+            <CommandGroup heading="Manage Agents" className="pb-2">
               {DummyAgentData.map((agent) => (
-                <Command.Item 
+                <CommandItem 
                   key={agent.id}
                   id={`toggle-agent-${agent.id}`}
                   onSelect={handleSelect}
@@ -191,12 +191,12 @@ const CommandPalette: React.FC = () => {
                   ) : (
                     <PlayCircle className="h-4 w-4 text-neutral-400" />
                   )}
-                </Command.Item>
+                </CommandItem>
               ))}
-            </Command.Group>
+            </CommandGroup>
             
-            <Command.Group heading="Resources" className="pb-2">
-              <Command.Item 
+            <CommandGroup heading="Resources" className="pb-2">
+              <CommandItem 
                 id="data-sources" 
                 onSelect={handleSelect} 
                 className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
@@ -204,8 +204,8 @@ const CommandPalette: React.FC = () => {
               >
                 <Database className="h-4 w-4 text-neutral-400" />
                 <span>Manage Data Sources</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="infrastructure" 
                 onSelect={handleSelect} 
                 className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
@@ -213,9 +213,9 @@ const CommandPalette: React.FC = () => {
               >
                 <Server className="h-4 w-4 text-neutral-400" />
                 <span>View Infrastructure</span>
-              </Command.Item>
-            </Command.Group>
-          </Command.List>
+              </CommandItem>
+            </CommandGroup>
+          </CommandList>
         </Command>
       </div>
     </div>

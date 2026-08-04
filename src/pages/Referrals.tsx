@@ -4,16 +4,14 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { Copy, Check, Gift, Users, Share2, DollarSign } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
-import { GridLines } from "@/components/ui/architectural-elements";
+import ChromeText from "@/components/visual/chrome-text";
+import { GridLines } from "@/components/visual/architectural-elements";
 import { Link } from "react-router-dom";
-import { useToast } from "@/components/ui/use-toast";
 
 const Referrals = () => {
   const [copied, setCopied] = useState(false);
-  const { toast } = useToast();
   
   // Example referral link
   const referralLink = "https://hanzo.ai/signup?ref=YOUR_USERNAME";
@@ -22,10 +20,7 @@ const Referrals = () => {
     navigator.clipboard.writeText(referralLink);
     setCopied(true);
     
-    toast({
-      title: "Link copied!",
-      description: "Your referral link has been copied to the clipboard",
-    });
+    toast("Link copied!", { description: "Your referral link has been copied to the clipboard" });
     
     setTimeout(() => setCopied(false), 2000);
   };

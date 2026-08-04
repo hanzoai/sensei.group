@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Terminal, Code, Database } from "lucide-react";
-import { ArchitecturalBox } from "@/components/ui/architectural-elements";
+import { ArchitecturalBox } from "@/components/visual/architectural-elements";
 
 type FeatureCardProps = {
   icon: React.ReactNode;

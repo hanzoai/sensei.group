@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Terminal, RefreshCw } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import ChromeText from "@/components/ui/chrome-text";
+import { Button } from "@hanzo/ui";
+import ChromeText from "@/components/visual/chrome-text";
 
 const DemoSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);

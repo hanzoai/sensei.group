@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { BlueprintLine } from "@/components/ui/architectural-elements";
-import { createAnimationVariant, timing, curves } from "@/components/ui/animation-variants";
+import { Button } from "@hanzo/ui";
+import { BlueprintLine } from "@/components/visual/architectural-elements";
+import { createAnimationVariant, timing, curves } from "@/components/visual/animation-variants";
 
 const fadeInAnimation = createAnimationVariant("fadeIn", {
   duration: timing.medium,

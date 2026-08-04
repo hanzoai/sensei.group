@@ -1,8 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useAccount } from '@/contexts/AccountContext';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage, Button } from "@hanzo/ui";
 import { Mail, MapPin, Calendar, Link as LinkIcon, Edit } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import AccountLayout from '@/components/account/AccountLayout';

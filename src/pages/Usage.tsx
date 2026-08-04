@@ -5,7 +5,7 @@ import UsageOverview from "@/components/usage/UsageOverview";
 import ProjectUsage from "@/components/usage/ProjectUsage";
 import ResourceBreakdown from "@/components/usage/ResourceBreakdown";
 import DateRangePicker from "@/components/usage/DateRangePicker";
-import AnimatedSection, { AnimatedHeading } from "@/components/ui/animated-section";
+import AnimatedSection, { AnimatedHeading } from "@/components/visual/animated-section";
 
 const Usage = () => {
   const [dateRange, setDateRange] = useState({ start: "Mar 7", end: "Mar 8" });

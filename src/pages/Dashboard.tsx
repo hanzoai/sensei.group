@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import KanbanBoard from "@/components/dashboard/KanbanBoard";
 import AgentsList from "@/components/dashboard/AgentsList";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { PlusCircle, LayoutGrid, Users, ChartBar, X, Plus, Database, Bot, Activity, Server } from "lucide-react";
 import CommandPalette from "@/components/dashboard/CommandPalette";
 import { useSearchParams, useNavigate } from "react-router-dom";

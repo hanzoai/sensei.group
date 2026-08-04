@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { ArrowRight, Sparkles, Zap } from "lucide-react";
 
 interface HeroButtonsProps {

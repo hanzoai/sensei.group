@@ -1,11 +1,8 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { Button, Input, Label, toast } from "@hanzo/ui";
 import { useAccount } from '@/contexts/AccountContext';
-import AnimatedSection, { AnimatedHeading } from '@/components/ui/animated-section';
-import { toast } from 'sonner';
+import AnimatedSection, { AnimatedHeading } from '@/components/visual/animated-section';
 
 const AccountSettings = () => {
   const { user, updateUserProfile } = useAccount();

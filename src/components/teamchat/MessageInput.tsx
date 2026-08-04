@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Send, RefreshCw, Camera, Mic, Paperclip } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 interface MessageInputProps {
   message: string;

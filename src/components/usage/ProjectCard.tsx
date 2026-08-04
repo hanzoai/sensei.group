@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Project } from "./models/project";
 import ResourceUsageSection from "./ResourceUsageSection";
 import ProjectCostSection from "./ProjectCostSection";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import { createAnimationVariant, curves } from "@/components/visual/animation-variants";
 
 const cardAnimation = createAnimationVariant("fadeInBlur", {
   duration: 0.4,

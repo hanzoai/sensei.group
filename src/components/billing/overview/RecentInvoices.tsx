@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Clock, Download, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from "@hanzo/ui";
 import BillingTabsLink from '../BillingTabsLink';
 
 const RecentInvoices = () => {

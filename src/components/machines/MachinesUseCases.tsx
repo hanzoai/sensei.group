@@ -1,6 +1,6 @@
 
 import React from 'react';
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 const UseCaseCard = ({ title, description, features }) => {
   return (

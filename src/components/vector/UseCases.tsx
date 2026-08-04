@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Bot, Search, BrainCircuit, Image, FileText, Tag } from "lucide-react";
-import ChromeText from "@/components/ui/chrome-text";
-import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/ui/animated-section";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import ChromeText from "@/components/visual/chrome-text";
+import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/visual/animated-section";
+import { createAnimationVariant, curves } from "@/components/visual/animation-variants";
 
 const useCaseVariant = createAnimationVariant("fadeInBlur", {
   duration: 0.35,

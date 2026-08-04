@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Switch } from "@/components/ui/radix-switch";
+import { Switch } from "@hanzo/ui";
 import { Shield, HeadsetIcon } from "lucide-react";
 
 interface CostSummaryProps {

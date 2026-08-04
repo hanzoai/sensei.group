@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion, MotionProps, HTMLMotionProps } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "@hanzo/ui";
 import { sectionAnimation, headingAnimation, staggerContainer } from "./animation-variants";
 
 // Define the allowed HTML elements for the animated section
