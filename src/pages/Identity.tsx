@@ -38,7 +38,7 @@ const Identity = () => {
           
           {/* Hero Visual */}
           <div className="hz-grid hz-grid-3 hz-gap-5">
-            <div className="hz-card hz-col hz-ai-center">
+            <div className="hz-span-1 hz-card hz-col hz-ai-center">
               <div className="hz-sq-8 hz-r-full hz-bg-raised hz-row hz-ai-center hz-jc-center hz-mb-4">
                 <User className="hz-sq-6 hz-fg-soft" />
               </div>
@@ -48,7 +48,7 @@ const Identity = () => {
               </p>
             </div>
             
-            <div className="hz-card hz-col hz-ai-center">
+            <div className="hz-span-1 hz-card hz-col hz-ai-center">
               <div className="hz-sq-8 hz-r-full hz-bg-raised hz-row hz-ai-center hz-jc-center hz-mb-4">
                 <Shield className="hz-sq-6 hz-fg-soft" />
               </div>
@@ -58,7 +58,7 @@ const Identity = () => {
               </p>
             </div>
             
-            <div className="hz-card hz-col hz-ai-center">
+            <div className="hz-span-1 hz-card hz-col hz-ai-center">
               <div className="hz-sq-8 hz-r-full hz-bg-raised hz-row hz-ai-center hz-jc-center hz-mb-4">
                 <Lock className="hz-sq-6 hz-fg-soft" />
               </div>

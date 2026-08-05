@@ -107,7 +107,7 @@ const DeveloperFirst = () => {
         </motion.div>
         
         <div className="hz-grid hz-grid-6 hz-gap-6">
-          <div className="hz-col hz-jc-center">
+          <div className="hz-span-3 hz-col hz-jc-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -156,7 +156,7 @@ const DeveloperFirst = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className=""
+            className="hz-span-4"
           >
             <div className="hz-bg-surface hz-r-lg hz-bordered hz-clip hz-shadow-lg">
               <div className="hz-row hz-border-b">

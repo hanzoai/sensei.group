@@ -26,7 +26,7 @@ const Integrations = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="hz-card"
+            className="hz-span-2 hz-card"
           >
             <div className="hz-bg-raised hz-p-3 hz-r-full hz-w-fit hz-mb-4">
               <Plug className="hz-sq-4 hz-fg-muted" />
@@ -52,7 +52,7 @@ const Integrations = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="hz-bg-surface hz-bordered hz-r-lg hz-clip"
+            className="hz-span-3 hz-bg-surface hz-bordered hz-r-lg hz-clip"
           >
             <div className="hz-p-5 hz-border-b">
               <h3 className="hz-t-2xl hz-w-bold hz-mb-2">Developer-First APIs</h3>

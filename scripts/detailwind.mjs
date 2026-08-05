@@ -132,8 +132,8 @@ const RULES = [
   [/^(block|inline-block|inline|contents|flow-root)$/, () => []],
   [/^hidden$/, () => ['hz-hide']],
   [/^sr-only$/, () => ['hz-sr']],
-  [/^col-span-2$/, () => ['hz-span-2']],
-  [/^col-span-(full|3|4|5|6|12)$/, () => ['hz-span-full']],
+  [/^col-span-(1|2|3|4|5|6)$/, (m) => ['hz-span-' + m[1]]],
+  [/^col-span-(full|7|8|9|10|11|12)$/, () => ['hz-span-full']],
   [/^(row-span|col-start|row-start|auto-|place-|content-|justify-items)/, () => []],
   // spacing
   [/^gap(-x|-y)?-(\d+(?:\.\d+)?)$/, (m) => ['hz-gap-' + step(m[2])]],
@@ -345,6 +345,19 @@ export function translate(value) {
       take(new RegExp('^[wh]-' + m[1].replace('.', '\\.') + '$'))
       out.push('hz-sq-' + sq(m[1]))
     }
+  }
+
+  // `col-span-1 md:col-span-3` is ONE span — the wide one. The narrow value is
+  // there to say "full width while the grid is a single column", which the span
+  // roles already do by only applying from the tablet up. Taking the largest
+  // also stops the breakpoint copy from being dropped on the floor, which is
+  // what left every explicitly-spanned panel at one column wide.
+  const spans = [...take(/^col-span-\d+$/), ...bpTok(/^col-span-\d+$/)]
+    .map((t) => +t.split('-').pop()).filter((n) => n > 0)
+  if (spans.length) {
+    dropBp(/^col-span-/)
+    const n = Math.max(...spans)
+    out.push(n >= 7 ? 'hz-span-full' : 'hz-span-' + n)
   }
 
   // grid + grid-cols-N (+ responsive) → one role

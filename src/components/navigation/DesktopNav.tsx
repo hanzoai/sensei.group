@@ -9,7 +9,7 @@ import { NavMenu } from "./NavMenu";
 const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
   <div className="hz-grid hz-grid-4 hz-gap-6">
     {/* Featured - About Hanzo */}
-    <div className="">
+    <div className="hz-span-1">
       <div className="hz-card hz-mb-4">
         <h3 className="hz-fg hz-w-semibold hz-mb-2">Hanzo AI</h3>
         <p className="hz-fg-muted hz-t-xs hz-mb-3 hz-leading-relaxed">

@@ -67,7 +67,7 @@ const HeroSection = () => {
           <div className="hz-abs hz-inset hz-z-raised hz-bh-8 hz-bottom-0"></div>
           <div className="hz-p-2 hz-r-lg hz-bordered hz-shadow-lg hz-clip">
             <div className="hz-grid hz-grid-5 hz-gap-3 hz-p-4 hz-bg-overlay hz-r-lg">
-              <div className="hz-stack-4">
+              <div className="hz-span-1 hz-stack-4">
                 <div className="hz-bh-5 hz-bg-raised hz-r-md"></div>
                 <div className="hz-bh-5 hz-bg-raised hz-r-md"></div>
                 <div className="hz-bh-5 hz-bg-raised hz-r-md"></div>
@@ -75,7 +75,7 @@ const HeroSection = () => {
                 <div className="hz-bh-5 hz-bg-raised hz-r-md"></div>
                 <div className="hz-bh-8 hz-bg-raised hz-r-md hz-mt-6"></div>
               </div>
-              <div className="hz-span-full hz-stack-4">
+              <div className="hz-span-4 hz-stack-4">
                 <div className="hz-bh-7 hz-bg-raised hz-r-md"></div>
                 <div className="hz-bh-8 hz-r-lg hz-rel hz-clip">
                   <div className="hz-abs hz-bottom-0 hz-bh-8">

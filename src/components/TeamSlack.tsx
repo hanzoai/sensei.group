@@ -45,7 +45,7 @@ const TeamSlack = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="hz-border-r hz-p-4"
+            className="hz-span-1 hz-border-r hz-p-4"
           >
             <div className="hz-row hz-ai-center hz-jc-between hz-p-2 hz-mb-4">
               <h3 className="hz-fg-muted hz-w-semibold">Hanzo Team</h3>
@@ -75,7 +75,7 @@ const TeamSlack = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="hz-span-full hz-p-4"
+            className="hz-span-3 hz-p-4"
           >
             <motion.div 
               initial={{ opacity: 0, y: -10 }}

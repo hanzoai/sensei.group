@@ -48,7 +48,7 @@ const Security = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className=""
+            className="hz-span-1"
           >
             <div className="hz-card hz-h-full">
               <div className="hz-row hz-jc-center hz-mb-5">
@@ -82,7 +82,7 @@ const Security = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className=""
+            className="hz-span-2"
           >
             <div className="hz-card hz-h-full">
               <h3 className="hz-t-xl hz-w-bold hz-mb-5">Compliance Certifications</h3>

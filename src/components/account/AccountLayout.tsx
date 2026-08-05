@@ -86,7 +86,7 @@ const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
 
             <div className="hz-grid hz-grid-4 hz-gap-6">
               {/* Sidebar Navigation */}
-              <div className="">
+              <div className="hz-span-1">
                 <div className="hz-card hz-glass hz-stack-1">
                   {accountNavItems.map((item) => (
                     <Link 
@@ -115,7 +115,7 @@ const AccountLayout = ({ children }: { children?: React.ReactNode }) => {
               </div>
               
               {/* Main Content */}
-              <div className="">
+              <div className="hz-span-3">
                 <div className="hz-card hz-glass">
                   {children || <Outlet />}
                 </div>

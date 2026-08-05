@@ -119,7 +119,7 @@ const SolutionCapabilities: React.FC = () => {
       className="hz-r-lg hz-bordered hz-clip"
     >
       <div className="hz-grid hz-grid-5">
-        <div className="hz-span-full hz-p-6">
+        <div className="hz-span-3 hz-p-6">
           <div className="hz-row hz-ai-center hz-gap-2 hz-mb-4">
             <span className="hz-t-xs hz-fg-muted">Case Study</span>
             <span className="hz-sq-1 hz-r-full hz-bg-raised"></span>

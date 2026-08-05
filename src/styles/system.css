@@ -114,7 +114,19 @@
   .hz-grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .hz-grid-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
-.hz-span-2 { grid-column: span 2; }
+/* How many of those columns one child takes. Only from the tablet up, because
+   below it every grid here is a single column and a span would be a no-op at
+   best. `col-span-1 md:col-span-3` used to translate to nothing at all, which
+   is how the account page's content panel ended up one quarter wide and empty
+   next to its sidebar. */
+.hz-span-1 { grid-column: span 1; }
+@media (min-width: 768px) {
+  .hz-span-2 { grid-column: span 2; }
+  .hz-span-3 { grid-column: span 3; }
+  .hz-span-4 { grid-column: span 4; }
+  .hz-span-5 { grid-column: span 5; }
+  .hz-span-6 { grid-column: span 6; }
+}
 .hz-span-full { grid-column: 1 / -1; }
 
 /* ── spacing ramp ─────────────────────────────────────────────────────── */

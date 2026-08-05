@@ -204,7 +204,7 @@ const Footer = () => {
         {/* Main footer content */}
         <div className="hz-grid hz-grid-6 hz-gap-6">
           {/* Logo and chat widget - left column */}
-          <div className="hz-stack-5">
+          <div className="hz-span-3 hz-stack-5">
             {/* Logo */}
             <Link to="/" className="hz-row hz-ai-center hz-inline-2">
               <img
@@ -258,7 +258,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation columns */}
-          <div className="">
+          <div className="hz-span-full">
             <div className="hz-grid hz-grid-6 hz-gap-6">
               <FooterColumn {...footerLinks.products} />
               <FooterColumn {...footerLinks.features} />

@@ -60,7 +60,7 @@ const PurchaseCredits = () => {
         </AnimatedHeading>
 
         <div className="hz-grid hz-grid-5 hz-gap-6">
-          <div className="">
+          <div className="hz-span-3">
             <div className="hz-bg hz-border-none hz-r-lg hz-p-5 hz-stack-5">
               <form onSubmit={handlePurchaseCredits} className="hz-stack-5">
                 <div className="hz-stack-2">
@@ -132,7 +132,7 @@ const PurchaseCredits = () => {
             </div>
           </div>
           
-          <div className="">
+          <div className="hz-span-2">
             <div className="hz-bg hz-border-none hz-r-lg hz-p-5 hz-stack-4">
               <h3 className="hz-t-lg hz-w-medium">Order Summary</h3>
               

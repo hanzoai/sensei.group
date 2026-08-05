@@ -28,7 +28,7 @@ const OperativeUsage = () => {
         </div>
         
         <div className="hz-grid hz-grid-5 hz-gap-6">
-          <div className="hz-stack-5">
+          <div className="hz-span-2 hz-stack-5">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -89,7 +89,7 @@ const OperativeUsage = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="hz-card hz-h-full"
+            className="hz-span-3 hz-card hz-h-full"
           >
             <h3 className="hz-t-xl hz-w-semibold hz-fg hz-mb-4">Basic Usage</h3>
             

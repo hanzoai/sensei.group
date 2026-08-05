@@ -241,7 +241,7 @@ const AgentDetail: React.FC<AgentDetailProps> = ({ agent, onClose, onUpdate }) =
 
           {activeTab === 'rag' && (
             <div className="hz-grid hz-grid-3 hz-gap-5">
-              <div className="hz-border-r hz-px-4">
+              <div className="hz-span-1 hz-border-r hz-px-4">
                 <div className="hz-row hz-jc-between hz-ai-center hz-mb-4">
                   <h3 className="hz-t-sm hz-w-medium">Knowledge Sources</h3>
                   <Button size="sm" variant="ghost" onClick={handleAddRagSource}>
