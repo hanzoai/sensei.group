@@ -55,7 +55,7 @@ const CloudServiceGrid: React.FC<CloudServiceGridProps> = ({ isHovered, setIsHov
             <p className="text-neutral-300 text-sm">Discover our full range of cloud solutions and services</p>
             <Button 
               className="mt-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-[var(--white)] border-none"
-              radius="full"
+              borderRadius={9999}
             >
               View All Services
             </Button>

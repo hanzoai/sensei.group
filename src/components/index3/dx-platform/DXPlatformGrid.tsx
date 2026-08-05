@@ -122,7 +122,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
             <div className="mt-auto">
               <Button 
                 className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-[var(--white)] w-full"
-                radius="full"
+                borderRadius={9999}
               >
                 View All Tools
               </Button>
@@ -150,7 +150,7 @@ const DXPlatformGrid: React.FC<DXPlatformGridProps> = ({ isHovered, setIsHovered
             asChild
             size="lg"
             className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-[var(--white)] font-medium shadow-lg transition-all duration-300"
-            radius="full"
+            borderRadius={9999}
           >
             <Link to="/signup">Get Started Free</Link>
           </Button>

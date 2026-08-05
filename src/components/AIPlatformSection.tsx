@@ -7,7 +7,16 @@ import ChromeText from "@/components/visual/chrome-text";
 import { MasonryGrid, MasonryItem } from "@/components/visual/masonry-grid";
 import { ArchitecturalBox, GridLines } from "@/components/visual/architectural-elements";
 import { aiPlatformFeatures } from "./data/ai-platform-data";
-import { getColorClasses } from "./utils/tailwind-helpers";
+import { accent, accents, rgba } from "@/components/visual/accent-colors";
+
+// Gradient card fill: gray at rest, feature accent on hover.
+const accentStyle = (color: string, hovered: boolean): React.CSSProperties => {
+  const a = hovered ? accent(color) : accents.gray;
+  return {
+    backgroundImage: `linear-gradient(to bottom right, ${rgba(a.bg, 0.3)}, ${rgba(a.bgTo, 0.3)})`,
+    borderColor: rgba(a.edge, 0.2),
+  };
+};
 
 const AIPlatformSection = () => {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -54,10 +63,7 @@ const AIPlatformSection = () => {
           <MasonryGrid columns={4} gap={20} className="mb-12">
             {aiPlatformFeatures.map((feature, index) => {
               const isFeatureHovered = hovered === index;
-              const gradientClasses = getColorClasses(feature.color, 'gradient', isFeatureHovered);
-              const borderClasses = getColorClasses(feature.color, 'border', isFeatureHovered);
-              const textColorClass = getColorClasses(feature.color, 'text', isFeatureHovered);
-              
+
               return (
                 <MasonryItem key={feature.id}>
                   <motion.div
@@ -67,15 +73,16 @@ const AIPlatformSection = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <ArchitecturalBox
-                      className={`h-full bg-gradient-to-br ${gradientClasses} ${borderClasses} backdrop-blur-sm border p-6 rounded-2xl transition-colors duration-300`}
+                      className="h-full backdrop-blur-sm border p-6 rounded-2xl transition-colors duration-300"
+                      style={accentStyle(feature.color, isFeatureHovered)}
                       showCorners={true}
                       cornerSize={16}
                       cornerColor={isFeatureHovered ? `rgba(147, 51, 234, 0.4)` : "rgba(147, 51, 234, 0.2)"}
                     >
                       <div className="mb-4">
-                        {React.createElement(feature.icon, { 
-                          size: 32, 
-                          className: textColorClass
+                        {React.createElement(feature.icon, {
+                          size: 32,
+                          style: { color: accent(feature.color).text },
                         })}
                       </div>
                       <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>

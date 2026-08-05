@@ -10,7 +10,7 @@ const ExploreAllButton: React.FC = () => {
       <Button 
         variant="outline" 
         className="group px-6" 
-        radius="full"
+        borderRadius={9999}
         asChild
       >
         <Link to="/platform">

@@ -128,6 +128,7 @@ export const ArchitecturalCorner: React.FC<ArchitecturalCornerProps> = ({
 export const ArchitecturalBox: React.FC<{
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   showCorners?: boolean;
   showGrid?: boolean;
   cornerSize?: number;
@@ -141,6 +142,7 @@ export const ArchitecturalBox: React.FC<{
 }> = ({
   children,
   className = "",
+  style,
   showCorners = true,
   showGrid = false,
   cornerSize = 20,
@@ -153,8 +155,9 @@ export const ArchitecturalBox: React.FC<{
   onClick
 }) => {
   return (
-    <div 
+    <div
       className={`relative ${className}`}
+      style={style}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}

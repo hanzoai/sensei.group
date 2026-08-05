@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { createRequire } from "module";
-import { guiAliases } from "@hanzogui/vite-plugin";
+import { hanzoguiAliases } from "@hanzogui/vite-plugin";
 
 const require = createRequire(import.meta.url);
 // react-native-svg (pulled in by the gui icon set) ships its web implementation
@@ -39,7 +39,7 @@ export default defineConfig({
       },
       { find: /^react-native$/, replacement: path.resolve(__dirname, "script/react-native-web-shim.mjs") },
       { find: /^react-native-svg$/, replacement: rnSvgWeb },
-      ...guiAliases({ rnwLite: true }),
+      ...hanzoguiAliases({ rnwLite: true }),
     ],
   },
 });

@@ -23,7 +23,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
       <Button 
         size="sm" 
         variant="outline" 
-        radius="full"
+        borderRadius={9999}
         className="text-white border-white/10 bg-transparent hover:bg-white/5 h-10 min-w-[140px]"
       >
         <a href="/ai" className="chrome-text flex items-center">
@@ -33,7 +33,7 @@ const HeroButtons: React.FC<HeroButtonsProps> = ({ titleAnimationComplete }) => 
       </Button>
       <Button 
         size="sm" 
-        radius="full"
+        borderRadius={9999}
         className="bg-white text-black border border-gray-300 hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300 h-10 min-w-[140px]"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

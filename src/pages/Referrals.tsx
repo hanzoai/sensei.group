@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Button } from "@hanzo/ui";
+import { Button, toast } from "@hanzo/ui";
 import { Copy, Check, Gift, Users, Share2, DollarSign } from "lucide-react";
 import ChromeText from "@/components/visual/chrome-text";
 import { GridLines } from "@/components/visual/architectural-elements";

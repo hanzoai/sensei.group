@@ -52,13 +52,13 @@ const memberColumns: Column<TeamMember>[] = [
     header: 'Actions',
     align: 'right',
     render: () => (
-      <DropdownMenu>
+      <DropdownMenu placement="bottom-end">
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
             <MoreVertical className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="bg-[var(--black)] border-gray-800/30">
+        <DropdownMenuContent className="bg-[var(--black)] border-gray-800/30">
           <DropdownMenuItem className="text-[var(--white)] hover:bg-gray-900/30">
             View Profile
           </DropdownMenuItem>
