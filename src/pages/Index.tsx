@@ -10,12 +10,12 @@ import DeveloperExperienceSection from "@/components/landing/DeveloperExperience
 import OpenSourceSection from "@/components/landing/OpenSourceSection";
 import PricingPreviewSection from "@/components/landing/PricingPreviewSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@hanzo/ui";
 import ChatWidget from "@/components/chat/ChatWidget";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="hz-min-h-screen hz-bg hz-fg">
       <Helmet>
         <title>Hanzo - Frontier AI for Developers</title>
         <meta name="description" content="Build with next-generation AI models. Deploy anywhere with our open-source platform or scale instantly on our AI cloud infrastructure." />

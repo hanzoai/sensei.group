@@ -2,54 +2,54 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 
 const AboutHero = () => {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="hz-py-7 hz-px-4 hz-rel hz-clip">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-blue-900/10 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="hz-abs hz-inset hz-dim-more"></div>
+      <div className="hz-sq-8 hz-abs hz-bg-raised hz-r-full hz-blur-bg"></div>
+      <div className="hz-sq-8 hz-abs hz-bg-raised hz-r-full hz-blur-bg"></div>
       
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="hz-container-wide hz-rel hz-z-raised">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center"
+          className="hz-align-center"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+          <span className="hz-px-4 hz-py-1 hz-r-full hz-bg-surface hz-bordered hz-border-strong hz-fg-soft hz-t-sm hz-w-medium hz-mb-5">
             Our Journey
           </span>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            History and Evolution of <span className="text-purple-400">Hanzo Industries</span>
+          <h1 className="hz-t-4xl hz-w-bold hz-mb-5">
+            History and Evolution of <span className="hz-fg-muted">Hanzo Industries</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto mb-12">
+          <p className="hz-container-narrow hz-t-xl hz-fg-soft hz-mb-7">
             From startup to AI powerhouse, our journey of transformation, innovation, and purpose.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="hz-row hz-wrap hz-jc-center hz-gap-4 hz-mb-7">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium"
+              className="hz-fg hz-px-6 hz-py-5 hz-r-lg hz-t-lg hz-w-medium"
             >
-              <a href="#timeline" className="flex items-center">
+              <a href="#timeline" className="hz-row hz-ai-center">
                 Explore Our Timeline
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="hz-sq-3 hz-ml-2" />
               </a>
             </Button>
             
             <Button 
               size="lg"
               variant="outline"
-              className="border-purple-600 text-[var(--white)] hover:bg-purple-600/10 px-8 py-6 rounded-lg text-lg font-medium"
+              className="hz-border-strong hz-fg hz-px-6 hz-py-5 hz-r-lg hz-t-lg hz-w-medium hz-hoverable"
             >
-              <a href="/zen" className="flex items-center">
+              <a href="/zen" className="hz-row hz-ai-center">
                 The Zen of Hanzo
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="hz-sq-3 hz-ml-2" />
               </a>
             </Button>
           </div>

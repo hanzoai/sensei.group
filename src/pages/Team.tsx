@@ -27,7 +27,7 @@ import WorkspaceIntegration from "@/components/team/WorkspaceIntegration";
 import AuditFeatures from "@/components/team/AuditFeatures";
 import EnterpriseReadiness from "@/components/team/EnterpriseReadiness";
 import CallToAction from "@/components/team/CallToAction";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@hanzo/ui";
 
 const Team = () => {
   useEffect(() => {
@@ -35,7 +35,7 @@ const Team = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[var(--black)] text-[var(--white)]">
+    <div className="hz-min-h-screen hz-bg hz-fg">
       <Helmet>
         <title>Hanzo Team | AI + Human Integration | Enterprise AI Solutions</title>
         <meta 

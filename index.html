@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- The theme classes are in the EXPORTED HTML, not applied by the app on
+     mount. @hanzo/design paints the dark ground from `:root`, but @hanzo/gui's
+     ink is a themed token whose default is the LIGHT one — so a document that
+     waits for JS to add `t_dark` renders #050505 text on the #0a0a0a ground
+     until the bundle lands, which on a slow connection is a page of invisible
+     words. These are the same two classes the runtime sets, so nothing flashes
+     and nothing is undone when it does. -->
+<html lang="en" class="t_dark dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +14,7 @@
     <meta name="description" content="World-class fractional talent on demand. Scale your team with elite professionals." />
     <meta name="author" content="Hanzo AI" />
     <meta property="og:image" content="/og-image.png" />
-    <link rel="icon" href="/img/28d53ec4-328f-4812-862b-b9a760bbabae.png" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" />
+    <link rel="icon" href="/favicon.ico" />
   </head>
   <body>
     <div id="root"></div>

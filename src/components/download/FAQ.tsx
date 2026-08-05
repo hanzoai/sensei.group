@@ -1,12 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@hanzo/ui";
 
 const FAQ = () => {
   const faqs = [
@@ -41,16 +36,16 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--black)]">
-      <div className="max-w-4xl mx-auto">
+    <section className="hz-py-7 hz-px-4 hz-bg">
+      <div className="hz-container-narrow">
         <motion.div
-          className="text-center mb-12"
+          className="hz-align-center hz-mb-7"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[var(--white)]">
+          <h2 className="hz-t-3xl hz-w-bold hz-mb-4 hz-fg">
             Common Questions
           </h2>
         </motion.div>
@@ -61,22 +56,21 @@ const FAQ = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Accordion type="single" collapsible className="space-y-4">
+          <div className="hz-stack-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="border border-gray-800 rounded-lg overflow-hidden bg-gray-900/50"
+              <Collapsible
+                key={index}
+                className="hz-bordered hz-r-lg hz-clip hz-bg-surface"
               >
-                <AccordionTrigger className="px-6 py-4 text-left text-lg font-medium text-[var(--white)] hover:no-underline">
+                <CollapsibleTrigger className="hz-px-5 hz-py-4 hz-w-full hz-align-left hz-t-lg hz-w-medium hz-fg">
                   {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-neutral-300">
+                </CollapsibleTrigger>
+                <CollapsibleContent className="hz-px-5 hz-pb-4 hz-fg-soft">
                   {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                </CollapsibleContent>
+              </Collapsible>
             ))}
-          </Accordion>
+          </div>
         </motion.div>
       </div>
     </section>

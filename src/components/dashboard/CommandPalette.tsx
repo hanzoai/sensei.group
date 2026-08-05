@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Command } from "cmdk";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@hanzo/ui";
 import { 
   Search, 
   Bot, 
@@ -74,148 +74,148 @@ const CommandPalette: React.FC = () => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[var(--black)]/60 backdrop-blur-sm flex items-start justify-center pt-[20vh]">
-      <div className="w-full max-w-2xl bg-[var(--black)] border border-gray-800 rounded-lg shadow-xl overflow-hidden">
+    <div className="hz-fixed hz-inset hz-z-overlay hz-bg-overlay hz-glass hz-row hz-ai-start hz-jc-center hz-pt-overlay">
+      <div className="hz-w-full hz-mw-md hz-bg hz-bordered hz-r-lg hz-shadow-lg hz-clip">
         <Command
-          className="bg-[var(--black)] text-[var(--white)] border-none"
+          className="hz-bg hz-fg hz-border-none"
           filter={(value, search, keywords) => {
             if (value.includes(search.toLowerCase())) return 1;
             if (keywords?.some(keyword => keyword.includes(search.toLowerCase()))) return 1;
             return 0;
           }}
         >
-          <div className="border-b border-gray-800 p-2 flex items-center">
-            <Search className="ml-2 h-4 w-4 text-neutral-500" />
-            <Command.Input 
+          <div className="hz-border-b hz-p-2 hz-row hz-ai-center">
+            <Search className="hz-sq-2 hz-ml-2 hz-fg-muted" />
+            <CommandInput 
               value={search}
               onValueChange={setSearch}
-              className="w-full bg-transparent border-none focus:outline-none px-2 py-1.5 text-neutral-200 placeholder-gray-500" 
+              className="hz-w-full hz-bg-none hz-border-none hz-px-2 hz-py-2 hz-fg" 
               placeholder="Search commands..." 
               autoFocus
             />
-            <kbd className="mr-2 px-1.5 py-0.5 text-xs rounded bg-gray-800 text-neutral-400">
+            <kbd className="hz-mr-2 hz-px-2 hz-py-1 hz-t-xs hz-r-md hz-bg-raised hz-fg-muted">
               Esc
             </kbd>
           </div>
           
-          <Command.List className="max-h-80 overflow-auto p-2">
-            <Command.Empty className="py-6 text-center text-neutral-500">
+          <CommandList className="hz-scroll-y hz-p-2">
+            <CommandEmpty className="hz-py-5 hz-align-center hz-fg-muted">
               No results found.
-            </Command.Empty>
+            </CommandEmpty>
             
-            <Command.Group heading="Navigation" className="pb-2">
-              <Command.Item 
+            <CommandGroup heading="Navigation" className="hz-pb-4">
+              <CommandItem 
                 id="view-board" 
                 onSelect={handleSelect} 
-                className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                className="hz-btn hz-btn-ghost hz-inline-2 hz-pointer hz-fg"
                 keywords={["kanban", "board", "tasks"]}
               >
-                <LayoutGrid className="h-4 w-4 text-neutral-400" />
+                <LayoutGrid className="hz-sq-2 hz-fg-muted" />
                 <span>View Kanban Board</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="view-agents" 
                 onSelect={handleSelect} 
-                className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                className="hz-btn hz-btn-ghost hz-inline-2 hz-pointer hz-fg"
                 keywords={["agents", "ai", "list"]}
               >
-                <Bot className="h-4 w-4 text-neutral-400" />
+                <Bot className="hz-sq-2 hz-fg-muted" />
                 <span>View Agents</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="view-analytics" 
                 onSelect={handleSelect} 
-                className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                className="hz-btn hz-btn-ghost hz-inline-2 hz-pointer hz-fg"
                 keywords={["analytics", "stats", "metrics"]}
               >
-                <ChartBar className="h-4 w-4 text-neutral-400" />
+                <ChartBar className="hz-sq-2 hz-fg-muted" />
                 <span>View Analytics</span>
-              </Command.Item>
-            </Command.Group>
+              </CommandItem>
+            </CommandGroup>
             
-            <Command.Group heading="Actions" className="pb-2">
-              <Command.Item 
+            <CommandGroup heading="Actions" className="hz-pb-4">
+              <CommandItem 
                 id="new-agent" 
                 onSelect={handleSelect} 
-                className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                className="hz-btn hz-btn-ghost hz-inline-2 hz-pointer hz-fg"
                 keywords={["create", "agent", "new", "add"]}
               >
-                <PlusCircle className="h-4 w-4 text-neutral-400" />
+                <PlusCircle className="hz-sq-2 hz-fg-muted" />
                 <span>Create New Agent</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="new-task" 
                 onSelect={handleSelect} 
-                className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                className="hz-btn hz-btn-ghost hz-inline-2 hz-pointer hz-fg"
                 keywords={["create", "task", "new", "add"]}
               >
-                <PlusCircle className="h-4 w-4 text-neutral-400" />
+                <PlusCircle className="hz-sq-2 hz-fg-muted" />
                 <span>Create New Task</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="refresh" 
                 onSelect={handleSelect} 
-                className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                className="hz-btn hz-btn-ghost hz-inline-2 hz-pointer hz-fg"
                 keywords={["refresh", "reload", "update"]}
               >
-                <RefreshCw className="h-4 w-4 text-neutral-400" />
+                <RefreshCw className="hz-sq-2 hz-fg-muted" />
                 <span>Refresh Dashboard</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="settings" 
                 onSelect={handleSelect} 
-                className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                className="hz-btn hz-btn-ghost hz-inline-2 hz-pointer hz-fg"
                 keywords={["settings", "preferences", "config"]}
               >
-                <Settings className="h-4 w-4 text-neutral-400" />
+                <Settings className="hz-sq-2 hz-fg-muted" />
                 <span>Open Settings</span>
-              </Command.Item>
-            </Command.Group>
+              </CommandItem>
+            </CommandGroup>
             
-            <Command.Group heading="Manage Agents" className="pb-2">
+            <CommandGroup heading="Manage Agents" className="hz-pb-4">
               {DummyAgentData.map((agent) => (
-                <Command.Item 
+                <CommandItem 
                   key={agent.id}
                   id={`toggle-agent-${agent.id}`}
                   onSelect={handleSelect}
-                  className="flex items-center justify-between px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                  className="hz-btn hz-btn-ghost hz-jc-between hz-pointer hz-fg"
                   keywords={[agent.name, agent.type, agent.status, "toggle", "agent"]}
                 >
-                  <div className="flex items-center space-x-2">
-                    <Bot className="h-4 w-4 text-neutral-400" />
+                  <div className="hz-row hz-ai-center hz-inline-2">
+                    <Bot className="hz-sq-2 hz-fg-muted" />
                     <span>{agent.name}</span>
-                    <span className="text-neutral-500 text-xs">{`(${agent.type})`}</span>
+                    <span className="hz-fg-muted hz-t-xs">{`(${agent.type})`}</span>
                   </div>
                   {agent.status === "running" ? (
-                    <PauseCircle className="h-4 w-4 text-green-500" />
+                    <PauseCircle className="hz-sq-2 hz-fg-muted" />
                   ) : (
-                    <PlayCircle className="h-4 w-4 text-neutral-400" />
+                    <PlayCircle className="hz-sq-2 hz-fg-muted" />
                   )}
-                </Command.Item>
+                </CommandItem>
               ))}
-            </Command.Group>
+            </CommandGroup>
             
-            <Command.Group heading="Resources" className="pb-2">
-              <Command.Item 
+            <CommandGroup heading="Resources" className="hz-pb-4">
+              <CommandItem 
                 id="data-sources" 
                 onSelect={handleSelect} 
-                className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                className="hz-btn hz-btn-ghost hz-inline-2 hz-pointer hz-fg"
                 keywords={["data", "sources", "database", "vector", "rag"]}
               >
-                <Database className="h-4 w-4 text-neutral-400" />
+                <Database className="hz-sq-2 hz-fg-muted" />
                 <span>Manage Data Sources</span>
-              </Command.Item>
-              <Command.Item 
+              </CommandItem>
+              <CommandItem 
                 id="infrastructure" 
                 onSelect={handleSelect} 
-                className="flex items-center space-x-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-800 text-neutral-200"
+                className="hz-btn hz-btn-ghost hz-inline-2 hz-pointer hz-fg"
                 keywords={["infrastructure", "server", "deploy", "resources"]}
               >
-                <Server className="h-4 w-4 text-neutral-400" />
+                <Server className="hz-sq-2 hz-fg-muted" />
                 <span>View Infrastructure</span>
-              </Command.Item>
-            </Command.Group>
-          </Command.List>
+              </CommandItem>
+            </CommandGroup>
+          </CommandList>
         </Command>
       </div>
     </div>

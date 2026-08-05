@@ -1,8 +1,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/ui/animated-section";
-import { createAnimationVariant, curves } from "@/components/ui/animation-variants";
+import AnimatedSection, { AnimatedHeading, AnimatedStaggerContainer } from "@/components/visual/animated-section";
+import { createAnimationVariant, curves } from "@/components/visual/animation-variants";
 
 const companyItemVariant = createAnimationVariant("fadeInBlur", {
   duration: 0.3,
@@ -20,21 +20,21 @@ const TrustedBy = () => {
 
   return (
     <AnimatedSection 
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-950"
+      className="hz-py-7 hz-px-4 hz-bg-surface"
       viewportAmount={0.3}
     >
-      <div className="max-w-7xl mx-auto">
-        <AnimatedHeading className="text-center mb-10">
-          <h2 className="text-2xl font-semibold text-[var(--white)] mb-2">Trusted By AI Innovators</h2>
-          <div className="w-20 h-1 bg-indigo-500 mx-auto"></div>
+      <div className="hz-container">
+        <AnimatedHeading className="hz-align-center hz-mb-6">
+          <h2 className="hz-t-2xl hz-w-semibold hz-fg hz-mb-2">Trusted By AI Innovators</h2>
+          <div className="hz-bw-8 hz-bh-1 hz-bg-raised hz-mx-auto"></div>
         </AnimatedHeading>
         
-        <AnimatedStaggerContainer className="flex flex-wrap justify-center gap-x-8 gap-y-6" delayFactor={0.03}>
+        <AnimatedStaggerContainer className="hz-row hz-wrap hz-jc-center hz-gap-6 hz-gap-5" delayFactor={0.03}>
           {companies.map((company, index) => (
             <motion.div 
               key={index}
               variants={companyItemVariant}
-              className="text-neutral-400 font-medium text-lg transition-colors hover:text-indigo-400"
+              className="hz-fg-muted hz-w-medium hz-t-lg hz-transition hz-link"
               whileHover={{ scale: 1.05, color: "#818cf8" }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}

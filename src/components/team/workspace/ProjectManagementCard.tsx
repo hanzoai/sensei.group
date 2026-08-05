@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Kanban, CheckCircle, Bot } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@hanzo/ui";
 
 const ProjectManagementCard = () => {
   return (
@@ -11,46 +11,46 @@ const ProjectManagementCard = () => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="bg-gray-900/30 border border-purple-900/20 rounded-xl overflow-hidden shadow-xl"
+      className="hz-bg-surface hz-bordered hz-r-lg hz-clip hz-shadow-lg"
     >
-      <div className="border-b border-gray-800 p-3 flex items-center">
-        <Kanban className="h-5 w-5 text-purple-400 mr-2" />
-        <span className="font-medium">Project Management</span>
-        <Badge variant="outline" className="ml-auto bg-purple-900/30 border-purple-500/30 text-purple-300">
+      <div className="hz-border-b hz-p-3 hz-row hz-ai-center">
+        <Kanban className="hz-sq-3 hz-fg-muted hz-mr-2" />
+        <span className="hz-w-medium">Project Management</span>
+        <Badge variant="outline" className="hz-ml-auto hz-bg-surface hz-border-strong hz-fg-soft">
           Linear-style
         </Badge>
       </div>
-      <div className="p-4">
-        <div className="bg-[var(--black)]/60 rounded-lg p-4">
-          <div className="mb-4 flex items-center justify-between">
-            <div className="flex items-center">
-              <h3 className="font-medium text-[var(--white)]">Website Redesign</h3>
-              <Badge className="ml-2 bg-blue-600/20 text-blue-400 border-blue-500/30">In Progress</Badge>
+      <div className="hz-p-4">
+        <div className="hz-bg-overlay hz-r-lg hz-p-4">
+          <div className="hz-mb-4 hz-row hz-ai-center hz-jc-between">
+            <div className="hz-row hz-ai-center">
+              <h3 className="hz-w-medium hz-fg">Website Redesign</h3>
+              <Badge className="hz-ml-2 hz-bg-raised hz-fg-muted hz-border-strong">In Progress</Badge>
             </div>
-            <div className="flex space-x-2">
-              <div className="w-6 h-6 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold">AI</div>
-              <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center text-xs">JD</div>
+            <div className="hz-row hz-inline-2">
+              <div className="hz-sq-4 hz-r-full hz-bg-raised hz-row hz-ai-center hz-jc-center hz-t-xs hz-w-bold">AI</div>
+              <div className="hz-sq-4 hz-r-full hz-bg-raised hz-row hz-ai-center hz-jc-center hz-t-xs">JD</div>
             </div>
           </div>
           
-          <div className="space-y-3">
-            <div className="flex items-center p-2 bg-gray-800/40 rounded-md border border-gray-700/50">
-              <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-              <span className="text-sm">Create wireframes</span>
-              <div className="ml-auto flex items-center space-x-1">
-                <div className="w-5 h-5 rounded-full bg-gray-600 flex items-center justify-center text-xs">JD</div>
+          <div className="hz-stack-3">
+            <div className="hz-row hz-ai-center hz-p-2 hz-bg-raised hz-r-md hz-bordered">
+              <CheckCircle className="hz-sq-2 hz-fg-muted hz-mr-2" />
+              <span className="hz-t-sm">Create wireframes</span>
+              <div className="hz-ml-auto hz-row hz-ai-center hz-inline-1">
+                <div className="hz-sq-3 hz-r-full hz-bg-raised hz-row hz-ai-center hz-jc-center hz-t-xs">JD</div>
               </div>
             </div>
-            <div className="flex items-center p-2 bg-gray-800/40 rounded-md border border-gray-700/50">
-              <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-              <span className="text-sm">Design homepage</span>
-              <div className="ml-auto flex items-center space-x-1">
-                <div className="w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center text-xs">AI</div>
+            <div className="hz-row hz-ai-center hz-p-2 hz-bg-raised hz-r-md hz-bordered">
+              <CheckCircle className="hz-sq-2 hz-fg-muted hz-mr-2" />
+              <span className="hz-t-sm">Design homepage</span>
+              <div className="hz-ml-auto hz-row hz-ai-center hz-inline-1">
+                <div className="hz-sq-3 hz-r-full hz-bg-raised hz-row hz-ai-center hz-jc-center hz-t-xs">AI</div>
               </div>
             </div>
-            <div className="flex items-center p-2 bg-purple-900/20 rounded-md border border-purple-700/50">
-              <Bot className="h-4 w-4 text-purple-400 mr-2" />
-              <span className="text-sm">AI working: Implementing frontend code</span>
+            <div className="hz-row hz-ai-center hz-p-2 hz-bg-surface hz-r-md hz-bordered">
+              <Bot className="hz-sq-2 hz-fg-muted hz-mr-2" />
+              <span className="hz-t-sm">AI working: Implementing frontend code</span>
             </div>
           </div>
         </div>

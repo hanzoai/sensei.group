@@ -15,23 +15,7 @@ import {
   Package,
   Check,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
-import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
+import { Badge, Button, Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, Input, cn } from "@hanzo/ui";
 import {
   ossCatalog,
   featuredCollections,
@@ -82,12 +66,12 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
 
   const getBadgeVariant = (type: string) => {
     switch (type) {
-      case 'featured': return 'bg-[#fd4444]/10 text-[#fd4444] border-[#fd4444]/30';
-      case 'recommended': return 'bg-blue-500/10 text-blue-400 border-blue-500/30';
-      case 'experimental': return 'bg-orange-500/10 text-orange-400 border-orange-500/30';
-      case 'stable': return 'bg-green-500/10 text-green-400 border-green-500/30';
-      case 'active': return 'bg-blue-500/10 text-blue-400 border-blue-500/30';
-      default: return 'bg-neutral-800 text-neutral-400 border-neutral-700';
+      case 'featured': return 'hz-bg-surface hz-fg-soft';
+      case 'recommended': return 'hz-bg-raised hz-fg-muted hz-border-strong';
+      case 'experimental': return 'hz-bg-raised hz-fg-muted hz-border-strong';
+      case 'stable': return 'hz-bg-raised hz-fg-muted hz-border-strong';
+      case 'active': return 'hz-bg-raised hz-fg-muted hz-border-strong';
+      default: return 'hz-bg-raised hz-fg-muted';
     }
   };
 
@@ -107,47 +91,47 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex items-center gap-4 p-4 rounded-lg border border-neutral-800 bg-neutral-900/50 hover:border-neutral-700 transition-colors"
+        className="hz-card hz-row hz-ai-center hz-gap-4 hz-transition hz-card-interactive"
       >
         {/* Icon */}
-        <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0">
-          {Icon && <Icon className="w-5 h-5 text-neutral-400" />}
+        <div className="hz-sq-6 hz-r-lg hz-bg-raised hz-row hz-ai-center hz-jc-center hz-none">
+          {Icon && <Icon className="hz-sq-3 hz-fg-muted" />}
         </div>
 
         {/* Content */}
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            <h3 className="font-semibold text-white truncate">{repo.name}</h3>
+        <div className="hz-grow">
+          <div className="hz-row hz-ai-center hz-gap-2 hz-mb-1">
+            <h3 className="hz-w-semibold hz-fg hz-truncate">{repo.name}</h3>
             {repo.signals.featured && (
-              <Badge variant="outline" className={cn('text-xs', getBadgeVariant('featured'))}>
+              <Badge variant="outline" className={cn('hz-t-xs', getBadgeVariant('featured'))}>
                 Featured
               </Badge>
             )}
           </div>
-          <p className="text-sm text-neutral-500 truncate">{repo.description}</p>
+          <p className="hz-t-sm hz-fg-muted hz-truncate">{repo.description}</p>
         </div>
 
         {/* Badges */}
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hz-desktop-only hz-row hz-ai-center hz-gap-2">
           {repo.languages.slice(0, 2).map(lang => (
-            <Badge key={lang} variant="outline" className="text-xs bg-neutral-800 text-neutral-400 border-neutral-700">
+            <Badge key={lang} variant="outline" className="hz-t-xs hz-bg-raised hz-fg-muted">
               {lang}
             </Badge>
           ))}
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-2">
+        <div className="hz-row hz-ai-center hz-gap-2">
           {primaryAction && (
-            <Button size="sm" className="bg-[#fd4444] hover:bg-[#fd4444]/90 text-white" asChild>
+            <Button size="sm" className="hz-bg-surface hz-fg hz-hoverable" asChild>
               <a href={primaryAction.url} target="_blank" rel="noopener noreferrer">
                 {primaryAction.label}
               </a>
             </Button>
           )}
-          <Button size="sm" variant="ghost" className="text-neutral-400 hover:text-white" asChild>
+          <Button size="sm" variant="ghost" className="hz-fg-muted hz-link" asChild>
             <a href={repo.actions.githubUrl} target="_blank" rel="noopener noreferrer">
-              <Github className="w-4 h-4" />
+              <Github className="hz-sq-2" />
             </a>
           </Button>
         </div>
@@ -159,52 +143,52 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="group flex flex-col rounded-xl border border-neutral-800 bg-neutral-900/50 hover:border-neutral-700 transition-all overflow-hidden"
+      className="hz-col hz-r-lg hz-bordered hz-bg-surface hz-transition hz-clip hz-hoverable"
     >
       {/* Header */}
-      <div className="p-5 pb-3">
-        <div className="flex items-start justify-between mb-3">
-          <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center">
-            {Icon && <Icon className="w-5 h-5 text-neutral-400 group-hover:text-[#fd4444] transition-colors" />}
+      <div className="hz-p-4 hz-pb-4">
+        <div className="hz-row hz-ai-start hz-jc-between hz-mb-3">
+          <div className="hz-sq-6 hz-r-lg hz-bg-raised hz-row hz-ai-center hz-jc-center">
+            {Icon && <Icon className="hz-sq-3 hz-fg-muted hz-transition hz-link" />}
           </div>
-          <div className="flex gap-1.5">
+          <div className="hz-row hz-gap-2">
             {repo.signals.featured && (
-              <Badge variant="outline" className={cn('text-xs', getBadgeVariant('featured'))}>
+              <Badge variant="outline" className={cn('hz-t-xs', getBadgeVariant('featured'))}>
                 Featured
               </Badge>
             )}
             {repo.signals.recommended && !repo.signals.featured && (
-              <Badge variant="outline" className={cn('text-xs', getBadgeVariant('recommended'))}>
+              <Badge variant="outline" className={cn('hz-t-xs', getBadgeVariant('recommended'))}>
                 Recommended
               </Badge>
             )}
-            <Badge variant="outline" className={cn('text-xs', getMaturityBadge(repo.maturity))}>
+            <Badge variant="outline" className={cn('hz-t-xs', getMaturityBadge(repo.maturity))}>
               {repo.maturity.charAt(0).toUpperCase() + repo.maturity.slice(1)}
             </Badge>
           </div>
         </div>
 
-        <h3 className="font-semibold text-white mb-1 group-hover:text-[#fd4444] transition-colors">
+        <h3 className="hz-w-semibold hz-fg hz-mb-1 hz-transition hz-hoverable">
           {repo.name}
         </h3>
-        <p className="text-xs text-neutral-500 font-mono mb-2">{repo.slug}</p>
-        <p className="text-sm text-neutral-400 line-clamp-2">{repo.description}</p>
+        <p className="hz-t-xs hz-fg-muted hz-mono hz-mb-2">{repo.slug}</p>
+        <p className="hz-t-sm hz-fg-muted hz-clamp-2">{repo.description}</p>
       </div>
 
       {/* Metadata */}
-      <div className="px-5 pb-3 flex flex-wrap gap-1.5">
+      <div className="hz-px-4 hz-pb-4 hz-row hz-wrap hz-gap-2">
         {repo.languages.slice(0, 3).map(lang => (
-          <Badge key={lang} variant="outline" className="text-xs bg-neutral-800/50 text-neutral-400 border-neutral-700">
+          <Badge key={lang} variant="outline" className="hz-t-xs hz-bg-raised hz-fg-muted">
             {lang}
           </Badge>
         ))}
         {repo.categories.slice(0, 1).map(cat => (
-          <Badge key={cat} variant="outline" className="text-xs bg-neutral-800/50 text-neutral-500 border-neutral-700">
+          <Badge key={cat} variant="outline" className="hz-t-xs hz-bg-raised hz-fg-muted">
             {cat}
           </Badge>
         ))}
         {repo.signals.deployable && (
-          <Badge variant="outline" className="text-xs bg-green-500/10 text-green-400 border-green-500/30">
+          <Badge variant="outline" className="hz-t-xs hz-bg-raised hz-fg-muted hz-border-strong">
             Deployable
           </Badge>
         )}
@@ -212,12 +196,12 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
 
       {/* Upstream Attribution */}
       {repo.upstream && (
-        <div className="px-5 pb-3">
+        <div className="hz-px-4 hz-pb-4">
           <a
             href={repo.upstream.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-neutral-600 hover:text-neutral-400 transition-colors"
+            className="hz-t-xs hz-fg-faint hz-transition hz-link"
           >
             Powered by {repo.upstream.name} →
           </a>
@@ -225,42 +209,42 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, view }) => {
       )}
 
       {/* Actions */}
-      <div className="mt-auto p-4 pt-3 border-t border-neutral-800 flex items-center gap-2">
+      <div className="hz-mt-auto hz-p-4 hz-pt-4 hz-border-t hz-row hz-ai-center hz-gap-2">
         {primaryAction ? (
-          <Button size="sm" className="flex-1 bg-[#fd4444] hover:bg-[#fd4444]/90 text-white" asChild>
+          <Button size="sm" className="hz-grow hz-bg-surface hz-fg hz-hoverable" asChild>
             <a href={primaryAction.url} target="_blank" rel="noopener noreferrer">
-              <primaryAction.icon className="w-3.5 h-3.5 mr-1.5" />
+              <primaryAction.icon className="hz-sq-2 hz-mr-2" />
               {primaryAction.label}
             </a>
           </Button>
         ) : (
-          <Button size="sm" variant="outline" className="flex-1 border-neutral-700 hover:bg-neutral-800" asChild>
+          <Button size="sm" variant="outline" className="hz-grow hz-hoverable" asChild>
             <a href={repo.actions.githubUrl} target="_blank" rel="noopener noreferrer">
-              <Github className="w-3.5 h-3.5 mr-1.5" />
+              <Github className="hz-sq-2 hz-mr-2" />
               View Source
             </a>
           </Button>
         )}
 
-        <div className="flex gap-1">
+        <div className="hz-row hz-gap-1">
           {repo.actions.docsUrl && (
-            <Button size="sm" variant="ghost" className="px-2 text-neutral-400 hover:text-white" asChild title="Docs">
+            <Button size="sm" variant="ghost" className="hz-px-2 hz-fg-muted hz-link" asChild title="Docs">
               <a href={repo.actions.docsUrl} target="_blank" rel="noopener noreferrer">
-                <BookOpen className="w-4 h-4" />
+                <BookOpen className="hz-sq-2" />
               </a>
             </Button>
           )}
           {repo.actions.learnUrl && (
-            <Button size="sm" variant="ghost" className="px-2 text-neutral-400 hover:text-white" asChild title="Learn">
+            <Button size="sm" variant="ghost" className="hz-px-2 hz-fg-muted hz-link" asChild title="Learn">
               <a href={repo.actions.learnUrl}>
-                <GraduationCap className="w-4 h-4" />
+                <GraduationCap className="hz-sq-2" />
               </a>
             </Button>
           )}
           {primaryAction && (
-            <Button size="sm" variant="ghost" className="px-2 text-neutral-400 hover:text-white" asChild title="GitHub">
+            <Button size="sm" variant="ghost" className="hz-px-2 hz-fg-muted hz-link" asChild title="GitHub">
               <a href={repo.actions.githubUrl} target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4" />
+                <Github className="hz-sq-2" />
               </a>
             </Button>
           )}
@@ -285,16 +269,16 @@ const CollectionCard: React.FC<CollectionCardProps> = ({ collection, onSelect })
   return (
     <button
       onClick={() => onSelect(collection.repos)}
-      className="flex items-center gap-3 p-4 rounded-xl border border-neutral-800 bg-neutral-900/30 hover:border-[#fd4444]/30 hover:bg-neutral-900/50 transition-all text-left group"
+      className="hz-card hz-row hz-ai-center hz-gap-3 hz-transition hz-align-left hz-card-interactive"
     >
-      <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center group-hover:bg-[#fd4444]/10 transition-colors">
-        <Icon className="w-5 h-5 text-neutral-400 group-hover:text-[#fd4444] transition-colors" />
+      <div className="hz-sq-6 hz-r-lg hz-bg-raised hz-row hz-ai-center hz-jc-center hz-transition hz-hoverable">
+        <Icon className="hz-sq-3 hz-fg-muted hz-transition hz-link" />
       </div>
       <div>
-        <h4 className="font-medium text-white text-sm group-hover:text-[#fd4444] transition-colors">
+        <h4 className="hz-w-medium hz-fg hz-t-sm hz-transition hz-hoverable">
           {collection.title}
         </h4>
-        <p className="text-xs text-neutral-500">{collection.description}</p>
+        <p className="hz-t-xs hz-fg-muted">{collection.description}</p>
       </div>
     </button>
   );
@@ -330,16 +314,16 @@ const FacetSection: React.FC<FacetSectionProps> = ({
   };
 
   return (
-    <div className="border-b border-neutral-800 pb-4 mb-4 last:border-0 last:pb-0 last:mb-0">
+    <div className="hz-border-b hz-pb-4 hz-mb-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full text-left mb-2"
+        className="hz-row hz-ai-center hz-jc-between hz-w-full hz-align-left hz-mb-2"
       >
-        <span className="text-sm font-medium text-neutral-300">{title}</span>
+        <span className="hz-t-sm hz-w-medium hz-fg-soft">{title}</span>
         <ChevronDown
           className={cn(
-            'w-4 h-4 text-neutral-500 transition-transform',
-            isOpen && 'rotate-180'
+            'hz-sq-2 hz-fg-muted hz-transition',
+            isOpen && ''
           )}
         />
       </button>
@@ -349,29 +333,29 @@ const FacetSection: React.FC<FacetSectionProps> = ({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="space-y-1 overflow-hidden"
+            className="hz-stack-1 hz-clip"
           >
             {options.map(option => (
               <button
                 key={option.value}
                 onClick={() => toggleOption(option.value)}
                 className={cn(
-                  'flex items-center gap-2 w-full px-2 py-1.5 rounded text-sm transition-colors',
+                  'hz-btn hz-btn-ghost hz-btn-block hz-gap-2 hz-transition',
                   selected.includes(option.value)
-                    ? 'bg-[#fd4444]/10 text-[#fd4444]'
-                    : 'text-neutral-400 hover:bg-neutral-800 hover:text-white'
+                    ? 'hz-bg-surface hz-fg-soft'
+                    : 'hz-fg-muted hz-link'
                 )}
               >
                 <div
                   className={cn(
-                    'w-4 h-4 rounded border flex items-center justify-center',
+                    'hz-sq-2 hz-r-md hz-bordered hz-row hz-ai-center hz-jc-center',
                     selected.includes(option.value)
-                      ? 'border-[#fd4444] bg-[#fd4444]'
-                      : 'border-neutral-600'
+                      ? 'hz-bg-surface'
+                      : 'hz-border-strong'
                   )}
                 >
                   {selected.includes(option.value) && (
-                    <Check className="w-3 h-3 text-white" />
+                    <Check className="hz-sq-1 hz-fg" />
                   )}
                 </div>
                 {option.label}
@@ -490,7 +474,7 @@ const OSSCatalog: React.FC = () => {
 
   // Facet rail content
   const FacetRail = () => (
-    <div className="space-y-4">
+    <div className="hz-stack-4">
       <FacetSection
         title="Type"
         options={repoTypes.map(t => ({ value: t.value, label: t.label }))}
@@ -534,25 +518,25 @@ const OSSCatalog: React.FC = () => {
   );
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-black min-h-screen">
-      <div className="max-w-7xl mx-auto">
+    <section className="hz-py-7 hz-px-4 hz-bg hz-min-h-screen">
+      <div className="hz-container">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
+        <div className="hz-mb-6">
+          <h1 className="hz-t-3xl hz-w-bold hz-fg hz-mb-3">
             OSS Catalog
           </h1>
-          <p className="text-neutral-400 text-lg">
+          <p className="hz-fg-muted hz-t-lg">
             Open source tools, templates, and infrastructure for building AI applications
           </p>
         </div>
 
         {/* Featured Collections */}
         {!selectedCollection && !searchQuery && quickFilter === 'all' && (
-          <div className="mb-10">
-            <h2 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+          <div className="hz-mb-6">
+            <h2 className="hz-t-sm hz-w-medium hz-fg-muted hz-upper hz-tracking-wide hz-mb-4">
               Quick Start Collections
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="hz-grid hz-grid-4 hz-gap-4">
               {featuredCollections.map(collection => (
                 <CollectionCard
                   key={collection.id}
@@ -565,21 +549,21 @@ const OSSCatalog: React.FC = () => {
         )}
 
         {/* Top Bar */}
-        <div className="flex flex-col lg:flex-row gap-4 mb-6">
+        <div className="hz-col-row hz-gap-4 hz-mb-5">
           {/* Search */}
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+          <div className="hz-rel hz-grow">
+            <Search className="hz-center-y hz-sq-2 hz-abs hz-fg-muted" />
             <Input
               type="text"
               placeholder="Search repos, templates, tools..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="pl-10 bg-neutral-900 border-neutral-800 focus:border-[#fd4444]/50"
+              className="hz-px-6 hz-bg-surface"
             />
           </div>
 
           {/* Quick Filters */}
-          <div className="flex gap-2 overflow-x-auto pb-2 lg:pb-0">
+          <div className="hz-row hz-gap-2 hz-scroll-x hz-pb-4">
             {quickFilters.map(filter => (
               <Button
                 key={filter.value}
@@ -590,10 +574,10 @@ const OSSCatalog: React.FC = () => {
                   setSelectedCollection(null);
                 }}
                 className={cn(
-                  'whitespace-nowrap',
+                  'hz-whitespace-nowrap',
                   quickFilter === filter.value
-                    ? 'bg-[#fd4444] text-white hover:bg-[#fd4444]/90'
-                    : 'border-neutral-700 hover:bg-neutral-800'
+                    ? 'hz-bg-surface hz-fg hz-hoverable'
+                    : 'hz-hoverable'
                 )}
               >
                 {filter.label}
@@ -602,22 +586,22 @@ const OSSCatalog: React.FC = () => {
           </div>
 
           {/* Sort & View */}
-          <div className="flex gap-2">
+          <div className="hz-row hz-gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="border-neutral-700 hover:bg-neutral-800">
+                <Button variant="outline" size="sm" className="hz-hoverable">
                   {sortOptions.find(s => s.value === sortBy)?.label || 'Sort'}
-                  <ChevronDown className="ml-2 w-4 h-4" />
+                  <ChevronDown className="hz-sq-2 hz-ml-2" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-neutral-900 border-neutral-800">
+              <DropdownMenuContent align="end" className="hz-bg-surface">
                 {sortOptions.map(option => (
                   <DropdownMenuItem
                     key={option.value}
                     onClick={() => setSortBy(option.value)}
                     className={cn(
-                      'cursor-pointer',
-                      sortBy === option.value && 'text-[#fd4444]'
+                      'hz-pointer',
+                      sortBy === option.value && 'hz-fg-soft'
                     )}
                   >
                     {option.label}
@@ -626,64 +610,64 @@ const OSSCatalog: React.FC = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <div className="flex border border-neutral-700 rounded-md">
+            <div className="hz-row hz-bordered hz-r-md">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setView('grid')}
-                className={cn('px-2', view === 'grid' && 'bg-neutral-800')}
+                className={cn('hz-px-2', view === 'grid' && 'hz-bg-raised')}
               >
-                <Grid3X3 className="w-4 h-4" />
+                <Grid3X3 className="hz-sq-2" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setView('list')}
-                className={cn('px-2', view === 'list' && 'bg-neutral-800')}
+                className={cn('hz-px-2', view === 'list' && 'hz-bg-raised')}
               >
-                <List className="w-4 h-4" />
+                <List className="hz-sq-2" />
               </Button>
             </div>
 
             {/* Mobile Filter Button */}
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="sm" className="lg:hidden border-neutral-700">
-                  <Filter className="w-4 h-4 mr-2" />
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline" size="sm" className="hz-mobile-only">
+                  <Filter className="hz-sq-2 hz-mr-2" />
                   Filters
                   {hasActiveFilters && (
-                    <span className="ml-2 w-5 h-5 rounded-full bg-[#fd4444] text-white text-xs flex items-center justify-center">
+                    <span className="hz-sq-3 hz-ml-2 hz-r-full hz-bg-surface hz-fg hz-t-xs hz-row hz-ai-center hz-jc-center">
                       {selectedTypes.length + selectedCategories.length + selectedLanguages.length}
                     </span>
                   )}
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="bottom" className="h-[80vh] bg-neutral-900 border-neutral-800">
-                <SheetHeader>
-                  <SheetTitle className="text-white">Filters</SheetTitle>
-                </SheetHeader>
-                <div className="mt-6 overflow-y-auto h-full pb-20">
+              </DialogTrigger>
+              <DialogContent className="hz-bg-surface">
+                <DialogHeader>
+                  <DialogTitle className="hz-fg">Filters</DialogTitle>
+                </DialogHeader>
+                <div className="hz-mt-5 hz-scroll-y hz-h-full hz-pb-8">
                   <FacetRail />
                 </div>
-              </SheetContent>
-            </Sheet>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
 
         {/* Active Filters */}
         {(hasActiveFilters || selectedCollection) && (
-          <div className="flex flex-wrap items-center gap-2 mb-6">
-            <span className="text-sm text-neutral-500">Active filters:</span>
+          <div className="hz-row hz-wrap hz-ai-center hz-gap-2 hz-mb-5">
+            <span className="hz-t-sm hz-fg-muted">Active filters:</span>
             {selectedCollection && (
-              <Badge variant="outline" className="bg-[#fd4444]/10 text-[#fd4444] border-[#fd4444]/30">
+              <Badge variant="outline" className="hz-bg-surface hz-fg-soft">
                 Collection
-                <button onClick={() => setSelectedCollection(null)} className="ml-1">
-                  <X className="w-3 h-3" />
+                <button onClick={() => setSelectedCollection(null)} className="hz-ml-1">
+                  <X className="hz-sq-1" />
                 </button>
               </Badge>
             )}
             {[...selectedTypes, ...selectedCategories, ...selectedLanguages].slice(0, 5).map(filter => (
-              <Badge key={filter} variant="outline" className="bg-neutral-800 text-neutral-300 border-neutral-700">
+              <Badge key={filter} variant="outline" className="hz-bg-raised hz-fg-soft">
                 {filter}
                 <button
                   onClick={() => {
@@ -691,9 +675,9 @@ const OSSCatalog: React.FC = () => {
                     setSelectedCategories(selectedCategories.filter(c => c !== filter));
                     setSelectedLanguages(selectedLanguages.filter(l => l !== filter));
                   }}
-                  className="ml-1"
+                  className="hz-ml-1"
                 >
-                  <X className="w-3 h-3" />
+                  <X className="hz-sq-1" />
                 </button>
               </Badge>
             ))}
@@ -701,7 +685,7 @@ const OSSCatalog: React.FC = () => {
               variant="ghost"
               size="sm"
               onClick={clearAllFilters}
-              className="text-neutral-400 hover:text-white"
+              className="hz-fg-muted hz-link"
             >
               Clear all
             </Button>
@@ -709,16 +693,16 @@ const OSSCatalog: React.FC = () => {
         )}
 
         {/* Main Content */}
-        <div className="flex gap-8">
+        <div className="hz-row hz-gap-6">
           {/* Facet Rail - Desktop */}
-          <aside className="hidden lg:block w-64 flex-shrink-0">
-            <div className="sticky top-24 p-4 rounded-xl border border-neutral-800 bg-neutral-900/30">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-medium text-white">Filters</h3>
+          <aside className="hz-desktop-only hz-bw-8 hz-none">
+            <div className="hz-card hz-sticky">
+              <div className="hz-row hz-ai-center hz-jc-between hz-mb-4">
+                <h3 className="hz-w-medium hz-fg">Filters</h3>
                 {hasActiveFilters && (
                   <button
                     onClick={clearAllFilters}
-                    className="text-xs text-neutral-500 hover:text-[#fd4444]"
+                    className="hz-t-xs hz-fg-muted hz-link"
                   >
                     Clear all
                   </button>
@@ -729,26 +713,26 @@ const OSSCatalog: React.FC = () => {
           </aside>
 
           {/* Results */}
-          <div className="flex-1 min-w-0">
+          <div className="hz-grow">
             {/* Results Count */}
-            <div className="flex items-center justify-between mb-4">
-              <p className="text-sm text-neutral-500">
+            <div className="hz-row hz-ai-center hz-jc-between hz-mb-4">
+              <p className="hz-t-sm hz-fg-muted">
                 {filteredRepos.length} {filteredRepos.length === 1 ? 'result' : 'results'}
               </p>
             </div>
 
             {/* Featured Row */}
             {featuredRepos.length > 0 && (
-              <div className="mb-8">
-                <h2 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#fd4444]" />
+              <div className="hz-mb-6">
+                <h2 className="hz-t-sm hz-w-medium hz-fg-muted hz-upper hz-tracking-wide hz-mb-4 hz-row hz-ai-center hz-gap-2">
+                  <span className="hz-sq-1 hz-r-full hz-bg-surface" />
                   Hanzo Picks
                 </h2>
                 <div
                   className={cn(
                     view === 'grid'
-                      ? 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'
-                      : 'space-y-3'
+                      ? 'hz-grid hz-grid-3 hz-gap-4'
+                      : 'hz-stack-3'
                   )}
                 >
                   {featuredRepos.map(repo => (
@@ -763,8 +747,8 @@ const OSSCatalog: React.FC = () => {
               <div
                 className={cn(
                   view === 'grid'
-                    ? 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'
-                    : 'space-y-3'
+                    ? 'hz-grid hz-grid-3 hz-gap-4'
+                    : 'hz-stack-3'
                 )}
               >
                 {mainRepos.map(repo => (
@@ -772,8 +756,8 @@ const OSSCatalog: React.FC = () => {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-16">
-                <p className="text-neutral-500 mb-4">No results found</p>
+              <div className="hz-align-center hz-py-7">
+                <p className="hz-fg-muted hz-mb-4">No results found</p>
                 <Button variant="outline" onClick={clearAllFilters}>
                   Clear filters
                 </Button>

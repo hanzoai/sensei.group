@@ -13,11 +13,11 @@ import Regions from "@/components/cloud/Regions";
 import Security from "@/components/cloud/Security";
 import TechStack from "@/components/cloud/TechStack";
 import CallToAction from "@/components/cloud/CallToAction";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@hanzo/ui";
 
 const Cloud = () => {
   return (
-    <div className="min-h-screen bg-[var(--black)] text-[var(--white)] overflow-x-hidden">
+    <div className="hz-min-h-screen hz-bg hz-fg">
       <Helmet>
         <title>Hanzo Cloud - Complete Cloud Platform</title>
         <meta name="description" content="90+ managed services for AI, databases, compute, and more. Build, deploy, and scale modern applications on a unified platform." />

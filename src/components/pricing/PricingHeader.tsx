@@ -1,13 +1,13 @@
 
 import React from "react";
-import ChromeText from "@/components/ui/chrome-text";
+import ChromeText from "@/components/visual/chrome-text";
 
 const PricingHeader = () => {
   return (
-    <div className="text-center max-w-3xl mx-auto mb-12">
+    <div className="hz-container-narrow hz-align-center hz-mb-7">
       <ChromeText 
         as="h1" 
-        className="text-4xl sm:text-5xl font-bold mb-6"
+        className="hz-t-4xl hz-w-bold hz-mb-5"
         preHeading="Simple & Transparent"
       >
         Pricing

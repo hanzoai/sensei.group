@@ -1,38 +1,38 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@hanzo/ui";
 import { ArrowRight } from "lucide-react";
 
 const HanzoExtensionCTA = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--black)] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 opacity-30"></div>
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+    <section className="hz-py-7 hz-px-4 hz-bg hz-rel hz-clip">
+      <div className="hz-abs hz-inset hz-dim-more"></div>
+      <div className="hz-sq-8 hz-abs hz-bg-raised hz-r-full hz-blur-bg"></div>
+      <div className="hz-sq-8 hz-abs hz-bg-raised hz-r-full hz-blur-bg"></div>
       
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="hz-container-wide hz-rel hz-z-raised">
         <motion.div 
-          className="text-center"
+          className="hz-align-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="hz-t-3xl hz-w-bold hz-mb-5">
             Get Started with Hanzo Extension Today
           </h2>
-          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-10">
+          <p className="hz-container-narrow hz-t-xl hz-fg-soft hz-mb-6">
             Join thousands of users who have enhanced their browsing experience with Hanzo AI capabilities.
           </p>
           
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-500 hover:to-blue-400 text-[var(--white)] px-8 py-6 rounded-lg text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+            className="hz-fg hz-px-6 hz-py-5 hz-r-lg hz-t-lg hz-w-medium hz-shadow-lg hz-transition"
           >
-            <a href="#browsers" className="flex items-center">
+            <a href="#browsers" className="hz-row hz-ai-center">
               Install Extension
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="hz-sq-3 hz-ml-2" />
             </a>
           </Button>
         </motion.div>
