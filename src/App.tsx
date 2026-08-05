@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Analytics } from "./analytics";
 import GlobalChatWidget from "./components/GlobalChatWidget";
 import PageTransition from "./components/PageTransition";
 import KonamiCode from "./components/KonamiCode";
@@ -46,7 +47,11 @@ import Commerce from "./pages/Commerce";
 import Extension from "./pages/Extension";
 import Base from "./pages/Base";
 import Download from "./pages/Download";
-import Analytics from "./pages/Analytics";
+// AnalyticsPage, not Analytics: this is the marketing page ABOUT the Analytics
+// product. The telemetry root imported at the top of this file owns that name,
+// here and on every other Hanzo surface, and two bindings called Analytics is how
+// the provider silently became a marketing page.
+import AnalyticsPage from "./pages/Analytics";
 import Cloud from "./pages/Cloud";
 import AIStudio from "./pages/AIStudio";
 import Operative from "./pages/Operative";
@@ -170,7 +175,7 @@ const MarketingRoutes = () => {
       <Route path="/extension" element={<Extension />} />
       <Route path="/base" element={<Base />} />
       <Route path="/download" element={<Download />} />
-      <Route path="/analytics" element={<Analytics />} />
+      <Route path="/analytics" element={<AnalyticsPage />} />
       <Route path="/cloud" element={<Cloud />} />
       <Route path="/edge" element={<Edge />} />
       <Route path="/platform" element={<Platform />} />
@@ -234,20 +239,24 @@ const isAccountRoute = (pathname: string) => {
 const App = () => {
   return (
     <BrowserRouter>
-      <ThemeProvider>
-        <ScrollToTop />
-        <PageTransition>
-          {isAccountRoute(window.location.pathname) ? (
-            <AccountRoutes />
-          ) : (
-            <MarketingRoutes />
-          )}
-        </PageTransition>
-        {/* Global chat widget on all pages */}
-        <GlobalChatWidget />
-        {/* Easter egg - Konami code for secret menu */}
-        <KonamiCode />
-      </ThemeProvider>
+      {/* Inside the router: <Analytics> counts one pageview per client-side route
+          change, and a route change here never touches the network. */}
+      <Analytics>
+        <ThemeProvider>
+          <ScrollToTop />
+          <PageTransition>
+            {isAccountRoute(window.location.pathname) ? (
+              <AccountRoutes />
+            ) : (
+              <MarketingRoutes />
+            )}
+          </PageTransition>
+          {/* Global chat widget on all pages */}
+          <GlobalChatWidget />
+          {/* Easter egg - Konami code for secret menu */}
+          <KonamiCode />
+        </ThemeProvider>
+      </Analytics>
     </BrowserRouter>
   );
 };
