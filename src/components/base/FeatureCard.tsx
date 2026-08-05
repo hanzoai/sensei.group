@@ -22,39 +22,39 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   const colorClasses: Record<string, { bg: string, text: string, border: string }> = {
     blue: { 
-      bg: "bg-blue-900/20", 
-      text: "text-blue-400", 
-      border: "border-blue-800/50" 
+      bg: "hz-bg-surface", 
+      text: "hz-fg-muted", 
+      border: "" 
     },
     purple: { 
-      bg: "bg-purple-900/20", 
-      text: "text-purple-400", 
-      border: "border-purple-800/50" 
+      bg: "hz-bg-surface", 
+      text: "hz-fg-muted", 
+      border: "" 
     },
     green: { 
-      bg: "bg-green-900/20", 
-      text: "text-green-400", 
-      border: "border-green-800/50" 
+      bg: "hz-bg-surface", 
+      text: "hz-fg-muted", 
+      border: "" 
     },
     amber: { 
-      bg: "bg-amber-900/20", 
-      text: "text-amber-400", 
-      border: "border-amber-800/50" 
+      bg: "hz-bg-surface", 
+      text: "hz-fg-muted", 
+      border: "" 
     },
     indigo: { 
-      bg: "bg-indigo-900/20", 
-      text: "text-indigo-400", 
-      border: "border-indigo-800/50" 
+      bg: "hz-bg-surface", 
+      text: "hz-fg-muted", 
+      border: "" 
     },
     cyan: { 
-      bg: "bg-cyan-900/20", 
-      text: "text-cyan-400", 
-      border: "border-cyan-800/50" 
+      bg: "hz-bg-surface", 
+      text: "hz-fg-muted", 
+      border: "" 
     },
     rose: { 
-      bg: "bg-rose-900/20", 
-      text: "text-rose-400", 
-      border: "border-rose-800/50" 
+      bg: "hz-bg-surface", 
+      text: "hz-fg-muted", 
+      border: "" 
     },
   };
 
@@ -66,20 +66,20 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: delay * 0.1 }}
-      className={`${classes.bg} border ${classes.border} rounded-lg p-6 h-full`}
+      className={`${classes.bg} hz-bordered ${classes.border} hz-r-lg hz-p-5 hz-h-full`}
     >
-      <div className="flex items-center mb-4">
-        <div className="mr-3">
-          <Icon className={`h-6 w-6 ${classes.text}`} />
+      <div className="hz-row hz-ai-center hz-mb-4">
+        <div className="hz-mr-3">
+          <Icon className={`hz-sq-4 ${classes.text}`} />
         </div>
-        <h3 className="text-xl font-semibold text-[var(--white)]">{title}</h3>
+        <h3 className="hz-t-xl hz-w-semibold hz-fg">{title}</h3>
       </div>
-      <p className="text-neutral-300 mb-4">{description}</p>
-      <ul className="space-y-2">
+      <p className="hz-fg-soft hz-mb-4">{description}</p>
+      <ul className="hz-stack-2">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-start">
-            <span className={`mr-2 ${classes.text}`}>•</span>
-            <span className="text-neutral-300 text-sm">{feature}</span>
+          <li key={index} className="hz-row hz-ai-start">
+            <span className={`hz-mr-2 ${classes.text}`}>•</span>
+            <span className="hz-fg-soft hz-t-sm">{feature}</span>
           </li>
         ))}
       </ul>

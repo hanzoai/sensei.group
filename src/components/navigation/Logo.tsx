@@ -154,7 +154,7 @@ const Logo = () => {
     <>
       <Link
         to="/"
-        className="relative flex items-center group"
+        className="hz-rel hz-row hz-ai-center"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onContextMenu={handleContextMenu}
@@ -163,14 +163,14 @@ const Logo = () => {
           initial="initial"
           animate="animate"
           variants={logoVariants}
-          className="w-6 h-6 relative flex-shrink-0"
+          className="hz-sq-4 hz-rel hz-none"
           onAnimationComplete={() => setAnimationComplete(true)}
           style={{ transformOrigin: "center center" }}
         >
           <svg
             viewBox="0 0 67 67"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full"
+            className="hz-w-full hz-h-full"
           >
             <motion.path
               custom={1}
@@ -218,10 +218,10 @@ const Logo = () => {
         </motion.div>
 
         {/* Wordmark - absolute positioned so it doesn't shift other content */}
-        <div className="absolute left-8 overflow-hidden">
+        <div className="hz-abs hz-clip">
           <span
-            className={`font-bold text-xl ${isDarkMode ? "text-white" : "text-neutral-900"} whitespace-nowrap block transition-transform duration-300 ease-out ${
-              shouldShowWordmark ? "translate-x-0" : "-translate-x-full"
+            className={`hz-w-bold hz-t-xl ${isDarkMode ? "hz-fg" : "hz-fg-faint"} hz-whitespace-nowrap hz-transition ${
+              shouldShowWordmark ? "" : ""
             }`}
           >
             Hanzo
@@ -238,34 +238,34 @@ const Logo = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.1 }}
-            className={`fixed z-[200] rounded-lg shadow-2xl py-1 min-w-[180px] border ${
+            className={`hz-fixed hz-z-overlay hz-r-lg hz-shadow-lg hz-py-1 hz-bordered ${
               isDarkMode
-                ? "bg-black border-neutral-800"
-                : "bg-white border-neutral-200"
+                ? "hz-bg"
+                : "hz-bg-inverse hz-border-strong"
             }`}
             style={{ left: contextMenu.x, top: contextMenu.y }}
           >
             {contextMenuItems.map((item, index) =>
               'divider' in item ? (
-                <div key={index} className={`border-t my-1 ${isDarkMode ? "border-neutral-800" : "border-neutral-200"}`} />
+                <div key={index} className={`hz-border-t hz-mt-1 hz-mb-1 ${isDarkMode ? "" : "hz-border-strong"}`} />
               ) : (
                 <button
                   key={item.label}
                   onClick={() => handleMenuItemClick(item)}
-                  className={`w-full text-left px-3 py-2 text-sm transition-colors flex items-center justify-between ${
+                  className={`hz-w-full hz-align-left hz-px-3 hz-py-2 hz-t-sm hz-transition hz-row hz-ai-center hz-jc-between ${
                     isDarkMode
-                      ? "text-neutral-300 hover:bg-neutral-800 hover:text-white"
-                      : "text-neutral-700 hover:bg-neutral-100 hover:text-black"
+                      ? "hz-fg-soft hz-hoverable"
+                      : "hz-fg-faint hz-link"
                   }`}
                 >
                   {item.label}
                   {'action' in item && item.action === 'copy-svg' && (
-                    <svg className={`w-3 h-3 ${isDarkMode ? "text-neutral-500" : "text-neutral-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className={`hz-sq-1 ${isDarkMode ? "hz-fg-muted" : "hz-fg-muted"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                   )}
                   {'external' in item && item.external && (
-                    <svg className={`w-3 h-3 ${isDarkMode ? "text-neutral-500" : "text-neutral-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className={`hz-sq-1 ${isDarkMode ? "hz-fg-muted" : "hz-fg-muted"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   )}

@@ -31,13 +31,13 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
 
   return (
     <Dialog open={!!task} onOpenChange={() => onClose()}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="hz-mw-md">
         <DialogHeader>
           <DialogTitle>
             <Input 
               value={editedTask.title}
               onChange={handleTitleChange}
-              className="text-xl font-semibold mt-2 bg-transparent border-none focus:ring-0 px-0 h-auto"
+              className="hz-t-xl hz-w-semibold hz-mt-2 hz-bg-none hz-border-none hz-px-0"
             />
           </DialogTitle>
         </DialogHeader>
@@ -47,7 +47,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
           onTaskChange={handleTaskChange} 
         />
 
-        <div className="flex justify-end gap-2 mt-6">
+        <div className="hz-row hz-jc-end hz-gap-2 hz-mt-5">
           <Button variant="ghost" onClick={onClose}>
             Cancel
           </Button>

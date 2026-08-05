@@ -12,25 +12,25 @@ interface DXPlatformSectionProps {
 
 const DXPlatformSection: React.FC<DXPlatformSectionProps> = ({ products }) => {
   return (
-    <div className="mb-20">
+    <div className="hz-mb-7">
       <SectionHeader
         badge="DX Platform"
-        badgeColor="bg-purple-900/30 border border-purple-500/30 text-purple-300"
+        badgeColor="hz-bg-surface hz-bordered hz-border-strong hz-fg-soft"
         title="Developer Experience Tools for AI Engineering"
         description="Supercharge your AI development workflow with purpose-built tools for engineers."
       />
 
-      <div className="mb-8">
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex space-x-4 pb-4 px-1">
+      <div className="hz-mb-6">
+        <ScrollArea className="hz-w-full hz-whitespace-nowrap">
+          <div className="hz-row hz-inline-4 hz-pb-4 hz-px-1">
             {products.map((product, index) => (
-              <div key={index} className="w-[300px] flex-shrink-0">
+              <div key={index} className="hz-none">
                 <ProductCard
-                  icon={<product.icon className="text-purple-400" />}
+                  icon={<product.icon className="hz-fg-muted" />}
                   title={product.name}
                   description={product.description}
-                  color="bg-purple-900/30"
-                  hoverColor="bg-purple-600/40"
+                  color="hz-bg-surface"
+                  hoverColor="hz-bg-raised"
                   link={product.link || "#"}
                 />
               </div>

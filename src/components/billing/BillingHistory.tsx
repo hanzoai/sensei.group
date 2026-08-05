@@ -16,13 +16,13 @@ interface Invoice {
 const getStatusColor = (status: string) => {
   switch (status) {
     case 'Paid':
-      return 'bg-green-900/20 text-green-400';
+      return 'hz-bg-surface hz-fg-muted';
     case 'Pending':
-      return 'bg-yellow-900/20 text-yellow-400';
+      return 'hz-bg-surface hz-fg-muted';
     case 'Failed':
-      return 'bg-red-900/20 text-red-400';
+      return 'hz-bg-surface hz-fg-muted';
     default:
-      return 'bg-gray-900/20 text-neutral-400';
+      return 'hz-bg-surface hz-fg-muted';
   }
 };
 
@@ -35,7 +35,7 @@ const columns: Column<Invoice>[] = [
     key: 'status',
     header: 'Status',
     render: (i) => (
-      <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(i.status)}`}>
+      <span className={`hz-px-2 hz-py-1 hz-r-full hz-t-xs ${getStatusColor(i.status)}`}>
         {i.status}
       </span>
     ),
@@ -46,7 +46,7 @@ const columns: Column<Invoice>[] = [
     align: 'right',
     render: () => (
       <Button variant="ghost" size="sm">
-        <Download className="h-4 w-4 mr-2" />
+        <Download className="hz-sq-2 hz-mr-2" />
         PDF
       </Button>
     ),
@@ -63,21 +63,21 @@ const BillingHistory = () => {
   ];
 
   return (
-    <div className="space-y-8">
-      <div className="flex items-center justify-between">
+    <div className="hz-stack-6">
+      <div className="hz-row hz-ai-center hz-jc-between">
         <BillingTabsLink tabId="overview" variant="ghost">
-          <ArrowLeft className="h-4 w-4 mr-2" /> Back to Overview
+          <ArrowLeft className="hz-sq-2 hz-mr-2" /> Back to Overview
         </BillingTabsLink>
         <Button variant="outline">
-          <Filter className="h-4 w-4 mr-2" />
+          <Filter className="hz-sq-2 hz-mr-2" />
           Filter
         </Button>
       </div>
       
-      <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
-        <h3 className="text-xl font-medium mb-6">Invoice History</h3>
+      <div className="hz-card">
+        <h3 className="hz-t-xl hz-w-medium hz-mb-5">Invoice History</h3>
         
-        <div className="overflow-x-auto">
+        <div className="hz-scroll-x">
           <DataTable<Invoice>
             rows={invoices}
             rowKey={(i) => i.id}

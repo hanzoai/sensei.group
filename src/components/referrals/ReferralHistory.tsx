@@ -23,10 +23,10 @@ const columns: Column<ReferralRecord>[] = [
     key: 'status',
     header: 'Status',
     render: (r) => (
-      <span className={`px-2 py-1 rounded-full text-xs ${
+      <span className={`hz-px-2 hz-py-1 hz-r-full hz-t-xs ${
         r.status === 'Completed'
-          ? 'bg-green-900/30 text-green-300'
-          : 'bg-yellow-900/30 text-yellow-300'
+          ? 'hz-bg-surface hz-fg-soft'
+          : 'hz-bg-surface hz-fg-soft'
       }`}>
         {r.status}
       </span>
@@ -43,10 +43,10 @@ const columns: Column<ReferralRecord>[] = [
 
 const ReferralHistory = ({ referralHistory }: ReferralHistoryProps) => {
   return (
-    <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
-      <h2 className="text-xl font-medium mb-4">Referral History</h2>
+    <div className="hz-card">
+      <h2 className="hz-t-xl hz-w-medium hz-mb-4">Referral History</h2>
       
-      <div className="rounded-lg border border-gray-800 overflow-hidden">
+      <div className="hz-r-lg hz-bordered hz-clip">
         <DataTable<ReferralRecord>
           rows={referralHistory}
           rowKey={(r) => String(r.id)}

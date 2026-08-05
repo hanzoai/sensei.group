@@ -14,26 +14,26 @@ const ViewAllButton: React.FC<ViewAllButtonProps> = ({ href, text, hoverColor })
   // Map hover colors to Tailwind classes
   const hoverColorMap: Record<string, { bg: string, border: string, text: string }> = {
     blue: {
-      bg: "hover:bg-blue-900/20",
-      border: "hover:border-blue-500",
-      text: "text-blue-400 hover:text-blue-300"
+      bg: "hz-hoverable",
+      border: "hz-hoverable",
+      text: "hz-fg-muted hz-link"
     },
     purple: {
-      bg: "hover:bg-purple-900/20",
-      border: "hover:border-purple-500",
-      text: "text-purple-400 hover:text-purple-300"
+      bg: "hz-hoverable",
+      border: "hz-hoverable",
+      text: "hz-fg-muted hz-link"
     },
     green: {
-      bg: "hover:bg-green-900/20",
-      border: "hover:border-green-500",
-      text: "text-green-400 hover:text-green-300"
+      bg: "hz-hoverable",
+      border: "hz-hoverable",
+      text: "hz-fg-muted hz-link"
     }
   };
   
   const colorClasses = hoverColorMap[hoverColor] || hoverColorMap.blue;
   
   return (
-    <div className="flex justify-center mb-12">
+    <div className="hz-row hz-jc-center hz-mb-7">
       <motion.div
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -42,16 +42,16 @@ const ViewAllButton: React.FC<ViewAllButtonProps> = ({ href, text, hoverColor })
           variant="outline" 
           size="sm"
           className={cn(
-            "group border-gray-700 transition-all duration-300",
+            "hz-transition",
             colorClasses.bg,
             colorClasses.border,
             colorClasses.text
           )}
           asChild
         >
-          <a href={href} className="flex items-center gap-2">
+          <a href={href} className="hz-row hz-ai-center hz-gap-2">
             <span>{text}</span>
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="hz-sq-2 hz-transition" />
           </a>
         </Button>
       </motion.div>

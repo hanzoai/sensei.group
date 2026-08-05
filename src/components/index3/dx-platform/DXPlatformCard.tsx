@@ -19,58 +19,58 @@ interface DXPlatformCardProps {
 const getColorClasses = (color: string = "indigo", isHovered: boolean) => {
   const colorMap: Record<string, { bg: string, hoverBg: string, text: string, hoverText: string }> = {
     indigo: { 
-      bg: "bg-indigo-900/30", 
-      hoverBg: "bg-indigo-600/30", 
-      text: "text-indigo-400", 
-      hoverText: "text-indigo-300" 
+      bg: "hz-bg-surface", 
+      hoverBg: "hz-bg-raised", 
+      text: "hz-fg-muted", 
+      hoverText: "hz-fg-soft" 
     },
     purple: { 
-      bg: "bg-purple-900/30", 
-      hoverBg: "bg-purple-600/30", 
-      text: "text-purple-400", 
-      hoverText: "text-purple-300" 
+      bg: "hz-bg-surface", 
+      hoverBg: "hz-bg-raised", 
+      text: "hz-fg-muted", 
+      hoverText: "hz-fg-soft" 
     },
     blue: { 
-      bg: "bg-blue-900/30", 
-      hoverBg: "bg-blue-600/30", 
-      text: "text-blue-400", 
-      hoverText: "text-blue-300" 
+      bg: "hz-bg-surface", 
+      hoverBg: "hz-bg-raised", 
+      text: "hz-fg-muted", 
+      hoverText: "hz-fg-soft" 
     },
     green: { 
-      bg: "bg-green-900/30", 
-      hoverBg: "bg-green-600/30", 
-      text: "text-green-400", 
-      hoverText: "text-green-300" 
+      bg: "hz-bg-surface", 
+      hoverBg: "hz-bg-raised", 
+      text: "hz-fg-muted", 
+      hoverText: "hz-fg-soft" 
     },
     amber: { 
-      bg: "bg-amber-900/30", 
-      hoverBg: "bg-amber-600/30", 
-      text: "text-amber-400", 
-      hoverText: "text-amber-300" 
+      bg: "hz-bg-surface", 
+      hoverBg: "hz-bg-raised", 
+      text: "hz-fg-muted", 
+      hoverText: "hz-fg-soft" 
     },
     teal: { 
-      bg: "bg-teal-900/30", 
-      hoverBg: "bg-teal-600/30", 
-      text: "text-teal-400", 
-      hoverText: "text-teal-300" 
+      bg: "hz-bg-surface", 
+      hoverBg: "hz-bg-raised", 
+      text: "hz-fg-muted", 
+      hoverText: "hz-fg-soft" 
     },
     rose: { 
-      bg: "bg-rose-900/30", 
-      hoverBg: "bg-rose-600/30", 
-      text: "text-rose-400", 
-      hoverText: "text-rose-300" 
+      bg: "hz-bg-surface", 
+      hoverBg: "hz-bg-raised", 
+      text: "hz-fg-muted", 
+      hoverText: "hz-fg-soft" 
     },
     cyan: { 
-      bg: "bg-cyan-900/30", 
-      hoverBg: "bg-cyan-600/30", 
-      text: "text-cyan-400", 
-      hoverText: "text-cyan-300" 
+      bg: "hz-bg-surface", 
+      hoverBg: "hz-bg-raised", 
+      text: "hz-fg-muted", 
+      hoverText: "hz-fg-soft" 
     },
     gray: { 
-      bg: "bg-gray-900/30", 
-      hoverBg: "bg-gray-700/30", 
-      text: "text-neutral-400", 
-      hoverText: "text-neutral-300" 
+      bg: "hz-bg-surface", 
+      hoverBg: "hz-bg-raised", 
+      text: "hz-fg-muted", 
+      hoverText: "hz-fg-soft" 
     }
   };
 
@@ -97,19 +97,19 @@ const DXPlatformCard: React.FC<DXPlatformCardProps> = ({
 
   const CardContent = (
     <>
-      <div className={`h-12 w-12 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300 ${bgClass}`}>
-        <Icon className={`h-6 w-6 transition-colors duration-300 ${textClass}`} />
+      <div className={`hz-sq-7 hz-r-lg hz-row hz-ai-center hz-jc-center hz-mb-4 hz-transition ${bgClass}`}>
+        <Icon className={`hz-sq-4 hz-transition ${textClass}`} />
       </div>
-      <ChromeText as="h3" className="text-xl font-bold mb-2">
+      <ChromeText as="h3" className="hz-t-xl hz-w-bold hz-mb-2">
         {title}
       </ChromeText>
-      <p className="text-neutral-300 mb-4 text-sm">
+      <p className="hz-fg-soft hz-mb-4 hz-t-sm">
         {description}
       </p>
-      <ul className="text-neutral-400 space-y-2 text-xs mt-auto hidden lg:block">
+      <ul className="hz-desktop-only hz-fg-muted hz-stack-2 hz-t-xs hz-mt-auto">
         {features.slice(0, 2).map((feature, index) => (
-          <li key={`${id}-feature-${index}`} className="flex items-start">
-            <span className="mr-2">•</span>
+          <li key={`${id}-feature-${index}`} className="hz-row hz-ai-start">
+            <span className="hz-mr-2">•</span>
             <span>{feature}</span>
           </li>
         ))}
@@ -117,7 +117,7 @@ const DXPlatformCard: React.FC<DXPlatformCardProps> = ({
     </>
   );
 
-  const containerClasses = "bg-gray-900/20 border border-gray-800 rounded-xl p-6 group hover:bg-gray-900/30 transition-colors h-full flex flex-col";
+  const containerClasses = "hz-card hz-transition hz-h-full hz-col hz-card-interactive";
 
   return (
     <motion.div

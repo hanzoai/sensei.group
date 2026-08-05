@@ -129,10 +129,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const getSpacingClass = (): string => {
     switch (spacing) {
-      case 'compact': return 'p-2 gap-2';
-      case 'comfortable': return 'p-4 gap-4';
-      case 'spacious': return 'p-6 gap-6';
-      default: return 'p-4 gap-4';
+      case 'compact': return 'hz-p-2 hz-gap-2';
+      case 'comfortable': return 'hz-p-4 hz-gap-4';
+      case 'spacious': return 'hz-p-5 hz-gap-5';
+      default: return 'hz-p-4 hz-gap-4';
     }
   };
 
@@ -147,25 +147,25 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   const getGlassClass = (): string => {
-    const baseClasses = isDarkMode ? 'backdrop-blur' : 'backdrop-blur bg-[var(--white)]/75 border-white/20';
+    const baseClasses = isDarkMode ? 'backdrop-blur' : 'hz-glass hz-bg-surface';
     
     switch (glassOpacity) {
       case 'subtle': 
         return isDarkMode 
-          ? 'bg-[var(--white)]/5 backdrop-blur-sm border-white/10' 
-          : 'bg-[var(--white)]/60 backdrop-blur-sm border-black/5';
+          ? 'hz-bg-surface hz-glass' 
+          : 'hz-bg-surface hz-glass';
       case 'medium': 
         return isDarkMode 
-          ? 'bg-[var(--white)]/10 backdrop-blur-md border-white/20' 
-          : 'bg-[var(--white)]/70 backdrop-blur-md border-black/10';
+          ? 'hz-bg-surface hz-glass' 
+          : 'hz-bg-surface hz-glass';
       case 'heavy': 
         return isDarkMode 
-          ? 'bg-[var(--white)]/20 backdrop-blur-lg border-white/30' 
-          : 'bg-[var(--white)]/80 backdrop-blur-lg border-black/15';
+          ? 'hz-bg-surface hz-glass' 
+          : 'hz-bg-surface hz-glass';
       default: 
         return isDarkMode 
-          ? 'bg-[var(--white)]/10 backdrop-blur-md border-white/20' 
-          : 'bg-[var(--white)]/70 backdrop-blur-md border-black/10';
+          ? 'hz-bg-surface hz-glass' 
+          : 'hz-bg-surface hz-glass';
     }
   };
 

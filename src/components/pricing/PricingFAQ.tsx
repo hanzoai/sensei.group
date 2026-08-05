@@ -63,16 +63,16 @@ const PricingFAQ = () => {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto my-16 px-4">
-      <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+    <div className="hz-container-narrow hz-mt-7 hz-mb-7">
+      <h2 className="hz-t-2xl hz-w-bold hz-mb-6 hz-align-center">Frequently Asked Questions</h2>
       
-      <div className="border-gray-800">
+      <div className="">
         {faqs.map((faq, index) => (
-          <Collapsible key={index} className="border-b border-gray-800">
-            <CollapsibleTrigger className="py-4 w-full text-left text-neutral-200 hover:text-[var(--white)]">
+          <Collapsible key={index} className="hz-border-b">
+            <CollapsibleTrigger className="hz-py-4 hz-w-full hz-align-left hz-fg hz-hoverable">
               {faq.question}
             </CollapsibleTrigger>
-            <CollapsibleContent className="text-neutral-400 pb-4">
+            <CollapsibleContent className="hz-fg-muted hz-pb-4">
               {faq.answer}
             </CollapsibleContent>
           </Collapsible>

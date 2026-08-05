@@ -12,25 +12,25 @@ interface AICloudSectionProps {
 
 const AICloudSection: React.FC<AICloudSectionProps> = ({ products }) => {
   return (
-    <div className="mb-20">
+    <div className="hz-mb-7">
       <SectionHeader
         badge="AI Cloud"
-        badgeColor="bg-blue-900/30 border border-blue-500/30 text-blue-300"
+        badgeColor="hz-bg-surface hz-bordered hz-border-strong hz-fg-soft"
         title="Scalable Infrastructure for AI Applications"
         description="Build high-performance AI applications with our suite of cloud services designed for AI workloads."
       />
 
-      <div className="mb-8">
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex space-x-4 pb-4 px-1">
+      <div className="hz-mb-6">
+        <ScrollArea className="hz-w-full hz-whitespace-nowrap">
+          <div className="hz-row hz-inline-4 hz-pb-4 hz-px-1">
             {products.map((product, index) => (
-              <div key={index} className="w-[300px] flex-shrink-0">
+              <div key={index} className="hz-none">
                 <ProductCard
-                  icon={<product.icon className="text-blue-400" />}
+                  icon={<product.icon className="hz-fg-muted" />}
                   title={product.name}
                   description={product.description}
-                  color="bg-blue-900/30"
-                  hoverColor="bg-blue-600/40"
+                  color="hz-bg-surface"
+                  hoverColor="hz-bg-raised"
                   link={product.link || "#"}
                 />
               </div>
