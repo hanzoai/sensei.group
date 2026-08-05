@@ -1,7 +1,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { accent, rgba } from "@/components/visual/accent-colors";
 import { Laptop, Server, Cloud, Workflow } from "lucide-react";
 import { Button } from "@hanzo/ui";
 
@@ -61,6 +60,33 @@ const DeploymentOptions = () => {
     }
   ];
 
+  const getColorClasses = (color: string, isHovered: boolean = false) => {
+    const colorMap: Record<string, { bg: string, text: string, border: string }> = {
+      blue: { 
+        bg: isHovered ? "bg-blue-900/40" : "bg-blue-900/20", 
+        text: "text-blue-400", 
+        border: isHovered ? "border-blue-500/50" : "border-blue-800/50" 
+      },
+      indigo: { 
+        bg: isHovered ? "bg-indigo-900/40" : "bg-indigo-900/20", 
+        text: "text-indigo-400", 
+        border: isHovered ? "border-indigo-500/50" : "border-indigo-800/50" 
+      },
+      purple: { 
+        bg: isHovered ? "bg-purple-900/40" : "bg-purple-900/20", 
+        text: "text-purple-400", 
+        border: isHovered ? "border-purple-500/50" : "border-purple-800/50" 
+      },
+      teal: { 
+        bg: isHovered ? "bg-teal-900/40" : "bg-teal-900/20", 
+        text: "text-teal-400", 
+        border: isHovered ? "border-teal-500/50" : "border-teal-800/50" 
+      }
+    };
+
+    return colorMap[color] || colorMap.indigo;
+  };
+
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
@@ -82,7 +108,7 @@ const DeploymentOptions = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {deploymentOptions.map((option, index) => {
-            const a = accent(option.color, "indigo");
+            const { bg, text, border } = getColorClasses(option.color);
             return (
               <motion.div
                 key={index}
@@ -90,11 +116,10 @@ const DeploymentOptions = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-xl p-6 flex flex-col h-full transition-all duration-300"
-                style={{ backgroundColor: rgba(a.bg, 0.2), border: `1px solid ${rgba(a.bgTo, 0.5)}` }}
+                className={`${bg} border ${border} rounded-xl p-6 flex flex-col h-full transition-all duration-300 hover:transform hover:translate-y-[-4px] hover:shadow-lg hover:shadow-indigo-900/20`}
               >
-                <div style={{ backgroundColor: rgba(a.bg, 0.2) }} className="h-12 w-12 rounded-lg flex items-center justify-center mb-4">
-                  <option.icon style={{ color: a.text }} className="h-6 w-6" />
+                <div className={`h-12 w-12 rounded-lg ${bg} flex items-center justify-center mb-4`}>
+                  <option.icon className={`h-6 w-6 ${text}`} />
                 </div>
                 <h3 className="text-xl font-bold text-[var(--white)] mb-2">{option.title}</h3>
                 <p className="text-neutral-300 mb-6">{option.description}</p>
@@ -102,13 +127,13 @@ const DeploymentOptions = () => {
                 <ul className="space-y-2 mb-8 flex-grow">
                   {option.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start">
-                      <span style={{ color: a.text }} className="mr-2">•</span>
+                      <span className={`mr-2 ${text}`}>•</span>
                       <span className="text-neutral-400 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
-                <Button variant="outline" style={{ color: a.text }} className="mt-auto border-gray-700 hover:bg-gray-800">
+                <Button variant="outline" className={`mt-auto ${text} border-gray-700 hover:bg-gray-800`}>
                   {option.cta}
                 </Button>
               </motion.div>

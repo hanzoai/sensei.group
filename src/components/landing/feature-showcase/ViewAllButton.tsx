@@ -1,9 +1,8 @@
 
-import React, { useState } from "react";
-import { Button } from "@hanzo/ui";
+import React from "react";
+import { Button, cn } from "@hanzo/ui";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { accent, rgba } from "@/components/visual/accent-colors";
 
 interface ViewAllButtonProps {
   href: string;
@@ -12,26 +11,42 @@ interface ViewAllButtonProps {
 }
 
 const ViewAllButton: React.FC<ViewAllButtonProps> = ({ href, text, hoverColor }) => {
-  const [hovered, setHovered] = useState(false);
-  const a = accent(hoverColor, "blue");
-
+  // Map hover colors to Tailwind classes
+  const hoverColorMap: Record<string, { bg: string, border: string, text: string }> = {
+    blue: {
+      bg: "hover:bg-blue-900/20",
+      border: "hover:border-blue-500",
+      text: "text-blue-400 hover:text-blue-300"
+    },
+    purple: {
+      bg: "hover:bg-purple-900/20",
+      border: "hover:border-purple-500",
+      text: "text-purple-400 hover:text-purple-300"
+    },
+    green: {
+      bg: "hover:bg-green-900/20",
+      border: "hover:border-green-500",
+      text: "text-green-400 hover:text-green-300"
+    }
+  };
+  
+  const colorClasses = hoverColorMap[hoverColor] || hoverColorMap.blue;
+  
   return (
     <div className="flex justify-center mb-12">
       <motion.div
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
       >
-        <Button
-          variant="outline"
+        <Button 
+          variant="outline" 
           size="sm"
-          className="group transition-all duration-300"
-          style={
-            hovered
-              ? { backgroundColor: rgba(a.bg, 0.2), borderColor: rgba(a.edge, 1), color: a.textHover }
-              : { color: a.text }
-          }
+          className={cn(
+            "group border-gray-700 transition-all duration-300",
+            colorClasses.bg,
+            colorClasses.border,
+            colorClasses.text
+          )}
           asChild
         >
           <a href={href} className="flex items-center gap-2">

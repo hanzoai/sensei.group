@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 import ChromeText from "@/components/visual/chrome-text";
 import { Link } from "react-router-dom";
-import { tileStyle } from "@/components/visual/accent-colors";
 
 interface CloudServiceCardProps {
   id: string;
@@ -17,6 +16,72 @@ interface CloudServiceCardProps {
   color?: string;
 }
 
+const getColorClasses = (color: string = "purple", isHovered: boolean) => {
+  const colorMap: Record<string, { bg: string, hoverBg: string, text: string, hoverText: string }> = {
+    purple: { 
+      bg: "bg-purple-900/30", 
+      hoverBg: "bg-purple-600/30", 
+      text: "text-purple-400", 
+      hoverText: "text-purple-300" 
+    },
+    blue: { 
+      bg: "bg-blue-900/30", 
+      hoverBg: "bg-blue-600/30", 
+      text: "text-blue-400", 
+      hoverText: "text-blue-300" 
+    },
+    green: { 
+      bg: "bg-green-900/30", 
+      hoverBg: "bg-green-600/30", 
+      text: "text-green-400", 
+      hoverText: "text-green-300" 
+    },
+    teal: { 
+      bg: "bg-teal-900/30", 
+      hoverBg: "bg-teal-600/30", 
+      text: "text-teal-400", 
+      hoverText: "text-teal-300" 
+    },
+    amber: { 
+      bg: "bg-amber-900/30", 
+      hoverBg: "bg-amber-600/30", 
+      text: "text-amber-400", 
+      hoverText: "text-amber-300" 
+    },
+    indigo: { 
+      bg: "bg-indigo-900/30", 
+      hoverBg: "bg-indigo-600/30", 
+      text: "text-indigo-400", 
+      hoverText: "text-indigo-300" 
+    },
+    rose: { 
+      bg: "bg-rose-900/30", 
+      hoverBg: "bg-rose-600/30", 
+      text: "text-rose-400", 
+      hoverText: "text-rose-300" 
+    },
+    cyan: { 
+      bg: "bg-cyan-900/30", 
+      hoverBg: "bg-cyan-600/30", 
+      text: "text-cyan-400", 
+      hoverText: "text-cyan-300" 
+    },
+    gray: { 
+      bg: "bg-gray-900/30", 
+      hoverBg: "bg-gray-700/30", 
+      text: "text-neutral-400", 
+      hoverText: "text-neutral-300" 
+    }
+  };
+
+  const colorClasses = colorMap[color] || colorMap.purple;
+  
+  return {
+    bgClass: isHovered ? colorClasses.hoverBg : colorClasses.bg,
+    textClass: isHovered ? colorClasses.hoverText : colorClasses.text
+  };
+};
+
 const CloudServiceCard: React.FC<CloudServiceCardProps> = ({
   id,
   title,
@@ -28,12 +93,12 @@ const CloudServiceCard: React.FC<CloudServiceCardProps> = ({
   color = "purple"
 }) => {
   const isHoveredState = isHovered === id;
-  const tile = tileStyle(color, isHoveredState, "purple");
+  const { bgClass, textClass } = getColorClasses(color, isHoveredState);
   
   const CardContent = (
     <>
-      <div style={tile.bg} className="h-12 w-12 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300">
-        <Icon style={tile.text} className="h-6 w-6 transition-colors duration-300" />
+      <div className={`h-12 w-12 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300 ${bgClass}`}>
+        <Icon className={`h-6 w-6 transition-colors duration-300 ${textClass}`} />
       </div>
       <ChromeText as="h3" className="text-xl font-bold mb-2">
         {title}
