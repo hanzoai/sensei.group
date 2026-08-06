@@ -36,7 +36,7 @@ const Compliance = () => {
             
             <div className="hz-row hz-ai-center">
               <div className="hz-sq-7 hz-mr-4">
-                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/hanzo-ai-icon.png" alt="Hanzo Base Logo" className="hz-w-full hz-h-full hz-object-contain" />
+                <img src="/hanzo-mark.svg" alt="Hanzo Base Logo" className="hz-w-full hz-h-full hz-object-contain" />
               </div>
               <div>
                 <h3 className="hz-t-xl hz-w-bold hz-fg">Hanzo Base</h3>

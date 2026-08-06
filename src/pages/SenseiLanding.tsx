@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Users, Briefcase, Star, Globe, Clock, Award, Handshake, Sparkles } from "lucide-react";
+import { ArrowRight, Users, Briefcase, Globe, Clock, Award, Handshake, Sparkles } from "lucide-react";
 import { Button } from "@hanzo/ui";
 
 const categories = [
@@ -10,19 +10,6 @@ const categories = [
   { icon: "📈", name: "Marketing", count: "180+" },
   { icon: "🔬", name: "AI/ML", count: "300+" },
   { icon: "🏗️", name: "Architecture", count: "100+" },
-];
-
-const testimonials = [
-  {
-    quote: "Found our CTO through Sensei. Best decision we made.",
-    author: "Sarah Chen",
-    role: "CEO, TechStartup",
-  },
-  {
-    quote: "The quality of talent is exceptional. Game changer for our team.",
-    author: "Marcus Rodriguez",
-    role: "VP Engineering, ScaleUp",
-  },
 ];
 
 const SenseiLanding = () => {
@@ -145,35 +132,6 @@ const SenseiLanding = () => {
                 </div>
                 <h3 className="hz-w-semibold hz-mb-2">{step.title}</h3>
                 <p className="hz-t-sm hz-fg-muted">{step.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="hz-py-7 hz-bg-surface">
-        <div className="hz-container hz-mx-auto hz-px-5">
-          <div className="hz-grid hz-grid-2 hz-container-narrow hz-gap-6">
-            {testimonials.map((t, index) => (
-              <motion.div
-                key={t.author}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="hz-card"
-              >
-                <div className="hz-row hz-gap-1 hz-mb-4">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="hz-sq-2 hz-fg-muted" />
-                  ))}
-                </div>
-                <p className="hz-t-lg hz-mb-4 hz-italic">"{t.quote}"</p>
-                <div>
-                  <div className="hz-w-semibold">{t.author}</div>
-                  <div className="hz-t-sm hz-fg-muted">{t.role}</div>
-                </div>
               </motion.div>
             ))}
           </div>

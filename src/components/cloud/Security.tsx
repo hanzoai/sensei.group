@@ -68,22 +68,6 @@ const Security = () => {
             </div>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="hz-mt-7 hz-align-center"
-        >
-          <p className="hz-t-xl hz-w-semibold hz-mb-6">Trusted by teams at</p>
-          <div className="hz-row hz-wrap hz-jc-center hz-ai-center hz-gap-7">
-            <div className="hz-bh-7 hz-bw-8 hz-bg-raised hz-r-md"></div>
-            <div className="hz-bh-7 hz-bw-8 hz-bg-raised hz-r-md"></div>
-            <div className="hz-bh-7 hz-bw-8 hz-bg-raised hz-r-md"></div>
-            <div className="hz-bh-7 hz-bw-8 hz-bg-raised hz-r-md"></div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
