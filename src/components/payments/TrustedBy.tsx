@@ -86,8 +86,8 @@ const TrustedBy = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="hz-p-4"
           >
-            <div className="hz-t-3xl hz-w-bold hz-fg-muted hz-mb-2">99.99%</div>
-            <div className="hz-fg-muted">Uptime SLA</div>
+            <div className="hz-t-3xl hz-w-bold hz-fg-muted hz-mb-2">Multi-Region</div>
+            <div className="hz-fg-muted">Redundancy with Automated Failover</div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}

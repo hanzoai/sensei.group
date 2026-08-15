@@ -118,7 +118,7 @@ const Scaling = () => {
             <Cpu className="hz-sq-5 hz-fg-muted hz-mr-4" />
             <div>
               <h4 className="hz-fg hz-w-medium">High Availability</h4>
-              <p className="hz-fg-muted hz-t-sm">99.99% uptime SLA guarantee</p>
+              <p className="hz-fg-muted hz-t-sm">Multi-region redundancy with automated failover</p>
             </div>
           </div>
           

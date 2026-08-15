@@ -97,7 +97,7 @@ const Privacy = () => {
                 transition={{ duration: 0.4, delay: 0.15 }}
                 className="hz-row hz-wrap hz-jc-center hz-gap-3 hz-mb-6"
               >
-                {["GDPR", "CCPA", "SOC 2", "HIPAA"].map((badge) => (
+                {["GDPR", "CCPA", "SOC 2 Type II controls", "Certification scoped per engagement"].map((badge) => (
                   <div
                     key={badge}
                     className="hz-btn hz-gap-2"

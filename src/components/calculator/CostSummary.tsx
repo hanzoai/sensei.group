@@ -52,7 +52,7 @@ const CostSummary = ({
         <div className="hz-row hz-ai-center hz-jc-between">
           <div className="hz-row hz-ai-center hz-gap-2">
             <Shield className="hz-sq-2 hz-fg-muted" />
-            <span className="hz-fg-muted">SOC2 Type 2 Compliance</span>
+            <span className="hz-fg-muted">SOC 2 Type II controls</span>
           </div>
           <div className="hz-row hz-ai-center hz-gap-3">
             <span>${costs.compliance.toFixed(2)}</span>

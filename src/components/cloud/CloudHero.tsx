@@ -87,7 +87,7 @@ hanzo edge status
     },
     security: {
       title: "Enterprise Security",
-      code: `# SOC 2 & HIPAA compliant
+      code: `# SOC 2 Type II controls
 hanzo security audit
 
 # Private networking
@@ -177,7 +177,7 @@ const CloudHero = () => {
               className="hz-inline hz-ai-center hz-gap-2 hz-px-3 hz-py-1 hz-r-full hz-t-xs hz-w-medium hz-mb-5"
               style={{ backgroundColor: `${BRAND_COLOR}20`, color: BRAND_COLOR }}
             >
-              90+ Managed Services • Global Edge • 99.99% SLA
+              90+ Managed Services • Global Edge • Multi-Region Failover
             </motion.div>
 
             <motion.h1

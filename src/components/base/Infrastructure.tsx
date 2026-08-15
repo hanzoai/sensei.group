@@ -65,7 +65,7 @@ const Infrastructure = () => {
             </div>
             <h3 className="hz-t-xl hz-w-semibold hz-fg hz-mb-3">High Redundancy</h3>
             <p className="hz-fg-soft">
-              Fault-tolerant architecture with redundancy and failover capabilities to ensure 99.99% uptime.
+              Fault-tolerant architecture with multi-region redundancy and automated failover.
             </p>
           </motion.div>
         </div>

@@ -25,11 +25,11 @@ const Compliance = () => {
               <div className="hz-mt-4 hz-row hz-wrap hz-gap-4">
                 <div className="hz-row hz-ai-center hz-bg-surface hz-bordered hz-r-md hz-px-3 hz-py-1">
                   <Lock className="hz-sq-2 hz-fg-muted hz-mr-2" />
-                  <span className="hz-fg-soft hz-t-sm">SOC2 Type 2 Certified</span>
+                  <span className="hz-fg-soft hz-t-sm">SOC 2 Type II controls</span>
                 </div>
                 <div className="hz-row hz-ai-center hz-bg-surface hz-bordered hz-r-md hz-px-3 hz-py-1">
                   <Lock className="hz-sq-2 hz-fg-muted hz-mr-2" />
-                  <span className="hz-fg-soft hz-t-sm">HIPAA Compliant</span>
+                  <span className="hz-fg-soft hz-t-sm">Certification scoped per engagement</span>
                 </div>
               </div>
             </div>

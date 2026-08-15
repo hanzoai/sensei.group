@@ -118,7 +118,7 @@ const AuditFeatures = () => {
             <ul className="hz-stack-2">
               <li className="hz-row hz-ai-start">
                 <CheckCircle className="hz-sq-3 hz-fg-muted hz-mr-2 hz-mt-1 hz-none" />
-                <span className="hz-fg-soft">SOC 2, HIPAA, GDPR, and CCPA compliant</span>
+                <span className="hz-fg-soft">SOC 2 Type II controls, GDPR and CCPA compliant</span>
               </li>
               <li className="hz-row hz-ai-start">
                 <CheckCircle className="hz-sq-3 hz-fg-muted hz-mr-2 hz-mt-1 hz-none" />
@@ -142,11 +142,11 @@ const AuditFeatures = () => {
           <div className="hz-row hz-jc-center hz-gap-6 hz-wrap">
             <div className="hz-row hz-ai-center">
               <Lock className="hz-sq-4 hz-fg-muted hz-mr-2" />
-              <span className="hz-fg-soft">SOC 2 Type II</span>
+              <span className="hz-fg-soft">SOC 2 Type II controls</span>
             </div>
             <div className="hz-row hz-ai-center">
               <Lock className="hz-sq-4 hz-fg-muted hz-mr-2" />
-              <span className="hz-fg-soft">HIPAA</span>
+              <span className="hz-fg-soft">Certification scoped per engagement</span>
             </div>
             <div className="hz-row hz-ai-center">
               <Lock className="hz-sq-4 hz-fg-muted hz-mr-2" />
@@ -158,11 +158,11 @@ const AuditFeatures = () => {
             </div>
             <div className="hz-row hz-ai-center">
               <Lock className="hz-sq-4 hz-fg-muted hz-mr-2" />
-              <span className="hz-fg-soft">ISO 27001</span>
+              <span className="hz-fg-soft">Role-based access control</span>
             </div>
             <div className="hz-row hz-ai-center">
               <Bookmark className="hz-sq-4 hz-fg-muted hz-mr-2" />
-              <span className="hz-fg-soft">99.9% Uptime SLA</span>
+              <span className="hz-fg-soft">Multi-region redundancy with automated failover</span>
             </div>
           </div>
         </motion.div>

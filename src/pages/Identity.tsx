@@ -192,7 +192,7 @@ const Identity = () => {
               <ul className="hz-stack-2 hz-fg-soft">
                 <li className="hz-row hz-ai-start">
                   <span className="hz-fg-muted hz-mr-2">•</span>
-                  <span>SOC 2, GDPR, HIPAA, and PCI DSS compliance</span>
+                  <span>SOC 2 Type II controls, GDPR compliance, certification scoped per engagement</span>
                 </li>
                 <li className="hz-row hz-ai-start">
                   <span className="hz-fg-muted hz-mr-2">•</span>

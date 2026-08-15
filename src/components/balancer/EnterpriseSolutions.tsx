@@ -47,7 +47,7 @@ const EnterpriseSolutions = () => {
               <div>
                 <h3 className="hz-t-2xl hz-w-semibold hz-mb-2">High Availability Clustering</h3>
                 <p className="hz-fg-soft">
-                  Multi-region and multi-zone failover capabilities with automated health checks and self-healing for 99.99% uptime SLAs.
+                  Multi-region and multi-zone failover capabilities with automated health checks and self-healing.
                 </p>
               </div>
             </div>

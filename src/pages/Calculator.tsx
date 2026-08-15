@@ -45,7 +45,7 @@ const Calculator = () => {
               </li>
               <li className="hz-row hz-ai-center hz-gap-2">
                 <Shield className="hz-sq-2 hz-fg-muted" />
-                <span><strong>Compliance:</strong> $99/month for SOC2 Type 2 compliance</span>
+                <span><strong>Compliance:</strong> $99/month for SOC 2 Type II controls</span>
               </li>
               <li className="hz-row hz-ai-center hz-gap-2">
                 <HeadsetIcon className="hz-sq-2 hz-fg-muted" />

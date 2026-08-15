@@ -110,7 +110,7 @@ const Features = () => {
             <Lock className="hz-sq-7 hz-fg-muted hz-mb-5" />
             <h3 className="hz-t-xl hz-w-bold hz-mb-4">Enterprise Security</h3>
             <p className="hz-fg-soft">
-              SOC 2, GDPR, and HIPAA compliant infrastructure with private networking, encryption, and audit logging.
+              SOC 2 Type II controls on GDPR-compliant infrastructure with private networking, encryption, and audit logging.
             </p>
           </motion.div>
         </div>

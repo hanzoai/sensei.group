@@ -100,7 +100,7 @@ const DeploymentOptions = () => {
                 <span className="hz-fg-muted">✓</span> Zero-config deployments
               </li>
               <li className="hz-row hz-ai-center hz-gap-2">
-                <span className="hz-fg-muted">✓</span> 99.99% SLA
+                <span className="hz-fg-muted">✓</span> Multi-region failover
               </li>
             </ul>
             <Link
