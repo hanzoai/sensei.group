@@ -2,7 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@hanzo/ui";
-import { Github, FileText, Server } from "lucide-react";
+import { FileText, Server } from 'lucide-react'
+import { Github } from '@hanzo/ui/brands';
 
 const CallToAction = () => {
   return (

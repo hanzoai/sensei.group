@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge, Button, Input } from "@hanzo/ui";
-import { Search, ExternalLink, Github, Plug } from "lucide-react";
+import { Search, ExternalLink, Plug } from 'lucide-react'
+import { Github } from '@hanzo/ui/brands';
 
 // Sample integrations data - in production, this would come from an API
 const integrationCategories = [

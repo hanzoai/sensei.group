@@ -2,7 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@hanzo/ui";
-import { ArrowRight, Chrome, Globe } from "lucide-react";
+import { ArrowRight, Globe } from 'lucide-react'
+import { Chrome } from '@hanzo/ui/brands';
 import ChromeText from "@/components/visual/chrome-text";
 
 const HanzoExtensionHero = () => {
