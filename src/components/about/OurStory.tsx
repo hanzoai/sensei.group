@@ -26,7 +26,7 @@ const OurStory = () => {
         >
           <p className="hz-fg-soft hz-leading-relaxed hz-mb-5">
             Hanzo Industries, Inc. – originally known as Crowdstart under Verus Media – has undergone several transformations since its inception. 
-            Founded by Zach Kelling (with David Tai as co-founder) in the mid-2010s, the company evolved from a crowd-powered marketing platform 
+            Founded with David Tai in the mid-2010s, the company evolved from a crowd-powered marketing platform 
             into a Techstars-backed artificial intelligence venture, and ultimately into a multifaceted AI technology provider.
           </p>
           

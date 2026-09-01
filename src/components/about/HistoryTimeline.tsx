@@ -8,7 +8,7 @@ const timelineEvents = [
   {
     year: "2014-2016",
     title: "Origins: Verus Media & Crowdstart",
-    description: "Zach Kelling founded Verus Media and launched Crowdstart, a platform to harness crowd-driven data and AI to help businesses grow.",
+    description: "Verus Media was founded and launched Crowdstart, a platform to harness crowd-driven data and AI to help businesses grow.",
     icon: <Rocket className="hz-fg-muted" />,
     highlight: "Record-breaking product launches and significant crowdfunding success.",
     link: { text: "Learn about our platform", url: "/platform" }
