@@ -25,7 +25,6 @@ const MeetHanzoContent = ({ closeMenu }: { closeMenu: () => void }) => (
       </div>
       <ul className="hz-stack-2">
         <li><Link to="/philosophy" onClick={closeMenu} className="hz-t-sm hz-fg-soft hz-transition hz-hoverable">Philosophy</Link></li>
-        <li><Link to="/leadership" onClick={closeMenu} className="hz-t-sm hz-fg-soft hz-transition hz-hoverable">Leadership</Link></li>
         <li><Link to="/brand" onClick={closeMenu} className="hz-t-sm hz-fg-soft hz-transition hz-hoverable">Brand</Link></li>
         <li><Link to="/press" onClick={closeMenu} className="hz-t-sm hz-fg-soft hz-transition hz-hoverable">Press</Link></li>
       </ul>

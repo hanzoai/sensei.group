@@ -17,7 +17,7 @@ name: deploy
 # stand the site up.
 #
 # The one secret is HANZO_DEPLOY_TOKEN, which identifies us rather than granting
-# storage. It is set ON THE FORGE: this file lives under .hanzo/workflows/, which
+# storage. It is set ON GIT.HANZO.AI: this file lives under .hanzo/workflows/, which
 # only git.hanzo.ai reads, so GitHub's secret store is not in this path at all.
 
 on:
