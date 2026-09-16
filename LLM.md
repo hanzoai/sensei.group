@@ -71,26 +71,30 @@ strings).
 
 - `node scripts/css-check.mjs` — every class the markup uses against every rule
   the shipped CSS defines, inline `<style>` included. 99.8% of occurrences.
-- `node scripts/shots.mjs <outDir> [baseUrl]` — Playwright over all 93 routes at
-  390px and 1280px: horizontal overflow, sub-44px tap targets, empty pages, page
-  errors. Run it against a served `dist/` (`vite preview`, port 4173).
+- `node scripts/shots.mjs <outDir> [baseUrl]` — Playwright at 390px and 1280px:
+  horizontal overflow, sub-44px tap targets, empty pages, page errors. It walks
+  the routes it is given; there is one. Run it against a served `dist/`
+  (`vite preview`, port 4173).
 
 ## Structure
 
 ```
 src/
-  App.tsx              # Root router -- SenseiLanding as homepage
+  App.tsx              # One route: SenseiLanding at /
   pages/
-    SenseiLanding.tsx  # Homepage (/) -- talent network landing
-    ...                # Shared pages (same as other Hanzo sites)
-  components/          # Shared component library
+    SenseiLanding.tsx  # The site
+  components/          # PageTransition, ScrollToTop
   styles/              # index.css -> design tokens + system.css + site.css
 ```
 
 ## Key Routes
 
-- `/` -- SenseiLanding (fractional talent marketplace)
-- All other routes -- Shared product/marketing/account pages from common codebase
+- `/` — SenseiLanding, and that is the whole site.
+- Everything else — a 404 from the edge. The repo began as a copy of the Hanzo
+  site and carried ~90 of its routes, so /pricing, /products and the account and
+  billing pages served Hanzo's brand under this domain. They are gone, along with
+  the 437 source files behind them. The export ships no 404.html on purpose: one
+  would be answered with a 200 and keep those paths in a search index.
 
 ## How it ships
 `.hanzo/workflows/deploy.yml` on the git.hanzo.ai forge (`hanzo-build-linux-amd64`):
@@ -132,23 +136,22 @@ The homepage highlights:
 
 ## Notes
 
-- Shares the same component library and routes as hanzo.app, hanzo.id, hanzo.network, and hanzo.one. Only `SenseiLanding.tsx` and `index.html` metadata are unique.
-- Package name is `@sensei/site` (not `@hanzo/`). Only project with `dompurify` dependency.
-- Standard static SPA deployment (no edge middleware).
+- It shares a component library with the other sites in the estate; it does not
+  share their pages. It used to, and that was the defect.
+- Package name is `@sensei/site` (not `@hanzo/`).
+- Static export, no edge middleware.
 
 ## Known, and left alone deliberately
 
-- **`src/pages/` has pages with no `<Route>`** — Privacy, Terms, About, Careers,
-  Blog, Install, Calculator. A marketing site wants those URLs; the fix is to
-  route them, not to delete them, and that is a product call.
-- **`src/components/auth/Login.tsx` is a mock.** It writes a fake user to
-  `localStorage` and navigates to `/account`. It is not auth and must not become
-  auth: real sign-in is Hanzo IAM, and nothing here should grow a local
-  password flow.
-- **`tsc --noEmit` reports 31 errors**, all pre-existing: framer-motion v12
-  narrowed `Transition['type'] | ['ease']` and this tree passes plain strings.
-  `pnpm build` does not typecheck, which is why they survived.
-- **`src/pages/Install.tsx` renders a shell script** carrying a standalone HTML
-  document for hanzo.sh, which links `https://hanzo.sh/styles.css`. Its classes
-  answer to another site's stylesheet, so the codemod ignores it by name
-  (`IGNORE` in `detailwind.mjs`). Do not "fix" its Tailwind.
+- **`package.json` still lists what the deleted pages used** — `three`,
+  `dompurify`, `uuid`, `next-themes`, `react-helmet`. Nothing imports them, so
+  nothing ships them, and the lane installs with `--frozen-lockfile`: pruning
+  them means regenerating the lockfile in the same commit or the install fails.
+  `@hanzo/design`, `@hanzo/gui`, `@hanzogui/*` and `react-native-svg` only look
+  unused — index.css and vite.config reach them.
+- **`scripts/` holds the codemod that moved this tree off Tailwind** —
+  `migrate.sh`, `detailwind.mjs`, `sweep-residual.mjs`. Its targets are deleted;
+  `css-check.mjs` and `shots.mjs` still apply to what is left.
+- **`pnpm build` does not typecheck.** `tsc --noEmit` has never been clean here
+  (framer-motion v12 narrowed `Transition['type']` and this tree passes plain
+  strings), which is how those errors survived.
