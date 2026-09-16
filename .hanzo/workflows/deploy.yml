@@ -67,7 +67,12 @@ jobs:
       # the standing shared-bucket credential the grant replaced, and it could
       # overwrite every other org's site.
       - name: Publish to the Sites plane
-        uses: https://git.hanzo.ai/hanzoai/ci/.github/actions/site@v1
+      # BARE, not an https:// URL. git.hanzo.ai serves no git anonymously —
+      # every repo answers /info/refs with 401, public or not — and an absolute
+      # ref is fetched with no credential, so the action itself never arrives and
+      # the job dies before its first step. A bare ref resolves through the
+      # forge's DEFAULT_ACTIONS_URL, which is github, where this tag is readable.
+        uses: hanzoai/ci/.github/actions/site@v1
         with:
           slug: sensei-group
           dir: dist
