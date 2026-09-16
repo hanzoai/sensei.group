@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Analytics } from "./analytics";
 import PageTransition from "./components/PageTransition";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -15,18 +14,14 @@ import SenseiLanding from "./pages/SenseiLanding";
 // writing the page for THIS site.
 const App = () => (
   <BrowserRouter>
-    {/* Inside the router: <Analytics> counts one pageview per client-side route
-        change, and a route change here never touches the network. */}
-    <Analytics>
-      <ThemeProvider>
-        <ScrollToTop />
-        <PageTransition>
-          <Routes>
-            <Route path="/" element={<SenseiLanding />} />
-          </Routes>
-        </PageTransition>
-      </ThemeProvider>
-    </Analytics>
+    <ThemeProvider>
+      <ScrollToTop />
+      <PageTransition>
+        <Routes>
+          <Route path="/" element={<SenseiLanding />} />
+        </Routes>
+      </PageTransition>
+    </ThemeProvider>
   </BrowserRouter>
 );
 

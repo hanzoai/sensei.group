@@ -45,8 +45,6 @@ jobs:
           node-version: '22'
 
       - name: build the static export
-        env:
-          VITE_PUBLISHABLE_KEY: ${{ secrets.PUBLISHABLE_KEY }}
         run: |
           set -euo pipefail
           # pnpm-lock.yaml is lockfileVersion 9.0. package.json names no
