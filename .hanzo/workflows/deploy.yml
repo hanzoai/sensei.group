@@ -56,11 +56,10 @@ jobs:
           pnpm install --frozen-lockfile
           pnpm build
           test -s dist/index.html || { echo "::error::vite build produced no dist/index.html"; exit 1; }
-          # 404.html IS index.html here, and only because this is a client-routed
-          # SPA: every route below / is resolved by react-router in the browser and
-          # has no file of its own, so a miss must still boot the app. A real
-          # per-route export must NEVER do this.
-          cp dist/index.html dist/404.html
+          # NO 404.html. The export is ONE page, so every other path is genuinely
+          # not here and the edge says so with a 404 — which is what makes search
+          # engines drop the routes this site used to serve. A 404.html would be
+          # answered with a 200 and keep them indexed.
           echo "exported $(find dist -type f | wc -l) files"
 
       # ONE credential. The 202 carries a prefix-scoped, 30-minute presigned POST
