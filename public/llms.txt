@@ -1,20 +1,35 @@
-# Sensei Group
+# Sensei Group (sensei.group)
 
-> World-class fractional talent on demand.
+> World-class fractional talent on demand — curated L3–L9 Certified Human Sensei lens on `hanzo.market`, anchored on Hanzo Network (`eip155:36963`, HIP-1349). Built for both enterprise buyers and autonomous AI agents (`hire_sensei`).
 
 ## About
-Sensei Group is a fractional talent network. Companies describe what they need,
-matching finds pre-vetted candidates, and the work starts in days. The network
-covers engineering, design, product, marketing, AI/ML and architecture.
+Sensei Group is a fractional talent network and curated L3+ human specialist lens. Companies and autonomous agents describe what they need, matching finds cryptographically verified candidates, and the work starts in days. The network covers engineering, design, product, marketing, AI/ML and architecture.
 
 ## How it works
 - Share your needs: describe the role and the work
-- Matching: candidates are proposed from the network
-- Meet and interview: talk to vetted people
+- Matching: verified L3–L9 candidates are proposed from the network
+- Meet and interview: talk to vetted people (or dispatch via `hire_sensei` MCP)
 - Start working: onboard and scale the team
 
-## Links
-- [Website](https://sensei.group)
+## L3+ Certification Gate
+- **Exclusive `minLevel >= 3` Gate**: Only human practitioners holding an active, non-revoked **L3 through L9** Verifiable Credential issued by `did:hanzo:university` on **Hanzo Network** (Chain ID `36963`) appear in `sensei.group` or receive hiring dispatches.
+- **L1–L3 Free Forever**: Foundation mastery and L3 Sensei qualification on `hanzo.university` (`https://docs.hanzo.ai/docs/university`) are `$0` forever.
+- **L4–L9 Advanced Specialization**: Proctored practical exams (`$100` per attempt + optional monthly lab compute subscription) across ZAP Zero-Copy (`L4`), Sovereign Confidential Cloud (`L5`), Multi-Agent Swarms (`L6`), PEFT & 1-Bit BitDelta (`L7`), RLHF/DPO/GRPO (`L8`), and Frontier Zen / `qwen3+` Pre-Training, Model Soups & Quantization (`L9`).
+
+## For Autonomous AI Agents (Agent-Hires-Human Protocol)
+When an autonomous agent (`hanzo dev`, `hanzo team`, or custom MCP client) hits a Kai confidence floor, security sign-off boundary, or architectural deadlock, escalate via MCP or HTTP:
+
+- **MCP Discovery**: `GET https://sensei.group/.well-known/mcp.json`
+- **MCP Tool**: `hire_sensei` (`minLevel` integer `3..9`, `domain`, `title`, `acceptanceCriteria`, `maxBudgetUsdc`)
+- **HTTP Hiring Endpoint**: `POST https://api.hanzo.ai/v1/sensei/hire`
+- **Roster Lookup**: `GET https://api.hanzo.ai/v1/sensei/roster?minLevel=3`
+- **Escrow & Clearance**: Backed by `hanzo.market` job escrow and `/v1/principal/clearance` (HIP-1340) on `eip155:36963`.
+
+## Canonical Links
+- [Website / Marketplace Lens](https://sensei.group)
+- Open Ecosystem Marketplace: https://hanzo.market
+- Hanzo University Curriculum (L1–L9): https://docs.hanzo.ai/docs/university
+- HIP-1349 Specification: https://hips.hanzo.ai/docs/hip-1349-sensei-certification-standard/
 
 ## Contact
 - Inquiries: hello@sensei.group

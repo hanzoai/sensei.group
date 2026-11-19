@@ -125,14 +125,13 @@ pnpm preview
 pnpm lint
 ```
 
-## SenseiLanding Focus
+## SenseiLanding Focus (HIP-1349 L3+ Lens & Agent-Hires-Human)
 
-The homepage highlights:
-- Fractional talent network (on-demand, world-class professionals)
-- Categories: Engineering (500+), Design (200+), Product (150+), Marketing (180+), AI/ML (300+), Architecture (100+)
-- Testimonials from startup founders/VPs
-- It renders no Navbar and no Footer — a full-screen hero is the whole page.
-  That is how it has always been, not something the migration removed.
+`sensei.group` operates as the curated **L3–L9 Certified Human Sensei lens** over `hanzo.market`, anchored on **Hanzo Network** (EVM Chain ID `36963`, `eip155:36963`):
+- **L3+ Credential Gate (`src/services/senseiProtocol.ts`)**: `filterVerifiedSenseis` and `validateHireSenseiRequest` enforce `minLevel >= 3` (`L3–L9` badges) and verify unrevoked `did:hanzo:` credentials on Chain `36963`, rejecting `< 3` with `422 sensei_level_below_gate`. Unit tests run via `node --experimental-strip-types --test scripts/sensei-protocol.test.mts`.
+- **Agent-Hires-Human Protocol**: Publishes `hire_sensei` MCP tool discovery at `public/.well-known/mcp.json` and `public/llms.txt`, pairing with `POST /v1/sensei/hire` and `/v1/principal/clearance` escrow on `hanzo.market`.
+- **University Ladder**: Links directly to Hanzo University (`docs.hanzo.ai/docs/university`): L1–L3 Free Forever (L3 unlocks `sensei.group`), L4–L9 `$100` per certification attempt + optional monthly sandbox subscription (L9 targets Zen / `qwen3+` exclusively).
+- It renders no Navbar and no Footer — a self-contained monochrome `@hanzo/design` surface.
 
 ## Notes
 
