@@ -52,7 +52,7 @@ const DASHBOARD_NAV = [
 const TERMINAL_LINES = [
   { text: "$ curl -fsSL hanzo.sh/install.sh | sh", type: "command" },
   { text: "$ hanzo team create acme", type: "command" },
-  { text: "$ hanzo login", type: "command" },
+  { text: "$ hanzo auth login", type: "command" },
   { text: "$ hanzo iam role bind --role engineer --to dev@acme.com", type: "command" },
   { text: "$ hanzo kms key create dev-secrets", type: "command" },
   { text: '$ hanzo dev "Ship a RAG API for ./docs. Expose /chat. Write tests."', type: "command" },

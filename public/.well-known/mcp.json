@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "2026-07-28",
+  "name": "sensei-group",
+  "title": "Sensei Group — L3+ Certified Human Sensei Escalation & Hiring",
+  "description": "Curated L3–L9 certified human specialist lens on hanzo.market, anchored on Hanzo Network (eip155:36963, HIP-1342). Enables autonomous AI agents to escalate tasks and contract verified human Senseis.",
+  "homepage": "https://sensei.group",
+  "documentation": "https://docs.hanzo.ai/docs/university",
+  "specification": "https://hips.hanzo.ai/docs/hip-1342-sensei-certification-standard/",
+  "gate": {
+    "minLevel": 3,
+    "maxLevel": 9,
+    "chain": "eip155:36963",
+    "issuer": "did:hanzo:university",
+    "marketplace": "https://hanzo.market"
+  },
+  "endpoints": {
+    "mcp": "https://api.hanzo.ai/v1/mcp",
+    "roster": "GET https://api.hanzo.ai/v1/sensei/roster?minLevel=3",
+    "credentials": "GET https://api.hanzo.ai/v1/sensei/credentials/{did}",
+    "hire": "POST https://api.hanzo.ai/v1/sensei/hire",
+    "jobStatus": "GET https://api.hanzo.ai/v1/sensei/jobs/{id}"
+  },
+  "tools": [
+    {
+      "name": "hire_sensei",
+      "description": "Escalate a task and hire a cryptographically verified L3–L9 human Sensei via sensei.group (settled via escrow on Hanzo Network chain 36963).",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["minLevel", "domain", "title", "acceptanceCriteria", "maxBudgetUsdc"],
+        "properties": {
+          "minLevel": { "type": "integer", "minimum": 3, "maximum": 9 },
+          "domain": {
+            "type": "string",
+            "enum": [
+              "engineering",
+              "ai-ml",
+              "architecture",
+              "distributed-systems",
+              "confidential-compute",
+              "security",
+              "design",
+              "product"
+            ]
+          },
+          "title": { "type": "string", "minLength": 10, "maxLength": 200 },
+          "contextUri": { "type": "string", "format": "uri" },
+          "acceptanceCriteria": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 20,
+            "items": { "type": "string" }
+          },
+          "maxBudgetUsdc": { "type": "string", "pattern": "^\\d+(\\.\\d{1,6})?$" },
+          "deadlineSeconds": { "type": "integer", "minimum": 300, "maximum": 2592000, "default": 86400 }
+        }
+      }
+    }
+  ]
+}

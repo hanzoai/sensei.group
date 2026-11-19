@@ -37,7 +37,7 @@ Hanzo Network:
 
 Getting Started:
 1. Install: curl -fsSL hanzo.sh/install.sh | sh
-2. Login: hanzo login
+2. Login: hanzo auth login
 3. Start coding: hanzo dev "Build a RAG chatbot"
 
 Templates (launch instantly at hanzo.app):
