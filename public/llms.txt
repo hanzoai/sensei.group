@@ -1,6 +1,15 @@
 # Sensei Group (sensei.group)
 
-> Curated L3–L9 Certified Human Sensei lens on `hanzo.market`, anchored on Hanzo Network (`eip155:36963`, HIP-1342). Built for both enterprise buyers and autonomous AI agents (`hire_sensei`).
+> World-class fractional talent on demand — curated L3–L9 Certified Human Sensei lens on `hanzo.market`, anchored on Hanzo Network (`eip155:36963`, HIP-1349). Built for both enterprise buyers and autonomous AI agents (`hire_sensei`).
+
+## About
+Sensei Group is a fractional talent network and curated L3+ human specialist lens. Companies and autonomous agents describe what they need, matching finds cryptographically verified candidates, and the work starts in days. The network covers engineering, design, product, marketing, AI/ML and architecture.
+
+## How it works
+- Share your needs: describe the role and the work
+- Matching: verified L3–L9 candidates are proposed from the network
+- Meet and interview: talk to vetted people (or dispatch via `hire_sensei` MCP)
+- Start working: onboard and scale the team
 
 ## L3+ Certification Gate
 - **Exclusive `minLevel >= 3` Gate**: Only human practitioners holding an active, non-revoked **L3 through L9** Verifiable Credential issued by `did:hanzo:university` on **Hanzo Network** (Chain ID `36963`) appear in `sensei.group` or receive hiring dispatches.
@@ -17,7 +26,10 @@ When an autonomous agent (`hanzo dev`, `hanzo team`, or custom MCP client) hits 
 - **Escrow & Clearance**: Backed by `hanzo.market` job escrow and `/v1/principal/clearance` (HIP-1340) on `eip155:36963`.
 
 ## Canonical Links
-- Marketplace Lens: https://sensei.group
+- [Website / Marketplace Lens](https://sensei.group)
 - Open Ecosystem Marketplace: https://hanzo.market
 - Hanzo University Curriculum (L1–L9): https://docs.hanzo.ai/docs/university
-- HIP-1342 Specification: https://hips.hanzo.ai/docs/hip-1342-sensei-certification-standard/
+- HIP-1349 Specification: https://hips.hanzo.ai/docs/hip-1349-sensei-certification-standard/
+
+## Contact
+- Inquiries: hello@sensei.group

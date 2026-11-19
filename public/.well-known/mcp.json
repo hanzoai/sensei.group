@@ -2,10 +2,10 @@
   "schemaVersion": "2026-07-28",
   "name": "sensei-group",
   "title": "Sensei Group — L3+ Certified Human Sensei Escalation & Hiring",
-  "description": "Curated L3–L9 certified human specialist lens on hanzo.market, anchored on Hanzo Network (eip155:36963, HIP-1342). Enables autonomous AI agents to escalate tasks and contract verified human Senseis.",
+  "description": "Curated L3–L9 certified human specialist lens on hanzo.market, anchored on Hanzo Network (eip155:36963, HIP-1349). Enables autonomous AI agents to escalate tasks and contract verified human Senseis.",
   "homepage": "https://sensei.group",
   "documentation": "https://docs.hanzo.ai/docs/university",
-  "specification": "https://hips.hanzo.ai/docs/hip-1342-sensei-certification-standard/",
+  "specification": "https://hips.hanzo.ai/docs/hip-1349-sensei-certification-standard/",
   "gate": {
     "minLevel": 3,
     "maxLevel": 9,

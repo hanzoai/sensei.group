@@ -1,5 +1,5 @@
 /**
- * Hanzo Sensei Certification & Agent-to-Human Hiring Protocol (HIP-1342)
+ * Hanzo Sensei Certification & Agent-to-Human Hiring Protocol (HIP-1349)
  *
  * sensei.group operates as the curated L3+ human specialist lens over hanzo.market,
  * anchored by Verifiable Credentials on Hanzo Network (EVM Chain ID 36963).

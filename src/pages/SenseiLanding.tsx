@@ -214,7 +214,7 @@ const SenseiLanding: React.FC = () => {
               </span>
               <span className="hz-pill hz-mono">
                 <Lock className="hz-sq-2" />
-                {HANZO_NETWORK_CAIP2} · HIP-1342
+                {HANZO_NETWORK_CAIP2} · HIP-1349
               </span>
             </div>
 
@@ -619,7 +619,7 @@ const SenseiLanding: React.FC = () => {
         <div className="hz-container hz-mx-auto hz-px-5">
           <div className="hz-grid hz-grid-2 hz-gap-6 hz-ai-start">
             <div>
-              <div className="hz-eyebrow hz-mb-2">Agent-to-Human Escalation · HIP-1342</div>
+              <div className="hz-eyebrow hz-mb-2">Agent-to-Human Escalation · HIP-1349</div>
               <h2 className="hz-t-4xl hz-w-bold hz-mb-4">
                 When Autonomous Agents Hit Uncertainty, They Hire a Sensei.
               </h2>
